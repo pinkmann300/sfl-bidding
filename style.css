@@ -1,0 +1,93 @@
+/* Stylesheet for the SFL Auctions page */ 
+
+body{
+    background-color:black;
+    background-position:inherit;
+    /* background-image:url("images/bg.jpg"); */
+    font-weight:normal;
+}
+
+#hometitle {
+    color:white;
+    text-align:left; 
+    font-size:7vw; 
+    padding:20px;
+    margin-top: 2.5%;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 5%; 
+    width: 400px; 
+    height:inherit;
+}
+
+.div1 {
+    border-radius:15px; 
+    background-color: white;
+    height:400px; 
+    width:30%; 
+    padding:10px;
+    margin-left:60%;
+    margin-top:-35%;
+
+}
+
+.logform{
+    padding:4%; 
+    font-family: 'Poppins', sans-serif;
+    font-size:1.5vw;
+    opacity:0.6;
+}
+
+.adminBar{
+    margin-top: 1%;
+    height: 10%; 
+    width: 100%; 
+    position:fixed;
+}
+
+.buttonGr{
+    float:left; 
+    display:inline; 
+    width:100%;
+    margin-left:5%;
+}
+
+.button1{
+    width: 18%; 
+    background-color:white; 
+    color:black; 
+    padding: 2%;
+    font-size:1vw;
+    cursor:pointer;
+}
+
+.button1:disabled{
+    background-color:black; 
+    color:white;
+    cursor:none;
+}
+
+.button1:hover{
+    transition: 0.2s;
+    background-color:black; 
+    color:white;
+    cursor:pointer; 
+}
+
+.adminAlert{
+    margin-top: 10%; 
+    padding: 10px;
+    font-size: 5vw; 
+    width:99.125%; 
+    color:white;  
+    text-align:center;
+}
+
+.defPlayerDisp{
+    margin-top: 10%; 
+    padding:5px; 
+    width:92.5%; 
+    font-size: 20px; 
+    height:inherit; 
+    color:white; 
+    margin-left:5%;
+}
