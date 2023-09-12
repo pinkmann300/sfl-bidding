@@ -24,6 +24,10 @@ class Player {
     getPlayerDesc() {
         return this.playerDes;
     }
+
+    getPrize(){
+        return this.prize;
+    }
 }
 
 
@@ -45,6 +49,8 @@ function shuffleArray(array) {
 }
 
 
+var playerArr2 = [];
+
 // Defenders button 
 const defbutt = document.querySelector("#defense");
 defbutt.onclick = defenseList; 
@@ -63,12 +69,25 @@ gkbutt.onclick = goalist;
 
 // Randomize button which appears when one of them is clicked.
 const randomize = document.getElementById("randomizer");
+randomize.onclick = randomizing;
+
+console.log(playerArr2);
+
+const startAuc = document.querySelector("#startauc");
+startAuc.onclick = startAuction;
+
+const stopBid = document.querySelector("#stopbid");
+
+ 
+const startBid = document.querySelector("#startbid");
+
+
 
 // Hardcoded - sample player list.
 var playerArr = [
     new Player("Punya Chowksey", "2020-2025", "Hi, Im Punya", "Defender"),
-    new Player("Sagar", "2020-2023", "Hi,Im sagar", "Defender"),
-    new Player("Aatmesh", "2023-2024", "Im aatmesh", "Defender")
+    new Player("Sagar Bhargava", "2020-2023", "Hi,Im sagar", "Defender"),
+    new Player("Aatmesh Govind", "2023-2024", "Im aatmesh", "Defender")
 ];
 
 
@@ -80,7 +99,7 @@ function defenseList(){
 
     let list = document.getElementById("defList");
 
-    for (i = 0; i < playerArr.length; ++i) {
+    for (i = 0; i < (playerArr.length); ++i) {
         var li = document.createElement('li');
         li.innerText = playerArr[i].getName();
         list.appendChild(li);
@@ -91,37 +110,74 @@ function defenseList(){
 }
 
 
+
+
 function randomizing(){
-    playerArr = shuffleArray(playerArr);
+    playerArr2 = shuffleArray(playerArr);
     document.getElementById("defList").style.display = "none"; 
     document.getElementById("randef").style.display = "block";
 
     let listy = document.getElementById("randef");
 
-    //var li = document.createElement('li');
-    //li.innerText = playerArr[0].getName();
-    //listy.appendChild(li);
-
     document.getElementById("playerDisp").style.display = "block";
     randomize.style.display = "none";
-    displayPlayer(playerArr);
+
+    document.getElementById("startbid").disabled = true;
+    document.getElementById("stopbid").disabled = true;
+
+    document.getElementById("adminops").style.display = "inline-block";
+    displayPlayer(playerArr2[0]); 
+    playerArr2 = playerArr2.slice(1);
 
 }
 
 
-function displayPlayer(arr2){   
-
+function displayPlayer(playa){   
     const player = document.getElementById("playerName"); 
-    let displayInfo =  " " + (arr2[0]).getName();
+    let displayInfo =  " " + (playa).getName();
     const playerAge = document.getElementById("year");
     player.innerHTML = displayInfo; 
-    playerAge.innerHTML = arr2[0].getYear(); 
+    playerAge.innerHTML = playa.getYear(); 
+    document.getElementById("currentBid").style.display = "block";
+    document.getElementById("currentBid").innerText =  playa.getPrize() + " Cr"
+      
+}
+
+
+function startAuction(){
+    // Awaiting implementation 
+    document.getElementById("startauc").style.visibility="hidden"; 
+    document.getElementById("startbid").disabled = false; 
+    document.getElementById("stopbid").disabled = false; 
+
+    stopBid.onclick = stopBidding;
+
+    function stopBidding(){
+        if (playerArr2.length != 0)
+        {
+            displayPlayer(playerArr2[0]);
+            playerArr2 = playerArr2.slice(1);
+            
+        } 
+        else {
+            document.getElementById("defDis").style.display = "none";
+            document.getElementById("currentBid").style.display = "none";
+            document.getElementById("adminAl").style.display = "block";
+            document.getElementById("adminAl").innerText = "All players sold! Pick another category";
+        }
+    }
 }
 
 
 
 
-// 
+
+
+function listenBids(){
+    // Listens to bids from captains 
+
+
+}
 
 
 // Functions awaiting complete implementation. 
@@ -144,3 +200,10 @@ function notsure(){
 function login() {
     console.log('Logging in!')
 }
+
+
+
+
+
+
+
