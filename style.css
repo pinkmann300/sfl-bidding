@@ -85,7 +85,7 @@ body{
 .defPlayerDisp{
     margin-top: 10%; 
     padding:5px; 
-    width:92.5%; 
+    width:95%; 
     font-size: 20px; 
     height:inherit; 
     color:white; 
@@ -95,15 +95,15 @@ body{
 
 .playerDisp{
     margin-top:1%; 
-    margin-left:27.5%;
-    padding: 10px; 
-    width:40%;
+    margin-left:30%;
+    padding: 8px; 
+    width:35%;
     height:inherit;
     background-color: khaki;
     border-radius: 15px;
     color:black;
     text-align:center; 
-    font-size:2vw;
+    font-size:1.75vw;
 }
 
 
@@ -114,7 +114,7 @@ body{
 }
 
 #year{
-    font-size:1vw; 
+    font-size:1.5vw; 
     font-family: 'Poppins', sans-serif;
 }
 

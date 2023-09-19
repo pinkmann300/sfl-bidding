@@ -71,7 +71,7 @@ var midFieldArr = [
 var gkArr = [
     new Player("Mihir Vivek", "2020-2025", "Hi, Im Punya", "Defender"),
     new Player("Vedant Oswal", "2020-2023", "Hi,Im sagar", "Defender"),
-    new Player("Ramamoorthi", "2023-2024", "Im aatmesh", "Defender")
+    new Player("Pranav Ramamoorthi", "2023-2024", "Im aatmesh", "Defender")
 ];
 
 var notSureArr = [
