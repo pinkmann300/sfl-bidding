@@ -93,9 +93,6 @@ body{
 }
 
 
-
-
-
 .playerDisp{
     margin-top:1%; 
     margin-left:27.5%;
@@ -121,32 +118,18 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-.bid-box{
-    margin-top:2%; 
-    margin-left:45%; 
-    padding:10px; 
-    width:10%; 
-    height:inherit; 
-    background-color:green; 
-    color:white; 
-    border-radius:15px;
-    border-color: white; 
-    text-align: center; 
-    font-family: 'Poppins', sans-serif;
-    font-size:3vw;
-}
-
 
 .adminButtonGr{
     display:inline-block;
     margin-top:20%;  
     padding: 2%; 
+    position:fixed;
    
 }
 
 
 .admbtn-group button {
-  margin-top:10%; 
+  margin-top:18%; 
   border: 1px solid green;
   padding: 10px 24px; 
   cursor: pointer; 

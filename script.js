@@ -30,9 +30,7 @@ class Player {
     }
 }
 
-
 // Common functions 
-
 
 // Shuffle array - takes an array as a parameter and returns an array with the elements shuffled. 
 function shuffleArray(array) {
@@ -49,40 +47,6 @@ function shuffleArray(array) {
 }
 
 
-var playerArr2 = [];
-
-// Defenders button 
-const defbutt = document.querySelector("#defense");
-defbutt.onclick = defenseList; 
-
-// Forwards button 
-const forbutt = document.querySelector("#forwards"); 
-forbutt.onclick = forwardsList; 
-
-// Midfielders button
-const midbutt = document.querySelector("#midfielders"); 
-midbutt.onclick = midList; 
-
-// Goalkeepers button
-const gkbutt = document.querySelector("#goalkeepers"); 
-gkbutt.onclick = goalist;
-
-// Randomize button which appears when one of them is clicked.
-const randomize = document.getElementById("randomizer");
-randomize.onclick = randomizing;
-
-console.log(playerArr2);
-
-const startAuc = document.querySelector("#startauc");
-startAuc.onclick = startAuction;
-
-const stopBid = document.querySelector("#stopbid");
-
- 
-const startBid = document.querySelector("#startbid");
-
-
-
 // Hardcoded - sample player list.
 var playerArr = [
     new Player("Punya Chowksey", "2020-2025", "Hi, Im Punya", "Defender"),
@@ -91,33 +55,86 @@ var playerArr = [
 ];
 
 
-function defenseList(){
+var forwardArr = [
+    new Player("Tanav Vedantam", "2020-2025", "Hi, Im Punya", "Defender"),
+    new Player("Darshan Ramakrishnan", "2020-2023", "Hi,Im sagar", "Defender"),
+    new Player("Sandeep Chezhian A", "2023-2024", "Im aatmesh", "Defender")
+];
 
-    defbutt.disabled = true;
+
+var midFieldArr = [
+    new Player("Pranav Vale", "2020-2025", "Hi, Im Punya", "Defender"),
+    new Player("Alan", "2020-2023", "Hi,Im sagar", "Defender"),
+    new Player("Arul Shankar", "2023-2024", "Im aatmesh", "Defender")
+];
+
+var gkArr = [
+    new Player("Mihir Vivek", "2020-2025", "Hi, Im Punya", "Defender"),
+    new Player("Vedant Oswal", "2020-2023", "Hi,Im sagar", "Defender"),
+    new Player("Ramamoorthi", "2023-2024", "Im aatmesh", "Defender")
+];
+
+var notSureArr = [
+    new Player("Anish Kumar", "2020-2025", "Hi, Im Punya", "Defender"),
+    new Player("Nivedita Venkatesh", "2020-2023", "Hi,Im sagar", "Defender"),
+    new Player("Sahil Borse", "2023-2024", "Im aatmesh", "Defender")
+];
+
+var playerArr2 = [];
+
+
+// Randomize button which appears when one of them is clicked.
+const randomize = document.getElementById("randomizer");
+
+// Defenders button 
+const defbutt = document.getElementById("defense").addEventListener('click', function() { defenseList("defense", playerArr)});
+
+const forbutt = document.getElementById("forwards").addEventListener('click', function(){ defenseList("forwards",forwardArr)});
+
+
+const midbutt = document.getElementById("midfielders").addEventListener('click', function () {
+    defenseList("midfielders", midFieldArr)
+});
+
+
+const notsurebutt = document.getElementById("notsure").addEventListener('click', function () {
+    defenseList("notsure", notSureArr)
+});
+
+
+const gkbutt = document.getElementById("goalkeepers").addEventListener('click', function () {
+    defenseList("goalkeepers", gkArr)
+})
+
+const stopBid = document.querySelector("#stopbid");
+const startBid = document.querySelector("#startbid");
+
+function defenseList(a,b){
+    document.getElementById("playerDisp").style.display = "none";
+    document.getElementById(a).disabled = true;
     document.getElementById("adminAl").style.display = "none"; 
     document.getElementById("defDis").style.display="block";
+    randomize.style.display = "block";
 
     let list = document.getElementById("defList");
+    document.getElementById("defList").style.display = "block";
 
-    for (i = 0; i < (playerArr.length); ++i) {
+
+    for (i = 0; i < (b.length); ++i) {
         var li = document.createElement('li');
-        li.innerText = playerArr[i].getName();
+        li.innerText = b[i].getName();
         list.appendChild(li);
     }   
-   
-    randomize.onclick = randomizing; 
+    
+    randomize.onclick = function(){randomizingDef(b)}
     // Passes the rest of the function to randomizing. 
 }
 
 
-
-
-function randomizing(){
-    playerArr2 = shuffleArray(playerArr);
-    document.getElementById("defList").style.display = "none"; 
+function randomizingDef(arrw){
+    playerArr2 = shuffleArray(arrw);
+    document.getElementById("defList").style.display = "none";
     document.getElementById("randef").style.display = "block";
-
-    let listy = document.getElementById("randef");
 
     document.getElementById("playerDisp").style.display = "block";
     randomize.style.display = "none";
@@ -126,10 +143,15 @@ function randomizing(){
     document.getElementById("stopbid").disabled = true;
 
     document.getElementById("adminops").style.display = "inline-block";
-    displayPlayer(playerArr2[0]); 
+    document.getElementById("startauc").style.visibility = "visible";
+    displayPlayer(playerArr2[0]);
     playerArr2 = playerArr2.slice(1);
 
+    const startAuc = document.querySelector("#startauc");
+    startAuc.onclick = startAuction;
+
 }
+
 
 
 function displayPlayer(playa){   
@@ -137,10 +159,7 @@ function displayPlayer(playa){
     let displayInfo =  " " + (playa).getName();
     const playerAge = document.getElementById("year");
     player.innerHTML = displayInfo; 
-    playerAge.innerHTML = playa.getYear(); 
-    document.getElementById("currentBid").style.display = "block";
-    document.getElementById("currentBid").innerText =  playa.getPrize() + " Cr"
-      
+    playerAge.innerHTML = playa.getYear();      
 }
 
 
@@ -148,62 +167,33 @@ function startAuction(){
     // Awaiting implementation 
     document.getElementById("startauc").style.visibility="hidden"; 
     document.getElementById("startbid").disabled = false; 
-    document.getElementById("stopbid").disabled = false; 
+    
+    startBid.onclick = startBidding; 
 
-    stopBid.onclick = stopBidding;
+    function startBidding(){
+
+        document.getElementById("bidalert").style.display = "block";
+        document.getElementById("stopbid").disabled = false;
+        stopBid.onclick = stopBidding;
+    }
 
     function stopBidding(){
         if (playerArr2.length != 0)
         {
+            document.getElementById("stopbid").disabled = true;
+            document.getElementById("bidalert").style.display ="none";
             displayPlayer(playerArr2[0]);
             playerArr2 = playerArr2.slice(1);
-            
         } 
         else {
+            document.getElementById("bidalert").style.display = "none";
+            document.getElementById("adminops").style.display = "none";
             document.getElementById("defDis").style.display = "none";
-            document.getElementById("currentBid").style.display = "none";
             document.getElementById("adminAl").style.display = "block";
             document.getElementById("adminAl").innerText = "All players sold! Pick another category";
+            document.getElementById("defList").replaceChildren();
         }
     }
 }
-
-
-
-
-
-
-function listenBids(){
-    // Listens to bids from captains 
-
-
-}
-
-
-// Functions awaiting complete implementation. 
-function forwardsList(){
-    console.log("Forwards has been clicked!");
-}
-
-function midList(){
-    console.log("Midfielders have been clicked!"); 
-}
-
-function goalist(){
-    console.log("Goalkeepers have been clicked!"); 
-}
-
-function notsure(){
-    console.log("Not sure has been clicked!");
-}
-
-function login() {
-    console.log('Logging in!')
-}
-
-
-
-
-
 
 
