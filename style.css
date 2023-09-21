@@ -46,8 +46,8 @@ h1 {
 .adminBar{
     margin-top: 1%;
     height: 10%; 
-    width: 95%;
-    margin-left:0.5%;
+    width: 94%;
+    margin-left:1%;
 }
 
 .buttonGr{
@@ -83,7 +83,7 @@ h1 {
     margin-top: 10%; 
     padding: 10px;
     font-size: 5vw; 
-    width:99.125%; 
+    width:98%; 
     color:white;  
     text-align:center;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -91,21 +91,18 @@ h1 {
 
 .defPlayerDisp{
     margin-top: 10%; 
-    padding:6px; 
-    width:15%; 
+    padding:5px; 
+    width:94%; 
     font-size: 20px; 
     height:inherit; 
     color:white; 
     margin-left:5%;
-    background-color:black;
-    border-radius: 15px;
-    border-color: white;
 }
 
 
 .playerDisp{
     margin-top:1%; 
-    margin-left:32.5%;
+    margin-left:30%;
     padding: 8px; 
     width:35%;
     height:inherit;
