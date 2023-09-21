@@ -1,0 +1,7 @@
+new Player(
+  new Player("Ananya Gudaloor ","SIAS 21-24","Not sure"  ),
+  new Player("verainya priyankar ","SIAS 22-25","Not sure"  ),
+  new Player("Ahanya Appaiah","SIAS 21-24","Not sure"  ),
+  new Player("Inayat Beri ","SIAS 21-24","Not sure"  ),
+  new Player("Muskan Aneja","SIAS 22-25","Not sure"  )
+)

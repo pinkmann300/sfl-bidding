@@ -8,7 +8,6 @@ class Player {
     constructor(name, year, playerDes, position) {
         this.name = name;
         this.year = year;
-        this.playerDes = playerDes;
         this.position = position;
         this.prize = 0;
     }
@@ -48,36 +47,53 @@ function shuffleArray(array) {
 
 
 // Hardcoded - sample player list.
-var playerArr = [
-    new Player("Punya Chowksey", "2020-2025", "Hi, Im Punya", "Defender"),
-    new Player("Sagar Bhargava", "2020-2023", "Hi,Im sagar", "Defender"),
-    new Player("Aatmesh Govind", "2023-2024", "Im aatmesh", "Defender")
+var defenderArr = [
+    new Player("Eshani Reddy", "SIAS 22-25", "Defender"),
+    new Player("Apoorva ", "SIAS 21-24", "Defender"),
+    new Player("Nirjala Sharma ", "SIAS 23-27", "Defender"),
+    new Player("Antim Khare", "SIAS 23-27", "Defender"),
+    new Player("Tamanna Vijayan", "SIAS 23-27", "Defender"),
+    new Player("Konika kumari", "SIAS 23-27", "Defender"),
+    new Player("Deeksha Narayan ", "SIAS 23-27", "Defender"),
+    new Player("Shaikh Mehak", "SIAS 23-27", "Defender"),
+    new Player("Vara", "SIAS 21-24", "Defender"),
+    new Player("Antara Parekh ", "SIAS 21-24", "Defender"),
+    new Player("Bhavya Kandhari", "SIAS PG 23-24", "Defender"),
+    new Player("Ambika Tiwari", "SIAS 23-27", "Defender")
 ];
-
 
 var forwardArr = [
-    new Player("Tanav Vedantam", "2020-2025", "Hi, Im Punya", "Defender"),
-    new Player("Darshan Ramakrishnan", "2020-2023", "Hi,Im sagar", "Defender"),
-    new Player("Sandeep Chezhian A", "2023-2024", "Im aatmesh", "Defender")
+    new Player("Satvika Singh", "SIAS 22-25", "Forward"),
+    new Player("Isha Raghav ", "SIAS 22-25", "Forward"),
+    new Player("Seema ", "SIAS PG 23-24", "Forward")
+
 ];
 
-
 var midFieldArr = [
-    new Player("Pranav Vale", "2020-2025", "Hi, Im Punya", "Defender"),
-    new Player("Alan", "2020-2023", "Hi,Im sagar", "Defender"),
-    new Player("Arul Shankar", "2023-2024", "Im aatmesh", "Defender")
+    new Player("Ananya Sethi", "SIAS 21-24", "Midfielder"),
+    new Player("sumedha  ", "SIAS 22-25", "Midfielder"),
+    new Player("Manisha ", "SIAS 23-27", "Midfielder"),
+    new Player("Priyanka Acharya ", "SIAS 21-24", "Midfielder"),
+    new Player("Aarna Chugh", "SIAS 21-24", "Midfielder"),
+    new Player("Suhaava Kooner", "SIAS 21-24", "Midfielder")
 ];
 
 var gkArr = [
-    new Player("Mihir Vivek", "2020-2025", "Hi, Im Punya", "Defender"),
-    new Player("Vedant Oswal", "2020-2023", "Hi,Im sagar", "Defender"),
-    new Player("Pranav Ramamoorthi", "2023-2024", "Im aatmesh", "Defender")
+    new Player("Neha Dileep", "SIAS 22-25", "Goalkeeper"),
+    new Player("Laranya Sunil kodkani ", "SIAS 23-27", "Goalkeeper"),
+    new Player("Emel  sarbatwalla", "SIAS 23-27", "Goalkeeper"),
+    new Player("sneham", "SIAS 21-24", "Goalkeeper"),
+    new Player("Denuka Venkataraman ", "SIAS 23-27", "Goalkeeper"),
+    new Player("Aakansha ", "SIAS 22-25", "Goalkeeper"),
+    new Player("Shrawani Deshmukh ", "SIAS 22-25", "Goalkeeper")
 ];
 
 var notSureArr = [
-    new Player("Anish Kumar", "2020-2025", "Hi, Im Punya", "Defender"),
-    new Player("Nivedita Venkatesh", "2020-2023", "Hi,Im sagar", "Defender"),
-    new Player("Sahil Borse", "2023-2024", "Im aatmesh", "Defender")
+    new Player("Ananya Gudaloor ", "SIAS 21-24", "Not sure"),
+    new Player("verainya priyankar ", "SIAS 22-25", "Not sure"),
+    new Player("Ahanya Appaiah", "SIAS 21-24", "Not sure"),
+    new Player("Inayat Beri ", "SIAS 21-24", "Not sure"),
+    new Player("Muskan Aneja", "SIAS 22-25", "Not sure")
 ];
 
 var playerArr2 = [];
@@ -87,7 +103,7 @@ var playerArr2 = [];
 const randomize = document.getElementById("randomizer");
 
 // Defenders button 
-const defbutt = document.getElementById("defense").addEventListener('click', function() { defenseList("defense", playerArr)});
+const defbutt = document.getElementById("defense").addEventListener('click', function() { defenseList("defense", defenderArr)});
 
 const forbutt = document.getElementById("forwards").addEventListener('click', function(){ defenseList("forwards",forwardArr)});
 
@@ -195,5 +211,6 @@ function startAuction(){
         }
     }
 }
+
 
 
