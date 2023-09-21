@@ -152,66 +152,23 @@ h1 {
     transition-duration: 0.2s;
 }
 
-
-/* Modal container */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 50%;
-    height: 40%;
-    background-color: rgba(0,0,0,0.7);
-    margin-left:25%; 
-    margin-top:5%;
-}
-
-/* Modal content */
-.modal-content {
-    background-color: #fff;
-    margin-left: 25% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 60%;
-    position: relative;
-}
-
-/* Close button */
-.close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-    cursor: pointer;
-}
-
-/* Form styles (customize as needed) */
-form {
-    text-align: center;
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-input[type="text"],
-input[type="email"],
-#button2 {
-    width: 100%;
+.button2 {
+    width: 10%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size:1vw;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-#button2 {
+
+.button2 {
     background-color: #007bff;
-    color: #fff;
+    color: black;
     cursor: pointer;
 }
 
-#button2:hover {
+.button2:hover {
     background-color: #0056b3;
 }
