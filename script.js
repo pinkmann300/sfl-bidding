@@ -151,18 +151,15 @@ function randomizingDef(arrw){
     playerArr2 = shuffleArray(arrw);
     document.getElementById("defList").style.display = "none";
     document.getElementById("randef").style.display = "block";
-
     document.getElementById("playerDisp").style.display = "block";
     randomize.style.display = "none";
-
+    document.getElementById("defDis").style.visibility = "hidden";
     document.getElementById("startbid").disabled = true;
     document.getElementById("stopbid").disabled = true;
-
     document.getElementById("adminops").style.display = "inline-block";
     document.getElementById("startauc").style.visibility = "visible";
     displayPlayer(playerArr2[0]);
     playerArr2 = playerArr2.slice(1);
-
     const startAuc = document.querySelector("#startauc");
     startAuc.onclick = startAuction;
 

@@ -91,18 +91,21 @@ h1 {
 
 .defPlayerDisp{
     margin-top: 10%; 
-    padding:4px; 
-    width:94%; 
+    padding:6px; 
+    width:15%; 
     font-size: 20px; 
     height:inherit; 
     color:white; 
     margin-left:5%;
+    background-color:black;
+    border-radius: 15px;
+    border-color: white;
 }
 
 
 .playerDisp{
     margin-top:1%; 
-    margin-left:30%;
+    margin-left:32.5%;
     padding: 8px; 
     width:35%;
     height:inherit;
