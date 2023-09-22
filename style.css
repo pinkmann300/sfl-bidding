@@ -47,7 +47,7 @@ h1 {
     margin-top: 1%;
     height: 10%; 
     width: 94%;
-    margin-left:1%;
+    margin-left:1.5%;
 }
 
 .buttonGr{
@@ -171,4 +171,17 @@ h1 {
 
 .button2:hover {
     background-color: #0056b3;
+}
+
+.captainTable{
+    margin-left:2%;
+    margin-top:15%;
+    width:100%;
+    background-color:black;
+    color: white; 
+}
+
+table, th, td{
+border: 1 px solid white;
+border-collapse: collapse;
 }

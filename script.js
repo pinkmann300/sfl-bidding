@@ -65,8 +65,8 @@ var defenderArr = [
 var forwardArr = [
     new Player("Satvika Singh", "SIAS 22-25", "Forward"),
     new Player("Isha Raghav ", "SIAS 22-25", "Forward"),
-    new Player("Seema ", "SIAS PG 23-24", "Forward")
-
+    new Player("Seema ", "SIAS PG 23-24", "Forward"),
+    new Player("Uditi Krishna", "SIAS 21-24", "Forward")
 ];
 
 var midFieldArr = [
