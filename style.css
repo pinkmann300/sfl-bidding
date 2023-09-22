@@ -176,7 +176,7 @@ h1 {
 .captainTable{
     margin-left:2%;
     margin-top:15%;
-    width:100%;
+    width:80%;
     background-color:black;
     color: white; 
 }
@@ -184,4 +184,6 @@ h1 {
 table, th, td{
 border: 1 px solid white;
 border-collapse: collapse;
+padding: 4px;
+background-color: black;
 }
