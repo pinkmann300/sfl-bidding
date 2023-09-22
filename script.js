@@ -3,6 +3,22 @@
 
 // Player class defintiion
 
+
+class Captain {
+    constructor(capname, price) {
+        this.capname = capname; 
+        this.price = price 
+    }
+
+    getprice(){
+        return this.price;
+    }  
+
+    setPrice(k){
+        this.price = k;
+    }
+}
+
 class Player {
 
     constructor(name, year, playerDes, position) {
@@ -45,6 +61,36 @@ function shuffleArray(array) {
     return array;
 }
 
+// Hardcode - captains list 
+
+var nankiCap = new Captain("Nanki Puri", 150)
+var chandaCap = new Captain("Chanda Kumari", 150)
+
+
+const nankiPriceEl = document.getElementById("nankiPrice"); 
+nankiPriceEl.textContent = nankiCap.getprice(); 
+
+const chandaPriceEl = document.getElementById("chandaPrice");
+chandaPriceEl.textContent = chandaCap.getprice();
+
+const chandaSpending = document.getElementById("chandaspend"); 
+chandaSpending.onclick = function() { changePrice(chandaCap, chandaPriceEl) }
+
+const nankiSpending = document.getElementById("nankispend"); 
+nankiSpending.onclick = function() {changePrice(nankiCap, nankiPriceEl)}
+
+
+
+function changePrice(a, b) {
+    var userInput = prompt("Crores spent: ");
+
+    // Parse the input to an integer
+    var integerInput = parseInt(userInput, 10);
+
+    var newPrice = a.getprice() - integerInput;
+    a.setPrice(newPrice);
+    b.textContent = a.getprice();
+}
 
 // Hardcoded - sample player list.
 var defenderArr = [

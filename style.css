@@ -184,6 +184,6 @@ h1 {
 table, th, td{
 border: 1 px solid white;
 border-collapse: collapse;
-padding: 4px;
+padding: 10px;
 background-color: black;
 }
