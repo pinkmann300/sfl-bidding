@@ -63,9 +63,17 @@ function shuffleArray(array) {
 
 // Hardcode - captains list 
 
-var nankiCap = new Captain("Nanki Puri", 150)
-var chandaCap = new Captain("Chanda Kumari", 150)
+var nankiCap = new Captain("Nanki Puri", 150);
+var chandaCap = new Captain("Chanda Kumari", 150);
+var muskaanCap = new Captain("Muskaan Singh", 150);
+var mishkaCap = new Captain("Mishka Katyayan", 150);
 
+
+const mishkaPriceEl = document.getElementById("mishkaPrice");
+mishkaPriceEl.textContent = mishkaCap.getprice();
+
+const muskaanPriceEl = document.getElementById("muskaanPrice");
+muskaanPriceEl.textContent = muskaanCap.getprice();
 
 const nankiPriceEl = document.getElementById("nankiPrice"); 
 nankiPriceEl.textContent = nankiCap.getprice(); 
@@ -73,12 +81,19 @@ nankiPriceEl.textContent = nankiCap.getprice();
 const chandaPriceEl = document.getElementById("chandaPrice");
 chandaPriceEl.textContent = chandaCap.getprice();
 
+
+
 const chandaSpending = document.getElementById("chandaspend"); 
 chandaSpending.onclick = function() { changePrice(chandaCap, chandaPriceEl) }
 
 const nankiSpending = document.getElementById("nankispend"); 
 nankiSpending.onclick = function() {changePrice(nankiCap, nankiPriceEl)}
 
+const muskaanSpending = document.getElementById("muskaanspend"); 
+muskaanSpending.onclick = function() {changePrice(muskaanCap, muskaanPriceEl)}; 
+
+const mishkaSpending = document.getElementById("mishkaspend");
+mishkaSpending.onclick = function() {changePrice(mishkaCap, mishkaPriceEl)};
 
 
 function changePrice(a, b) {

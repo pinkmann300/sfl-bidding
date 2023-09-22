@@ -182,8 +182,12 @@ h1 {
 }
 
 table, th, td{
-border: 1 px solid white;
 border-collapse: collapse;
-padding: 10px;
-background-color: black;
+padding:10px;
+background-color:lavender;
+border-radius : 15px; 
+color: black;
+font-family: 'Poppins', sans-serif; 
+margin-left:1%;
+
 }
