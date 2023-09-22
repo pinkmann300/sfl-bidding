@@ -168,20 +168,11 @@ const defbutt = document.getElementById("defense").addEventListener('click', fun
 
 const forbutt = document.getElementById("forwards").addEventListener('click', function(){ defenseList("forwards",forwardArr)});
 
+const midbutt = document.getElementById("midfielders").addEventListener('click', function () { defenseList("midfielders", midFieldArr)});
 
-const midbutt = document.getElementById("midfielders").addEventListener('click', function () {
-    defenseList("midfielders", midFieldArr)
-});
+const notsurebutt = document.getElementById("notsure").addEventListener('click', function () { defenseList("notsure", notSureArr)});
 
-
-const notsurebutt = document.getElementById("notsure").addEventListener('click', function () {
-    defenseList("notsure", notSureArr)
-});
-
-
-const gkbutt = document.getElementById("goalkeepers").addEventListener('click', function () {
-    defenseList("goalkeepers", gkArr)
-})
+const gkbutt = document.getElementById("goalkeepers").addEventListener('click', function () { defenseList("goalkeepers", gkArr)})
 
 const stopBid = document.querySelector("#stopbid");
 const startBid = document.querySelector("#startbid");
@@ -209,6 +200,7 @@ function defenseList(a,b){
 
 
 function randomizingDef(arrw){
+    
     playerArr2 = shuffleArray(arrw);
     document.getElementById("defList").style.display = "none";
     document.getElementById("randef").style.display = "block";
@@ -221,6 +213,8 @@ function randomizingDef(arrw){
 
     document.getElementById("adminops").style.display = "inline-block";
     document.getElementById("startauc").style.visibility = "visible";
+    document.getElementById("purseTable").style.display = "block";
+
     displayPlayer(playerArr2[0]);
     playerArr2 = playerArr2.slice(1);
 
@@ -242,6 +236,7 @@ function displayPlayer(playa){
 
 function startAuction(){
     // Awaiting implementation 
+    
     document.getElementById("startauc").style.visibility="hidden"; 
     document.getElementById("startbid").disabled = false; 
     
