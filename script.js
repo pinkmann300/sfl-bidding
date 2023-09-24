@@ -182,10 +182,24 @@ new Player("Santosh Kandhan", "SIAS 20-23", "Defender")
 ];
 
 var forwardArr = [
-    new Player("Satvika Singh", "SIAS 22-25", "Forward"),
-    new Player("Isha Raghav ", "SIAS 22-25", "Forward"),
-    new Player("Seema ", "SIAS PG 23-24", "Forward"),
-    new Player("Uditi Krishna", "SIAS 21-24", "Forward")
+new Player("Yash Debnath", "SIAS 21-24", "Forward"),
+new Player("Tannmay Kakkar", "SIAS 23-27", "Forward"),
+new Player("Aparajith Kaushik", "SIAS 21-24", "Forward"),
+new Player("Sanath Vasudevan Kadalayil", "SIAS 23-27", "Forward"),
+new Player("Savir Nath Bhaduri", "SIAS 22-25", "Forward"),
+new Player("Viraat Sinh", "SIAS 23-27", "Forward"),
+new Player("Rohan Kalia", "SIAS 23-27", "Forward"),
+new Player("Ganesh khadse ", "SIAS 23-27", "Forward"),
+new Player("Raghav Govindarajan", "SIAS 23-27", "Forward"),
+new Player("Aadit", "SIAS 23-27", "Forward"),
+new Player("Arnav bhutani ", "SIAS 22-25", "Forward"),
+new Player("Aditya Akash Trigunayat ", "SIAS 23-27", "Forward"),
+new Player("Hemant", "SIAS 21-24", "Forward"),
+new Player("Zouman Hashim (Shaanzal)", "SIAS 22-25", "Forward"),
+new Player("Vignesh Girish Nair", "GSB BBA 23-26", "Forward"),
+new Player("Anoop Yadav", "SIAS 21-24", "Forward"),
+new Player("Nathan Upputuru", "SIAS 22-25", "Forward")
+
 ];
 
 var midFieldArr = [
