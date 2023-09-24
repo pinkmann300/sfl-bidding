@@ -111,12 +111,36 @@ muskaanSpending.onclick = function() {changePrice(muskaanCap, muskaanPriceEl)};
 const mishkaSpending = document.getElementById("mishkaspend");
 mishkaSpending.onclick = function() {changePrice(mishkaCap, mishkaPriceEl)};
 
+const punyaSpending = document.getElementById("punyaspend");
+punyaSpending.onclick = function () {
+    changePrice(punyaCap, punyaPriceEl)
+};
+
+const adiSpending = document.getElementById("adispend");
+adiSpending.onclick = function () {
+    changePrice(adiCap, adiPriceEl)
+};
+
+const aryaSpending = document.getElementById("aryaspend");
+aryaSpending.onclick = function () {
+    changePrice(aryaCap, aryaPriceEl)
+};
+
+const govindSpending = document.getElementById("govindspend");
+govindSpending.onclick = function () {
+    changePrice(govindCap, govindPriceEl)
+};
+
+
 
 function changePrice(a, b) {
     var userInput = prompt("Crores spent: ");
 
     // Parse the input to an integer
     var integerInput = parseInt(userInput, 10);
+
+    if (isNaN(integerInput)) {
+        integerInput = 0;}
 
     var newPrice = a.getprice() - integerInput;
     a.setPrice(newPrice);
