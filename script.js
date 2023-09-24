@@ -5,10 +5,10 @@
 
 
 class Captain {
-    constructor(capname, price) {
+    constructor(capname, price,sqSize) {
         this.capname = capname; 
         this.price = price 
-        this.sqSize = 0
+        this.sqSize = sqSize;
     }
 
     getprice(){
@@ -68,14 +68,14 @@ function shuffleArray(array) {
 
 // Hardcode - captains list 
 
-var nankiCap = new Captain("Nanki Puri", 150);
-var chandaCap = new Captain("Chanda Kumari", 150);
-var muskaanCap = new Captain("Muskaan Singh", 150);
-var mishkaCap = new Captain("Mishka Katyayan", 150);
-var punyaCap = new Captain("Punya Chowksey", 150); 
-var adiCap = new Captain("Adi Agarwal", 150);
-var aryaCap = new Captain("Arya Dutta", 150); 
-var govindCap = new Captain("Govind", 150); 
+var nankiCap = new Captain("Nanki Puri", 124,4);
+var chandaCap = new Captain("Chanda Kumari", 58,3);
+var muskaanCap = new Captain("Muskaan Singh", 84,6);
+var mishkaCap = new Captain("Mishka Katyayan", 35,3);
+var punyaCap = new Captain("Punya Chowksey", 49,4); 
+var adiCap = new Captain("Adi Agarwal", 55,5);
+var aryaCap = new Captain("Arya Dutta", 6,5); 
+var govindCap = new Captain("Govind", 20,3); 
 
 
 const mishkaPriceEl = document.getElementById("mishkaPrice");
