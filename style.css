@@ -135,8 +135,10 @@ h1 {
 }
 
 
+/* Works fine for now. Need to check responsiveness on SH display */ 
+
 .admbtn-group button {
-  margin-top:18%; 
+  margin-top:7%; 
   border: 1px solid green;
   padding: 10px 24px; 
   cursor: pointer; 

@@ -67,6 +67,10 @@ var nankiCap = new Captain("Nanki Puri", 150);
 var chandaCap = new Captain("Chanda Kumari", 150);
 var muskaanCap = new Captain("Muskaan Singh", 150);
 var mishkaCap = new Captain("Mishka Katyayan", 150);
+var punyaCap = new Captain("Punya Chowksey", 150); 
+var adiCap = new Captain("Adi Agarwal", 150);
+var aryaCap = new Captain("Arya Dutta", 150); 
+var govindCap = new Captain("Govind", 150); 
 
 
 const mishkaPriceEl = document.getElementById("mishkaPrice");
@@ -80,6 +84,18 @@ nankiPriceEl.textContent = nankiCap.getprice();
 
 const chandaPriceEl = document.getElementById("chandaPrice");
 chandaPriceEl.textContent = chandaCap.getprice();
+
+const punyaPriceEl = document.getElementById("punyaPrice");
+punyaPriceEl.textContent = punyaCap.getprice();
+
+const adiPriceEl = document.getElementById("adiPrice");
+adiPriceEl.textContent = adiCap.getprice();
+
+const aryaPriceEl = document.getElementById("aryaPrice");
+aryaPriceEl.textContent = aryaCap.getprice();
+
+const govindPriceEl = document.getElementById("govindPrice");
+govindPriceEl.textContent = govindCap.getprice();
 
 
 
