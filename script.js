@@ -214,13 +214,15 @@ new Player("Prithvi Padathara ", "SIAS 21-24", "Midfielder")
 
 
 var gkArr = [
-    new Player("Neha Dileep", "SIAS 22-25", "Goalkeeper"),
-    new Player("Laranya Sunil kodkani ", "SIAS 23-27", "Goalkeeper"),
-    new Player("Emel  sarbatwalla", "SIAS 23-27", "Goalkeeper"),
-    new Player("sneham", "SIAS 21-24", "Goalkeeper"),
-    new Player("Denuka Venkataraman ", "SIAS 23-27", "Goalkeeper"),
-    new Player("Aakansha ", "SIAS 22-25", "Goalkeeper"),
-    new Player("Shrawani Deshmukh ", "SIAS 22-25", "Goalkeeper")
+new Player("yashh", "SIAS 21-24", "Goalkeeper"),
+new Player("Sagar Garg ", "SIAS 22-25", "Goalkeeper"),
+new Player("Eeshaan Ray", "SIAS 22-25", "Goalkeeper"),
+new Player("Satyajit Mohan", "SIAS 23-27", "Goalkeeper"),
+new Player("Adeeb Rahman", "SIAS 23-27", "Goalkeeper"),
+new Player("Arnav V G", "SIAS 23-27", "Goalkeeper"),
+new Player("Yazad Bhacka", "SIAS 22-25", "Goalkeeper"),
+new Player("Akshat Mathur", "SIAS 22-25", "Goalkeeper")
+
 ];
 
 var notSureArr = [
