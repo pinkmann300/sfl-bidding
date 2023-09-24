@@ -226,11 +226,16 @@ new Player("Akshat Mathur", "SIAS 22-25", "Goalkeeper")
 ];
 
 var notSureArr = [
-    new Player("Ananya Gudaloor ", "SIAS 21-24", "Not sure"),
-    new Player("verainya priyankar ", "SIAS 22-25", "Not sure"),
-    new Player("Ahanya Appaiah", "SIAS 21-24", "Not sure"),
-    new Player("Inayat Beri ", "SIAS 21-24", "Not sure"),
-    new Player("Muskan Aneja", "SIAS 22-25", "Not sure")
+new Player("Rayyan Ali Khan", "SIAS 23-27", "Not sure"),
+new Player("Anish Kumar", "SIAS 21-24", "Not sure"),
+new Player("Tushar Agrawal", "SIAS 23-27", "Not sure"),
+new Player("D.SAI SRIKAR", "SIAS 23-27", "Not sure"),
+new Player("Sarim Shaikh ", "SIAS 23-27", "Not sure"),
+new Player("Aditya Swami ", "SIAS 22-25", "Not sure"),
+new Player("Jonath Kumar ", "SIAS 23-27", "Not sure"),
+new Player("Vishesh Agarwal ", "SIAS 21-24", "Not sure"),
+new Player("Pranav Jain", "SIAS 21-24", "Not sure"),
+new Player("Arunachalam", "SIAS 21-24", "Not sure")
 ];
 
 var playerArr2 = [];
