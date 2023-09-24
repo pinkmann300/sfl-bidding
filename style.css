@@ -101,12 +101,12 @@ h1 {
 
 
 .playerDisp{
-    margin-top:10%; 
+    margin-top:5%; 
     margin-left:30%;
     padding: 8px; 
     width:35%;
     height:inherit;
-    background-color: khaki;
+    background-color:khaki;
     border-radius: 15px;
     color:black;
     text-align:center; 

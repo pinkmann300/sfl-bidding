@@ -8,14 +8,23 @@ class Captain {
     constructor(capname, price) {
         this.capname = capname; 
         this.price = price 
+        this.sqSize = 0
     }
 
     getprice(){
         return this.price;
     }  
 
+    getSqSize(){
+        return this.sqSize;
+    }
+
     setPrice(k){
         this.price = k;
+    }
+
+    setSqSize(m){
+        this.sqSize = m;
     }
 }
 
@@ -78,11 +87,36 @@ muskaanPriceEl.textContent = muskaanCap.getprice();
 const nankiPriceEl = document.getElementById("nankiPrice"); 
 nankiPriceEl.textContent = nankiCap.getprice(); 
 
+const nss1 = document.getElementById("nss");
+nss1.textContent = nankiCap.getSqSize();
+
 const chandaPriceEl = document.getElementById("chandaPrice");
 chandaPriceEl.textContent = chandaCap.getprice();
 
+const vss1 = document.getElementById("vss"); 
+vss1.textContent = chandaCap.getSqSize();
+
 const punyaPriceEl = document.getElementById("punyaPrice");
 punyaPriceEl.textContent = punyaCap.getprice();
+
+const puss1 = document.getElementById("puss"); 
+puss1.textContent = punyaCap.getSqSize();
+
+const adss1 = document.getElementById("adss"); 
+adss1.textContent = adiCap.getSqSize();
+
+const aryss1 = document.getElementById("aryss");
+aryss1.textContent = aryaCap.getSqSize(); 
+
+const gss1 = document.getElementById("gss"); 
+gss1.textContent = govindCap.getSqSize(); 
+
+const miss1 = document.getElementById("miss"); 
+miss1.textContent = muskaanCap.getSqSize(); 
+
+const arss1 = document.getElementById("arss"); 
+arss1.textContent = mishkaCap.getSqSize(); 
+
 
 const adiPriceEl = document.getElementById("adiPrice");
 adiPriceEl.textContent = adiCap.getprice();
@@ -96,40 +130,41 @@ govindPriceEl.textContent = govindCap.getprice();
 
 
 const chandaSpending = document.getElementById("chandaspend"); 
-chandaSpending.onclick = function() { changePrice(chandaCap, chandaPriceEl) }
+chandaSpending.onclick = function() { changePrice(chandaCap, chandaPriceEl, vss1) }
 
 const nankiSpending = document.getElementById("nankispend"); 
-nankiSpending.onclick = function() {changePrice(nankiCap, nankiPriceEl)}
+nankiSpending.onclick = function() {changePrice(nankiCap, nankiPriceEl, nss1)}
 
 const muskaanSpending = document.getElementById("muskaanspend"); 
-muskaanSpending.onclick = function() {changePrice(muskaanCap, muskaanPriceEl)}; 
+muskaanSpending.onclick = function() {changePrice(muskaanCap, muskaanPriceEl, miss1)}; 
 
 const mishkaSpending = document.getElementById("mishkaspend");
-mishkaSpending.onclick = function() {changePrice(mishkaCap, mishkaPriceEl)};
+mishkaSpending.onclick = function() {changePrice(mishkaCap, mishkaPriceEl, arss1)};
 
 const punyaSpending = document.getElementById("punyaspend");
 punyaSpending.onclick = function () {
-    changePrice(punyaCap, punyaPriceEl)
+    changePrice(punyaCap, punyaPriceEl, puss1)
 };
 
 const adiSpending = document.getElementById("adispend");
 adiSpending.onclick = function () {
-    changePrice(adiCap, adiPriceEl)
+    changePrice(adiCap, adiPriceEl, adss1)
 };
 
 const aryaSpending = document.getElementById("aryaspend");
 aryaSpending.onclick = function () {
-    changePrice(aryaCap, aryaPriceEl)
+    changePrice(aryaCap, aryaPriceEl, aryss1)
 };
 
 const govindSpending = document.getElementById("govindspend");
 govindSpending.onclick = function () {
-    changePrice(govindCap, govindPriceEl)
+    changePrice(govindCap, govindPriceEl,gss1)
 };
 
 
 
-function changePrice(a, b) {
+
+function changePrice(a, b, c) {
     var userInput = prompt("Crores spent: ");
 
     // Parse the input to an integer
@@ -139,8 +174,13 @@ function changePrice(a, b) {
         integerInput = 0;}
 
     var newPrice = a.getprice() - integerInput;
+
+    var nsq = a.getSqSize() + Math.sign(integerInput);
+
     a.setPrice(newPrice);
+    a.setSqSize(nsq);
     b.textContent = a.getprice();
+    c.textContent = a.getSqSize();
 }
 
 // Hardcoded - sample player list.
