@@ -21,7 +21,7 @@ class Captain {
 
 class Player {
 
-    constructor(name, year, playerDes, position) {
+    constructor(name, year, position) {
         this.name = name;
         this.year = year;
         this.position = position;
@@ -34,10 +34,6 @@ class Player {
 
     getYear() {
         return this.year;
-    }
-
-    getPlayerDesc() {
-        return this.playerDes;
     }
 
     getPrize(){
@@ -203,13 +199,19 @@ new Player("Nathan Upputuru", "SIAS 22-25", "Forward")
 ];
 
 var midFieldArr = [
-    new Player("Ananya Sethi", "SIAS 21-24", "Midfielder"),
-    new Player("sumedha  ", "SIAS 22-25", "Midfielder"),
-    new Player("Manisha ", "SIAS 23-27", "Midfielder"),
-    new Player("Priyanka Acharya ", "SIAS 21-24", "Midfielder"),
-    new Player("Aarna Chugh", "SIAS 21-24", "Midfielder"),
-    new Player("Suhaava Kooner", "SIAS 21-24", "Midfielder")
+new Player("Manan Malik", "SIAS 23-27", "Midfielder"),
+new Player("Aarnav Subbaramu", "SIAS 22-25", "Midfielder"),
+new Player("Tanav", "SIAS 22-25", "Midfielder"),
+new Player("Ayaan Bedi", "SIAS 21-24", "Midfielder"),
+new Player("Granville Austin", "SIAS 22-25", "Midfielder"),
+new Player("Neel Kadambi ", "GSB BBA 23-26", "Midfielder"),
+new Player("Shivansh Anand", "SIAS 23-27", "Midfielder"),
+new Player("Aman Shah", "SIAS 21-24", "Midfielder"),
+new Player("Prakash John Mathew ", "SIAS 22-25", "Midfielder"),
+new Player("Baalateja Kataru", "SIAS PG 23-24", "Midfielder"),
+new Player("Prithvi Padathara ", "SIAS 21-24", "Midfielder")
 ];
+
 
 var gkArr = [
     new Player("Neha Dileep", "SIAS 22-25", "Goalkeeper"),
