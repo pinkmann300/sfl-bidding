@@ -167,9 +167,10 @@ var forwardArr = [
   new Player("Ansh Bhargava","SIAS 22-25","Tier B"  ),
   new Player("Tejas Narayan","SIAS 22-25","Tier B"  ),
   new Player("Kartikeya Tanav Vedantam","SIAS 22-25","Tier B"  ),
-  new Player("Tannmay Kakkar","SIAS 23-27","Tier B"  ),
   new Player("Pranav Jain","SIAS 21-24","Tier B"  ),
-  new Player("Raghav Kathane","SIAS 23-27","Tier B"  )
+  new Player("Raghav Kathane","SIAS 23-27","Tier B"  ),
+  new Player("Sabby Solagar","SIAS 23-27","Tier B"  ),
+  new Player("Aman Shah","SIAS 21-24","Tier B"  )
 
 ];
 
@@ -180,15 +181,14 @@ var midFieldArr = [
   new Player("Dev Thomas","SIAS 22-25","Tier C"  ),
   new Player("Hriday Shankar","SIAS 23-27","Tier C"  ),
   new Player("Pranav Ramamoorthi","SIAS 21-24","Tier C"  ),
-  new Player("Sabeshan Solagar","SIAS 23-27","Tier C"  ),
   new Player("Arjun Viswanathan","SIAS 23-27","Tier C"  ),
   new Player("Ayushman Kautilya Vardhan","SIAS 23-27","Tier C"  ),
   new Player("Vishnu Peri","SIAS 23-27","Tier C"  ),
   new Player("Vidur Ramasubramanian","SIAS 22-25","Tier C"  ),
   new Player("Aadit Jain","SIAS 23-27","Tier C"  ),
-  new Player("Aman Shah","SIAS 21-24","Tier C"  ),
   new Player("Vir Mohan","SIAS 22-25","Tier C"  ),
-  new Player("Arnav Bajoria","SIAS 23-27","Tier C"  )
+  new Player("Arnav Bajoria","SIAS 23-27","Tier C"  ),
+  new Player("Tannmay Kakkar","SIAS 23-27","Tier C"  )
 ];
 
 
