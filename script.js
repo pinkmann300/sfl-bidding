@@ -344,6 +344,3 @@ function startAuction(){
         }
     }
 }
-
-
-
