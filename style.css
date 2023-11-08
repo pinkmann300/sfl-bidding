@@ -3,7 +3,7 @@
 body{
     background-color:black;
     background-position:inherit;
-    background-image:url("images/bg.jpg");
+    background-image:url("images/in.jpg");
     font-weight:normal;
 }
 
@@ -45,9 +45,9 @@ h1 {
 
 .adminBar{
     margin-top: 1%;
-    height: 10%; 
-    width: 94%;
-    margin-left:1.5%;
+    height: 15%; 
+    width: 70%;
+    margin-left:25%;
 }
 
 .buttonGr{
@@ -55,6 +55,7 @@ h1 {
     display:inline; 
     width:100%;
     margin-left:5%;
+    padding:10px;
 }
 
 .button1{
@@ -62,7 +63,7 @@ h1 {
     background-color:white; 
     color:black; 
     padding: 2%;
-    font-size:1vw;
+    font-size:1.5vw;
     cursor:pointer;
 }
 
@@ -80,7 +81,7 @@ h1 {
 }
 
 .adminAlert{
-    margin-top: 10%; 
+    margin-top: 15%; 
     padding: 10px;
     font-size: 5vw; 
     width:98%; 
@@ -128,7 +129,7 @@ h1 {
 
 .adminButtonGr{
     display:inline-block;
-    margin-top:20%;  
+    margin-top:30%;  
     padding: 2%; 
     position:fixed;
    
@@ -138,7 +139,7 @@ h1 {
 /* Works fine for now. Need to check responsiveness on SH display */ 
 
 .admbtn-group button {
-  margin-top:7%; 
+  margin-top:15%; 
   border: 1px solid green;
   padding: 10px 24px; 
   cursor: pointer; 

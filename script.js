@@ -68,14 +68,11 @@ function shuffleArray(array) {
 
 // Hardcode - captains list 
 
-var nankiCap = new Captain("Nanki Puri", 124,4);
-var chandaCap = new Captain("Chanda Kumari", 58,3);
-var muskaanCap = new Captain("Muskaan Singh", 84,6);
-var mishkaCap = new Captain("Mishka Katyayan", 35,3);
-var punyaCap = new Captain("Punya Chowksey", 49,4); 
-var adiCap = new Captain("Adi Agarwal", 55,5);
-var aryaCap = new Captain("Arya Dutta", 6,5); 
-var govindCap = new Captain("Govind", 20,3); 
+var nankiCap = new Captain("Adwaiy", 200,0);
+var chandaCap = new Captain("Mudit", 200,0);
+var muskaanCap = new Captain("Santosh", 200,0);
+var mishkaCap = new Captain("Shaurya", 200,0);
+var punyaCap = new Captain("Tejas", 200,0); 
 
 
 const mishkaPriceEl = document.getElementById("mishkaPrice");
@@ -102,32 +99,11 @@ punyaPriceEl.textContent = punyaCap.getprice();
 const puss1 = document.getElementById("puss"); 
 puss1.textContent = punyaCap.getSqSize();
 
-const adss1 = document.getElementById("adss"); 
-adss1.textContent = adiCap.getSqSize();
-
-const aryss1 = document.getElementById("aryss");
-aryss1.textContent = aryaCap.getSqSize(); 
-
-const gss1 = document.getElementById("gss"); 
-gss1.textContent = govindCap.getSqSize(); 
-
 const miss1 = document.getElementById("miss"); 
 miss1.textContent = muskaanCap.getSqSize(); 
 
 const arss1 = document.getElementById("arss"); 
 arss1.textContent = mishkaCap.getSqSize(); 
-
-
-const adiPriceEl = document.getElementById("adiPrice");
-adiPriceEl.textContent = adiCap.getprice();
-
-const aryaPriceEl = document.getElementById("aryaPrice");
-aryaPriceEl.textContent = aryaCap.getprice();
-
-const govindPriceEl = document.getElementById("govindPrice");
-govindPriceEl.textContent = govindCap.getprice();
-
-
 
 const chandaSpending = document.getElementById("chandaspend"); 
 chandaSpending.onclick = function() { changePrice(chandaCap, chandaPriceEl, vss1) }
@@ -145,22 +121,6 @@ const punyaSpending = document.getElementById("punyaspend");
 punyaSpending.onclick = function () {
     changePrice(punyaCap, punyaPriceEl, puss1)
 };
-
-const adiSpending = document.getElementById("adispend");
-adiSpending.onclick = function () {
-    changePrice(adiCap, adiPriceEl, adss1)
-};
-
-const aryaSpending = document.getElementById("aryaspend");
-aryaSpending.onclick = function () {
-    changePrice(aryaCap, aryaPriceEl, aryss1)
-};
-
-const govindSpending = document.getElementById("govindspend");
-govindSpending.onclick = function () {
-    changePrice(govindCap, govindPriceEl,gss1)
-};
-
 
 
 
@@ -291,10 +251,6 @@ const forbutt = document.getElementById("forwards").addEventListener('click', fu
 
 const midbutt = document.getElementById("midfielders").addEventListener('click', function () { defenseList("midfielders", midFieldArr)});
 
-const notsurebutt = document.getElementById("notsure").addEventListener('click', function () { defenseList("notsure", notSureArr)});
-
-const gkbutt = document.getElementById("goalkeepers").addEventListener('click', function () { defenseList("goalkeepers", gkArr)})
-
 const stopBid = document.querySelector("#stopbid");
 const startBid = document.querySelector("#startbid");
 
@@ -383,7 +339,7 @@ function startAuction(){
             document.getElementById("adminops").style.display = "none";
             document.getElementById("defDis").style.display = "none";
             document.getElementById("adminAl").style.display = "block";
-            document.getElementById("adminAl").innerText = "All players sold! Pick another category";
+            document.getElementById("adminAl").innerHTML = "All players sold! <br> Pick another category";
             document.getElementById("defList").replaceChildren();
         }
     }
