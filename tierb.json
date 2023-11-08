@@ -1,0 +1,16 @@
+new Player(
+  new Player("Akhilesh Viswanathan","SIAS 23-27","Tier B"  ),
+  new Player("Ishaan Kurian","SIAS 23-27","Tier B"  ),
+  new Player("Manan Malik","SIAS 23-27","Tier B"  ),
+  new Player("Ayaan Bedi","SIAS 21-24","Tier B"  ),
+  new Player("Agnij P","SIAS 21-24","Tier B"  ),
+  new Player("Suryansh Tripathi","SIAS 23-27","Tier B"  ),
+  new Player("Aryan Grang","SIAS 23-27","Tier B"  ),
+  new Player("Aarhaan Shah","SIAS 23-27","Tier B"  ),
+  new Player("Ansh Bhargava","SIAS 22-25","Tier B"  ),
+  new Player("Tejas Narayan","SIAS 22-25","Tier B"  ),
+  new Player("Kartikeya Tanav Vedantam","SIAS 22-25","Tier B"  ),
+  new Player("Tannmay Kakkar","SIAS 23-27","Tier B"  ),
+  new Player("Pranav Jain","SIAS 21-24","Tier B"  ),
+  new Player("Raghav Kathane","SIAS 23-27","Tier B"  )
+)

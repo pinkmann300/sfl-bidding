@@ -1,0 +1,17 @@
+new Player(
+  new Player("Tarangg Kakkar","SIAS 23-27","Tier C"  ),
+  new Player("Sandeep Chezhian A","SIAS 20-23","Tier C"  ),
+  new Player("Satya","SIAS 23-27","Tier C"  ),
+  new Player("Dev Thomas","SIAS 22-25","Tier C"  ),
+  new Player("Hriday Shankar","SIAS 23-27","Tier C"  ),
+  new Player("Pranav Ramamoorthi","SIAS 21-24","Tier C"  ),
+  new Player("Sabeshan Solagar","SIAS 23-27","Tier C"  ),
+  new Player("Arjun Viswanathan","SIAS 23-27","Tier C"  ),
+  new Player("Ayushman Kautilya Vardhan","SIAS 23-27","Tier C"  ),
+  new Player("Vishnu Peri","SIAS 23-27","Tier C"  ),
+  new Player("Vidur Ramasubramanian","SIAS 22-25","Tier C"  ),
+  new Player("Aadit Jain","SIAS 23-27","Tier C"  ),
+  new Player("Aman Shah","SIAS 21-24","Tier C"  ),
+  new Player("Vir Mohan","SIAS 22-25","Tier C"  ),
+  new Player("Arnav Bajoria","SIAS 23-27","Tier C"  )
+)

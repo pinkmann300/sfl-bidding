@@ -145,98 +145,52 @@ function changePrice(a, b, c) {
 
 // Hardcoded - sample player list.
 var defenderArr = [
-new Player("Sagar Bhargava", "SIAS PG 23-24", "Defender"),
-new Player("Shambo Mukherjee", "SIAS 23-27", "Defender"),
-new Player("Pranav Harikrishnan", "SIAS 22-25", "Defender"),
-new Player("Anirudh reddy", "SIAS 23-27", "Defender"),
-new Player("Divij Doshi", "SIAS 21-24", "Defender"),
-new Player("Rohan John Jacob", "SIAS 23-27", "Defender"),
-new Player("Tarangg Kakkar ", "SIAS 23-27", "Defender"),
-new Player("Aarhaan Shah", "SIAS 23-27", "Defender"),
-new Player("Kunsh Khanna", "SIAS 21-24", "Defender"),
-new Player("Vir Mohan ", "SIAS 22-25", "Defender"),
-new Player("Varun Raiji", "SIAS 22-25", "Defender"),
-new Player("Aditya Shivakumar", "SIAS 23-27", "Defender"),
-new Player("Akhilesh Viswanathan", "SIAS 23-27", "Defender"),
-new Player("Monu Rathore", "SIAS 22-25", "Defender"),
-new Player("Navneet ", "SIAS 23-27", "Defender"),
-new Player("Vihaan Shah", "SIAS 21-24", "Defender"),
-new Player("Aaryan Garg", "SIAS PG 23-24", "Defender"),
-new Player("R Vishal Krishnan", "SIAS 23-27", "Defender"),
-new Player("Joseph Antony George", "SIAS 23-27", "Defender"),
-new Player("Arjun Baratan", "SIAS 22-25", "Defender"),
-new Player("Pranav Ramamoorthi", "SIAS 21-24", "Defender"),
-new Player("Aryaan Jeppu", "SIAS 22-25", "Defender"),
-new Player("Meghnad Dadgupta", "SIAS 21-24", "Defender"),
-new Player("Arnav Goel", "SIAS 23-27", "Defender"),
-new Player("Pranav Rawal ", "SIAS 22-25", "Defender"),
-new Player("Abhay Vasishta V ", "SIAS 21-24", "Defender"),
-new Player("Vedant Oswal ", "SIAS 21-24", "Defender"),
-new Player("Aryaan Nanda", "SIAS 21-24", "Defender"),
-new Player("Alan", "SIAS 22-25", "Defender"),
-new Player("Santosh Kandhan", "SIAS 20-23", "Defender")
+  new Player("Aatmesh Govind","SIAS 20-23","Tier A"  ),
+  new Player("Anish Kumar","SIAS 21-24","Tier A"  ),
+  new Player("Aditya Swami","SIAS 22-25","Tier A"  ),
+  new Player("Savir Nath Bhaduri","SIAS 22-25","Tier A"  ),
+  new Player("Pranav Vale","SIAS 21-24","Tier A"  ),
+  new Player("Shivansh Anand","SIAS 23-27","Tier A"  ),
+  new Player("Adeeb Rahman","SIAS 23-27","Tier A"  )
+
 ];
 
 var forwardArr = [
-new Player("Yash Debnath", "SIAS 21-24", "Forward"),
-new Player("Tannmay Kakkar", "SIAS 23-27", "Forward"),
-new Player("Aparajith Kaushik", "SIAS 21-24", "Forward"),
-new Player("Sanath Vasudevan Kadalayil", "SIAS 23-27", "Forward"),
-new Player("Savir Nath Bhaduri", "SIAS 22-25", "Forward"),
-new Player("Viraat Sinh", "SIAS 23-27", "Forward"),
-new Player("Rohan Kalia", "SIAS 23-27", "Forward"),
-new Player("Ganesh khadse ", "SIAS 23-27", "Forward"),
-new Player("Raghav Govindarajan", "SIAS 23-27", "Forward"),
-new Player("Aadit", "SIAS 23-27", "Forward"),
-new Player("Arnav bhutani ", "SIAS 22-25", "Forward"),
-new Player("Aditya Akash Trigunayat ", "SIAS 23-27", "Forward"),
-new Player("Hemant", "SIAS 21-24", "Forward"),
-new Player("Zouman Hashim (Shaanzal)", "SIAS 22-25", "Forward"),
-new Player("Vignesh Girish Nair", "GSB BBA 23-26", "Forward"),
-new Player("Anoop Yadav", "SIAS 21-24", "Forward"),
-new Player("Nathan Upputuru", "SIAS 22-25", "Forward")
+  new Player("Akhilesh Viswanathan","SIAS 23-27","Tier B"  ),
+  new Player("Ishaan Kurian","SIAS 23-27","Tier B"  ),
+  new Player("Manan Malik","SIAS 23-27","Tier B"  ),
+  new Player("Ayaan Bedi","SIAS 21-24","Tier B"  ),
+  new Player("Agnij P","SIAS 21-24","Tier B"  ),
+  new Player("Suryansh Tripathi","SIAS 23-27","Tier B"  ),
+  new Player("Aryan Grang","SIAS 23-27","Tier B"  ),
+  new Player("Aarhaan Shah","SIAS 23-27","Tier B"  ),
+  new Player("Ansh Bhargava","SIAS 22-25","Tier B"  ),
+  new Player("Tejas Narayan","SIAS 22-25","Tier B"  ),
+  new Player("Kartikeya Tanav Vedantam","SIAS 22-25","Tier B"  ),
+  new Player("Tannmay Kakkar","SIAS 23-27","Tier B"  ),
+  new Player("Pranav Jain","SIAS 21-24","Tier B"  ),
+  new Player("Raghav Kathane","SIAS 23-27","Tier B"  )
 
 ];
 
 var midFieldArr = [
-new Player("Manan Malik", "SIAS 23-27", "Midfielder"),
-new Player("Aarnav Subbaramu", "SIAS 22-25", "Midfielder"),
-new Player("Tanav", "SIAS 22-25", "Midfielder"),
-new Player("Ayaan Bedi", "SIAS 21-24", "Midfielder"),
-new Player("Granville Austin", "SIAS 22-25", "Midfielder"),
-new Player("Neel Kadambi ", "GSB BBA 23-26", "Midfielder"),
-new Player("Shivansh Anand", "SIAS 23-27", "Midfielder"),
-new Player("Aman Shah", "SIAS 21-24", "Midfielder"),
-new Player("Prakash John Mathew ", "SIAS 22-25", "Midfielder"),
-new Player("Baalateja Kataru", "SIAS PG 23-24", "Midfielder"),
-new Player("Prithvi Padathara ", "SIAS 21-24", "Midfielder")
+  new Player("Tarangg Kakkar","SIAS 23-27","Tier C"  ),
+  new Player("Sandeep Chezhian A","SIAS 20-23","Tier C"  ),
+  new Player("Satya","SIAS 23-27","Tier C"  ),
+  new Player("Dev Thomas","SIAS 22-25","Tier C"  ),
+  new Player("Hriday Shankar","SIAS 23-27","Tier C"  ),
+  new Player("Pranav Ramamoorthi","SIAS 21-24","Tier C"  ),
+  new Player("Sabeshan Solagar","SIAS 23-27","Tier C"  ),
+  new Player("Arjun Viswanathan","SIAS 23-27","Tier C"  ),
+  new Player("Ayushman Kautilya Vardhan","SIAS 23-27","Tier C"  ),
+  new Player("Vishnu Peri","SIAS 23-27","Tier C"  ),
+  new Player("Vidur Ramasubramanian","SIAS 22-25","Tier C"  ),
+  new Player("Aadit Jain","SIAS 23-27","Tier C"  ),
+  new Player("Aman Shah","SIAS 21-24","Tier C"  ),
+  new Player("Vir Mohan","SIAS 22-25","Tier C"  ),
+  new Player("Arnav Bajoria","SIAS 23-27","Tier C"  )
 ];
 
-
-var gkArr = [
-new Player("yashh", "SIAS 21-24", "Goalkeeper"),
-new Player("Sagar Garg ", "SIAS 22-25", "Goalkeeper"),
-new Player("Eeshaan Ray", "SIAS 22-25", "Goalkeeper"),
-new Player("Satyajit Mohan", "SIAS 23-27", "Goalkeeper"),
-new Player("Adeeb Rahman", "SIAS 23-27", "Goalkeeper"),
-new Player("Arnav V G", "SIAS 23-27", "Goalkeeper"),
-new Player("Yazad Bhacka", "SIAS 22-25", "Goalkeeper"),
-new Player("Akshat Mathur", "SIAS 22-25", "Goalkeeper")
-
-];
-
-var notSureArr = [
-new Player("Rayyan Ali Khan", "SIAS 23-27", "Not sure"),
-new Player("Anish Kumar", "SIAS 21-24", "Not sure"),
-new Player("Tushar Agrawal", "SIAS 23-27", "Not sure"),
-new Player("D.SAI SRIKAR", "SIAS 23-27", "Not sure"),
-new Player("Sarim Shaikh ", "SIAS 23-27", "Not sure"),
-new Player("Aditya Swami ", "SIAS 22-25", "Not sure"),
-new Player("Jonath Kumar ", "SIAS 23-27", "Not sure"),
-new Player("Vishesh Agarwal ", "SIAS 21-24", "Not sure"),
-new Player("Pranav Jain", "SIAS 21-24", "Not sure"),
-new Player("Arunachalam", "SIAS 21-24", "Not sure")
-];
 
 var playerArr2 = [];
 

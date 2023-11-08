@@ -1,0 +1,37 @@
+[
+  newPlayer(
+    "Name": "Aatmesh Govind",
+    "Batch": "SIAS 20-23",
+    "Position": "Tier A"
+  ),
+  newPlayer(
+    "Name": "Anish Kumar",
+    "Batch": "SIAS 21-24",
+    "Position": "Tier A"
+  ),
+  newPlayer(
+    "Name": "Aditya Swami",
+    "Batch": "SIAS 22-25",
+    "Position": "Tier A"
+  ),
+  newPlayer(
+    "Name": "Savir Nath Bhaduri",
+    "Batch": "SIAS 22-25",
+    "Position": "Tier A"
+  ),
+  newPlayer(
+    "Name": "Pranav Vale",
+    "Batch": "SIAS 21-24",
+    "Position": "Tier A"
+  ),
+  newPlayer(
+    "Name": "Shivansh Anand",
+    "Batch": "SIAS 23-27",
+    "Position": "Tier A"
+  ),
+  newPlayer(
+    "Name": "Adeeb Rahman",
+    "Batch": "SIAS 23-27",
+    "Position": "Tier A"
+  )
+]
