@@ -68,7 +68,6 @@ function shuffleArray(array) {
 
 // Hardcode - captains list 
 
-var nankiCap = new Captain("Adwaiy", 200,0);
 var chandaCap = new Captain("Mudit", 200,0);
 var muskaanCap = new Captain("Santosh", 200,0);
 var mishkaCap = new Captain("Shaurya", 200,0);
@@ -81,11 +80,6 @@ mishkaPriceEl.textContent = mishkaCap.getprice();
 const muskaanPriceEl = document.getElementById("muskaanPrice");
 muskaanPriceEl.textContent = muskaanCap.getprice();
 
-const nankiPriceEl = document.getElementById("nankiPrice"); 
-nankiPriceEl.textContent = nankiCap.getprice(); 
-
-const nss1 = document.getElementById("nss");
-nss1.textContent = nankiCap.getSqSize();
 
 const chandaPriceEl = document.getElementById("chandaPrice");
 chandaPriceEl.textContent = chandaCap.getprice();
@@ -107,9 +101,6 @@ arss1.textContent = mishkaCap.getSqSize();
 
 const chandaSpending = document.getElementById("chandaspend"); 
 chandaSpending.onclick = function() { changePrice(chandaCap, chandaPriceEl, vss1) }
-
-const nankiSpending = document.getElementById("nankispend"); 
-nankiSpending.onclick = function() {changePrice(nankiCap, nankiPriceEl, nss1)}
 
 const muskaanSpending = document.getElementById("muskaanspend"); 
 muskaanSpending.onclick = function() {changePrice(muskaanCap, muskaanPriceEl, miss1)}; 
@@ -145,8 +136,7 @@ function changePrice(a, b, c) {
 
 // Hardcoded - sample player list.
 var defenderArr = [
-  new Player("Aatmesh Govind","SIAS 20-23","Tier A"  ),
-  new Player("Anish Kumar","SIAS 21-24","Tier A"  ),
+  
   new Player("Aditya Swami","SIAS 22-25","Tier A"  ),
   new Player("Savir Nath Bhaduri","SIAS 22-25","Tier A"  ),
   new Player("Pranav Vale","SIAS 21-24","Tier A"  ),
@@ -166,6 +156,8 @@ var forwardArr = [
   new Player("Aarhaan Shah","SIAS 23-27","Tier B"  ),
   new Player("Ansh Bhargava","SIAS 22-25","Tier B"  ),
   new Player("Tejas Narayan","SIAS 22-25","Tier B"  ),
+  new Player("Aatmesh Govind","SIAS 20-23","Tier B"  ),
+  new Player("Anish Kumar","SIAS 21-24","Tier B"  ),
   new Player("Kartikeya Tanav Vedantam","SIAS 22-25","Tier B"  ),
   new Player("Pranav Jain","SIAS 21-24","Tier B"  ),
   new Player("Raghav Kathane","SIAS 23-27","Tier B"  ),
@@ -188,7 +180,10 @@ var midFieldArr = [
   new Player("Aadit Jain","SIAS 23-27","Tier C"  ),
   new Player("Vir Mohan","SIAS 22-25","Tier C"  ),
   new Player("Arnav Bajoria","SIAS 23-27","Tier C"  ),
-  new Player("Tannmay Kakkar","SIAS 23-27","Tier C"  )
+  new Player("Tannmay Kakkar","SIAS 23-27","Tier C"  ), 
+  new Player("Nathan Upputuru", "SIAS 22-25", "Tier C"), 
+  new Player("Amogh Raju", "SIAS 23-27", "Tier C")
+
 ];
 
 
