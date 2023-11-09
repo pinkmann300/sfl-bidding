@@ -136,7 +136,7 @@ function changePrice(a, b, c) {
 
 // Hardcoded - sample player list.
 var defenderArr = [
-  
+  new Player ("Adwaiy Tholia", "SIAS 20-23", "Tier A"),
   new Player("Aditya Swami","SIAS 22-25","Tier A"  ),
   new Player("Savir Nath Bhaduri","SIAS 22-25","Tier A"  ),
   new Player("Pranav Vale","SIAS 21-24","Tier A"  ),
