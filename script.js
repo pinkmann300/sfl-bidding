@@ -65,8 +65,8 @@ function shuffleArray(array) {
 // Hardcode - captains list 
 
 var chandaCap = new Captain("Mudit", 100,0);
-var muskaanCap = new Captain("Santosh", 98,1);
-var mishkaCap = new Captain("Shaurya", 100,0);
+var muskaanCap = new Captain("Santosh", 100,0);
+var mishkaCap = new Captain("Shaurya", 98,1);
 var punyaCap = new Captain("Tanmay", 100,0); 
 var sriramCap = new Captain("Sriram", 84,2);
 var arnavCap = new Captain("Arnav", 100,0);
