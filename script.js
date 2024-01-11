@@ -65,10 +65,10 @@ function shuffleArray(array) {
 // Hardcode - captains list 
 
 var chandaCap = new Captain("Mudit", 100,0);
-var muskaanCap = new Captain("Santosh", 100,0);
+var muskaanCap = new Captain("Santosh", 98,1);
 var mishkaCap = new Captain("Shaurya", 100,0);
 var punyaCap = new Captain("Tanmay", 100,0); 
-var sriramCap = new Captain("Sriram", 100,0);
+var sriramCap = new Captain("Sriram", 84,2);
 var arnavCap = new Captain("Arnav", 100,0);
 
 
@@ -127,7 +127,7 @@ sriramSpending.onclick = function () {
     changePrice(sriramCap, sriPriceEl, suss)
 };
 
-const arnavSpending = document.getElementById("sriramspend");
+const arnavSpending = document.getElementById("arnavspend");
 arnavSpending.onclick = function () {
     changePrice(arnavCap, arnavPriceEl, ass)
 };
@@ -155,7 +155,6 @@ function changePrice(a, b, c) {
 // Hardcoded - sample player list.
 var batArr = [
    new Player ("Sparsh Makharia","Batsman"  ),
-  new Player ("Aarnav Subbaramu","Batsman"  ),
   new Player ("Ishaan Agarwal","Batsman"  ),
   new Player ("Varun Raiji","Batsman"  ),
   new Player ("Arul Shankar ","Batsman"  ),
@@ -163,11 +162,10 @@ var batArr = [
   new Player ("Ram Murari ","Batsman"  ),
   new Player ("Aashil Patel","Batsman"  ),
   new Player ("Manan Malik","Batsman"  ),
-  new Player ("Sagar Bhargava","Batsman"  ),
   new Player ("Sparsh Makharia","Batsman"  ),
-  new Player ("Arya Dutta","Batsman"  ),
+
   new Player ("Arjun Baratan","Batsman"  ),
-  new Player ("Nathan D'Souza","Batsman"  ),
+
   new Player ("Tejas Narayan","Batsman"  )
 ];
 
