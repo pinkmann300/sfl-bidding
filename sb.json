@@ -1,0 +1,6 @@
+new Player(
+  new Player("Yazad Bhacka","Spin Bowler"  ),
+  new Player("Siddharth Nagarajan","Spin Bowler"  ),
+  new Player("Sai Srikar Dayana","Spin Bowler"  ),
+  new Player("Ayaan Bedi","Spin Bowler"  )
+)

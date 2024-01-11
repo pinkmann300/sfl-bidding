@@ -1,0 +1,7 @@
+new Player(
+  new Player("Manav Sharma ","Fast Bowler"  ),
+  new Player("Manav Sharma","Fast Bowler"  ),
+  new Player("Divij Doshi","Fast Bowler"  ),
+  new Player("Tushar Agrawal","Fast Bowler"  ),
+  new Player("Rohan Jacob","Fast Bowler"  )
+)

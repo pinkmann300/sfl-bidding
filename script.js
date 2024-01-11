@@ -32,7 +32,6 @@ class Player {
 
     constructor(name, year, position) {
         this.name = name;
-        this.year = year;
         this.position = position;
         this.prize = 0;
     }
@@ -41,9 +40,6 @@ class Player {
         return this.name;
     }
 
-    getYear() {
-        return this.year;
-    }
 
     getPrize(){
         return this.prize;
@@ -68,10 +64,12 @@ function shuffleArray(array) {
 
 // Hardcode - captains list 
 
-var chandaCap = new Captain("Mudit", 200,0);
-var muskaanCap = new Captain("Santosh", 200,0);
-var mishkaCap = new Captain("Shaurya", 200,0);
-var punyaCap = new Captain("Tejas", 200,0); 
+var chandaCap = new Captain("Mudit", 100,0);
+var muskaanCap = new Captain("Santosh", 100,0);
+var mishkaCap = new Captain("Shaurya", 100,0);
+var punyaCap = new Captain("Tanmay", 100,0); 
+var sriramCap = new Captain("Sriram", 100,0);
+var arnavCap = new Captain("Arnav", 100,0);
 
 
 const mishkaPriceEl = document.getElementById("mishkaPrice");
@@ -79,7 +77,6 @@ mishkaPriceEl.textContent = mishkaCap.getprice();
 
 const muskaanPriceEl = document.getElementById("muskaanPrice");
 muskaanPriceEl.textContent = muskaanCap.getprice();
-
 
 const chandaPriceEl = document.getElementById("chandaPrice");
 chandaPriceEl.textContent = chandaCap.getprice();
@@ -99,6 +96,18 @@ miss1.textContent = muskaanCap.getSqSize();
 const arss1 = document.getElementById("arss"); 
 arss1.textContent = mishkaCap.getSqSize(); 
 
+const sriPriceEl = document.getElementById("sriPrice"); 
+sriPriceEl.textContent = sriramCap.getprice();
+
+const suss1 = document.getElementById("suss"); 
+suss1.textContent = sriramCap.getSqSize();
+
+const arnavPriceEl = document.getElementById("arnavPrice");
+arnavPriceEl.textContent = arnavCap.getprice();
+
+const ass1 = document.getElementById("ass"); 
+ass1.textContent = arnavCap.getSqSize();
+
 const chandaSpending = document.getElementById("chandaspend"); 
 chandaSpending.onclick = function() { changePrice(chandaCap, chandaPriceEl, vss1) }
 
@@ -113,6 +122,15 @@ punyaSpending.onclick = function () {
     changePrice(punyaCap, punyaPriceEl, puss1)
 };
 
+const sriramSpending = document.getElementById("sriramspend");
+sriramSpending.onclick = function () {
+    changePrice(sriramCap, sriPriceEl, suss)
+};
+
+const arnavSpending = document.getElementById("sriramspend");
+arnavSpending.onclick = function () {
+    changePrice(arnavCap, arnavPriceEl, ass)
+};
 
 
 function changePrice(a, b, c) {
@@ -135,55 +153,92 @@ function changePrice(a, b, c) {
 }
 
 // Hardcoded - sample player list.
-var defenderArr = [
-  new Player ("Adwaiy Tholia", "SIAS 20-23", "Tier A"),
-  new Player("Aditya Swami","SIAS 22-25","Tier A"  ),
-  new Player("Savir Nath Bhaduri","SIAS 22-25","Tier A"  ),
-  new Player("Pranav Vale","SIAS 21-24","Tier A"  ),
-  new Player("Shivansh Anand","SIAS 23-27","Tier A"  ),
-  new Player("Adeeb Rahman","SIAS 23-27","Tier A"  )
+var batArr = [
+   new Player ("Sparsh Makharia","Batsman"  ),
+  new Player ("Aarnav Subbaramu","Batsman"  ),
+  new Player ("Ishaan Agarwal","Batsman"  ),
+  new Player ("Varun Raiji","Batsman"  ),
+  new Player ("Arul Shankar ","Batsman"  ),
+  new Player ("Ganesh","Batsman"  ),
+  new Player ("Ram Murari ","Batsman"  ),
+  new Player ("Aashil Patel","Batsman"  ),
+  new Player ("Manan Malik","Batsman"  ),
+  new Player ("Sagar Bhargava","Batsman"  ),
+  new Player ("Sparsh Makharia","Batsman"  ),
+  new Player ("Arya Dutta","Batsman"  ),
+  new Player ("Arjun Baratan","Batsman"  ),
+  new Player ("Nathan D'Souza","Batsman"  ),
+  new Player ("Tejas Narayan","Batsman"  )
+];
+
+var fbArr = [
+ new Player("Manav Sharma ","Fast Bowler"  ),
+  new Player("Manav Sharma","Fast Bowler"  ),
+  new Player("Divij Doshi","Fast Bowler"  ),
+  new Player("Tushar Agrawal","Fast Bowler"  ),
+  new Player("Rohan Jacob","Fast Bowler"  )
 
 ];
 
-var forwardArr = [
-  new Player("Akhilesh Viswanathan","SIAS 23-27","Tier B"  ),
-  new Player("Ishaan Kurian","SIAS 23-27","Tier B"  ),
-  new Player("Manan Malik","SIAS 23-27","Tier B"  ),
-  new Player("Ayaan Bedi","SIAS 21-24","Tier B"  ),
-  new Player("Agnij P","SIAS 21-24","Tier B"  ),
-  new Player("Suryansh Tripathi","SIAS 23-27","Tier B"  ),
-  new Player("Aryan Grang","SIAS 23-27","Tier B"  ),
-  new Player("Aarhaan Shah","SIAS 23-27","Tier B"  ),
-  new Player("Ansh Bhargava","SIAS 22-25","Tier B"  ),
-  new Player("Tejas Narayan","SIAS 22-25","Tier B"  ),
-  new Player("Aatmesh Govind","SIAS 20-23","Tier B"  ),
-  new Player("Anish Kumar","SIAS 21-24","Tier B"  ),
-  new Player("Kartikeya Tanav Vedantam","SIAS 22-25","Tier B"  ),
-  new Player("Pranav Jain","SIAS 21-24","Tier B"  ),
-  new Player("Raghav Kathane","SIAS 23-27","Tier B"  ),
-  new Player("Sabby Solagar","SIAS 23-27","Tier B"  ),
-  new Player("Aman Shah","SIAS 21-24","Tier B"  )
+var wkArr = [
+ new Player ("Sanath Kadalayil","Wicket-Keeper" ),
+  new Player ("Sabesan Solagar","Wicket-Keeper"  ),
+  new Player ("Sanath Kadalayil","Wicket-Keeper"  )
 
 ];
 
-var midFieldArr = [
-  new Player("Tarangg Kakkar","SIAS 23-27","Tier C"  ),
-  new Player("Sandeep Chezhian A","SIAS 20-23","Tier C"  ),
-  new Player("Satya","SIAS 23-27","Tier C"  ),
-  new Player("Dev Thomas","SIAS 22-25","Tier C"  ),
-  new Player("Hriday Shankar","SIAS 23-27","Tier C"  ),
-  new Player("Pranav Ramamoorthi","SIAS 21-24","Tier C"  ),
-  new Player("Arjun Viswanathan","SIAS 23-27","Tier C"  ),
-  new Player("Ayushman Kautilya Vardhan","SIAS 23-27","Tier C"  ),
-  new Player("Vishnu Peri","SIAS 23-27","Tier C"  ),
-  new Player("Vidur Ramasubramanian","SIAS 22-25","Tier C"  ),
-  new Player("Aadit Jain","SIAS 23-27","Tier C"  ),
-  new Player("Vir Mohan","SIAS 22-25","Tier C"  ),
-  new Player("Arnav Bajoria","SIAS 23-27","Tier C"  ),
-  new Player("Tannmay Kakkar","SIAS 23-27","Tier C"  ), 
-  new Player("Nathan Upputuru", "SIAS 22-25", "Tier C"), 
-  new Player("Amogh Raju", "SIAS 23-27", "Tier C")
+var arArr = 
+[
+      new Player ("Vedant Kollare","All Rounder"  ),
+  new Player ("Sidhant dhere ","All Rounder"  ),
+  new Player ("Sarim Shaikh ","All Rounder"  ),
+  new Player ("Shivansh Anand","All Rounder"  ),
+  new Player ("Vibhav Kapoor","All Rounder"  ),
+  new Player ("Aditya Akash Trigunayat ","All Rounder"  ),
+  new Player ("Raghav Govindarajan","All Rounder"  ),
+  new Player ("Prakash John Mathew","All Rounder"  ),
+  new Player ("Prithvi Singh","All Rounder"  ),
+  new Player ("Adi Agarwal","All Rounder"  ),
+  new Player ("Vedant Jhawar","All Rounder"  ),
+  new Player ("Hemant Megavath","All Rounder"  ),
+  new Player ("Pranav Jain","All Rounder"  ),
+  new Player ("Ansh Bhargava","All Rounder"  ),
+  new Player ("Mudit Kohli","All Rounder"  ),
+  new Player ("Yaadhi","All Rounder"  ),
+  new Player ("Dushyant Agarwal","All Rounder"  ),
+  new Player ("Dhruv Sachin Lele ","All Rounder"  ),
+  new Player ("Viraat Sinh ","All Rounder"  ),
+  new Player ("Vignesh Girish Nair","All Rounder"  ),
+  new Player ("Meet Tosaniwal ","All Rounder"  ),
+  new Player ("Tarangg Kakkar","All Rounder"  ),
+  new Player ("Anish Kumar","All Rounder"  ),
+  new Player ("Pranav Vale","All Rounder"  ),
+  new Player ("Yash Jhawar","All Rounder"  )
+]; 
 
+var sbArr = [
+      new Player("Yazad Bhacka","Spin Bowler"  ),
+  new Player("Siddharth Nagarajan","Spin Bowler"  ),
+  new Player("Sai Srikar Dayana","Spin Bowler"  ),
+  new Player("Ayaan Bedi","Spin Bowler"  )
+];
+
+
+var nsArr = [
+      new Player("Rohit Sriram","Not Sure"  ),
+  new Player("Abhay Vasishta V ","Not Sure"  ),
+  new Player("Pranav Ramamoorthi","Not Sure"  ),
+  new Player("Raghav Kathane","Not Sure"  ),
+  new Player("Sunny Bind ","Not Sure"  ),
+  new Player("Dheer Panjwani ","Not Sure"  ),
+  new Player("Arunachalam","Not Sure"  ),
+  new Player("Vatsalya Betala","Not Sure"  ),
+  new Player("Baalateja Kataru","Not Sure"  ),
+  new Player("Nathan Upputuru","Not Sure"  ),
+  new Player("Tanav Vedantam ","Not Sure"  ),
+  new Player("Aatmesh Govind ","Not Sure"  ),
+  new Player("Punya Chowksey ","Not Sure"  ),
+  new Player("Akhilesh V","Not Sure"  )
 ];
 
 
@@ -194,12 +249,16 @@ var playerArr2 = [];
 const randomize = document.getElementById("randomizer");
 
 // Defenders button 
-const defbutt = document.getElementById("defense").addEventListener('click', function() { defenseList("defense", defenderArr)});
+const defbutt = document.getElementById("defense").addEventListener('click', function() { defenseList("defense", batArr)});
 
-const forbutt = document.getElementById("forwards").addEventListener('click', function(){ defenseList("forwards",forwardArr)});
+const forbutt = document.getElementById("forwards").addEventListener('click', function(){ defenseList("forwards",fbArr)});
 
-const midbutt = document.getElementById("midfielders").addEventListener('click', function () { defenseList("midfielders", midFieldArr)});
+const midbutt = document.getElementById("midfielders").addEventListener('click', function () { defenseList("midfielders", wkArr)});
 
+
+const arbutt = document.getElementById("ar").addEventListener('click', function () { defenseList("ar", arArr)});
+const sbbutt = document.getElementById("sb").addEventListener('click', function () { defenseList("sb", sbArr)});
+const nsbutt = document.getElementById("nots").addEventListener('click', function () { defenseList("nots", nsArr)});
 const stopBid = document.querySelector("#stopbid");
 const startBid = document.querySelector("#startbid");
 
@@ -254,9 +313,7 @@ function randomizingDef(arrw){
 function displayPlayer(playa){   
     const player = document.getElementById("playerName"); 
     let displayInfo =  " " + (playa).getName();
-    const playerAge = document.getElementById("year");
-    player.innerHTML = displayInfo; 
-    playerAge.innerHTML = playa.getYear();      
+    player.innerHTML = displayInfo;      
 }
 
 

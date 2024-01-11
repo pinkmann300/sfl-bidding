@@ -1,0 +1,17 @@
+new Player (
+  new Player ("Sparsh Makharia","Batsman"  ),
+  new Player ("Aarnav Subbaramu","Batsman"  ),
+  new Player ("Ishaan Agarwal","Batsman"  ),
+  new Player ("Varun Raiji","Batsman"  ),
+  new Player ("Arul Shankar ","Batsman"  ),
+  new Player ("Ganesh","Batsman"  ),
+  new Player ("Ram Murari ","Batsman"  ),
+  new Player ("Aashil Patel","Batsman"  ),
+  new Player ("Manan Malik","Batsman"  ),
+  new Player ("Sagar Bhargava","Batsman"  ),
+  new Player ("Sparsh Makharia","Batsman"  ),
+  new Player ("Arya Dutta","Batsman"  ),
+  new Player ("Arjun Baratan","Batsman"  ),
+  new Player ("Nathan D'Souza","Batsman"  ),
+  new Player ("Tejas Narayan","Batsman"  )
+)

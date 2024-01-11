@@ -54,16 +54,16 @@ h1 {
     float:left; 
     display:inline; 
     width:100%;
-    margin-left:5%;
+    margin-left:-5%;
     padding:10px;
 }
 
 .button1{
-    width: 18%; 
+    width: 20%; 
     background-color:white; 
     color:black; 
     padding: 2%;
-    font-size:1.5vw;
+    font-size:1vw;
     cursor:pointer;
 }
 
