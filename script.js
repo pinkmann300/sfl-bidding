@@ -157,9 +157,9 @@ var batArr = [
    new Player ("Sparsh Makharia","Batsman"  ),
   new Player ("Ishaan Agarwal","Batsman"  ),
   new Player ("Varun Raiji","Batsman"  ),
-  new Player ("Arul Shankar ","Batsman"  ),
+  new Player ("Arul Shankar","Batsman"  ),
   new Player ("Ganesh","Batsman"  ),
-  new Player ("Ram Murari ","Batsman"  ),
+  new Player ("Ram Murari","Batsman"  ),
   new Player ("Aashil Patel","Batsman"  ),
   new Player ("Manan Malik","Batsman"  ),
   new Player ("Sparsh Makharia","Batsman"  ),
@@ -170,7 +170,7 @@ var batArr = [
 ];
 
 var fbArr = [
- new Player("Manav Sharma ","Fast Bowler"  ),
+ new Player("Manav Sharma","Fast Bowler"  ),
   new Player("Manav Sharma","Fast Bowler"  ),
   new Player("Divij Doshi","Fast Bowler"  ),
   new Player("Tushar Agrawal","Fast Bowler"  ),
