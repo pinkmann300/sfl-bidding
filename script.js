@@ -50,11 +50,11 @@ class Player {
 
 // Shuffle array - takes an array as a parameter and returns an array with the elements shuffled. 
 function shuffleArray(array) {
-    for(var i = array.length - 1; i > 0; i--) {
+    for(let i = array.length - 1; i > 0; i--) {
         // Generate random number
-        var j = Math.floor(Math.random() *(i + 1));
+        let j = Math.floor(Math.random() *(i + 1));
 
-        var temp = array[i];
+        let temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
@@ -72,19 +72,19 @@ var sriramCap = new Captain("Sriram", 84,2);
 var arnavCap = new Captain("Arnav", 100,0);
 
 
-const mishkaPriceEl = document.getElementById("mishkaPrice");
+const chandaPriceEl = document.getElementById("cp1_Price");
+chandaPriceEl.textContent = chandaCap.getprice();
+
+const mishkaPriceEl = document.getElementById("cp2_Price");
 mishkaPriceEl.textContent = mishkaCap.getprice();
 
-const muskaanPriceEl = document.getElementById("muskaanPrice");
+const muskaanPriceEl = document.getElementById("cp3_Price");
 muskaanPriceEl.textContent = muskaanCap.getprice();
-
-const chandaPriceEl = document.getElementById("chandaPrice");
-chandaPriceEl.textContent = chandaCap.getprice();
 
 const vss1 = document.getElementById("vss"); 
 vss1.textContent = chandaCap.getSqSize();
 
-const punyaPriceEl = document.getElementById("punyaPrice");
+const punyaPriceEl = document.getElementById("cp4_Price");
 punyaPriceEl.textContent = punyaCap.getprice();
 
 const puss1 = document.getElementById("puss"); 
@@ -96,40 +96,36 @@ miss1.textContent = muskaanCap.getSqSize();
 const arss1 = document.getElementById("arss"); 
 arss1.textContent = mishkaCap.getSqSize(); 
 
-const sriPriceEl = document.getElementById("sriPrice"); 
+const sriPriceEl = document.getElementById("cp5_Price");
 sriPriceEl.textContent = sriramCap.getprice();
 
 const suss1 = document.getElementById("suss"); 
 suss1.textContent = sriramCap.getSqSize();
 
-const arnavPriceEl = document.getElementById("arnavPrice");
+const arnavPriceEl = document.getElementById("cp6_Price");
 arnavPriceEl.textContent = arnavCap.getprice();
 
 const ass1 = document.getElementById("ass"); 
 ass1.textContent = arnavCap.getSqSize();
 
-const chandaSpending = document.getElementById("chandaspend"); 
+const chandaSpending = document.getElementById("cp1_Spend");
 chandaSpending.onclick = function() { changePrice(chandaCap, chandaPriceEl, vss1) }
 
-const muskaanSpending = document.getElementById("muskaanspend"); 
-muskaanSpending.onclick = function() {changePrice(muskaanCap, muskaanPriceEl, miss1)}; 
+const mishkaSpending = document.getElementById("cp2_Spend");
+mishkaSpending.onclick = function() {changePrice(mishkaCap, mishkaPriceEl, arss1)}
 
-const mishkaSpending = document.getElementById("mishkaspend");
-mishkaSpending.onclick = function() {changePrice(mishkaCap, mishkaPriceEl, arss1)};
+const muskaanSpending = document.getElementById("cp3_Spend");
+muskaanSpending.onclick = function() {changePrice(muskaanCap, muskaanPriceEl, miss1)}
 
-const punyaSpending = document.getElementById("punyaspend");
-punyaSpending.onclick = function () {
-    changePrice(punyaCap, punyaPriceEl, puss1)
-};
+const punyaSpending = document.getElementById("cp4_Spend");
+punyaSpending.onclick = function () {changePrice(punyaCap, punyaPriceEl, puss1)}
 
-const sriramSpending = document.getElementById("sriramspend");
-sriramSpending.onclick = function () {
-    changePrice(sriramCap, sriPriceEl, suss)
-};
+const sriramSpending = document.getElementById("cp5_Spend");
+sriramSpending.onclick = function () {changePrice(sriramCap, sriPriceEl, suss1)}
 
-const arnavSpending = document.getElementById("arnavspend");
+const arnavSpending = document.getElementById("cp6_Spend");
 arnavSpending.onclick = function () {
-    changePrice(arnavCap, arnavPriceEl, ass)
+    changePrice(arnavCap, arnavPriceEl, ass1)
 };
 
 
