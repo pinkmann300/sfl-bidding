@@ -27,13 +27,6 @@ class Player {
         this.batch = batch;
         this.position = position;
     }
-
-    getBatch() {
-        return this.batch;
-    }
-
-
-
 }
 
 // Common functions 
@@ -106,23 +99,23 @@ captain6_Purse.textContent = captain6.purse;
 
 // Display captain squad sizes
 
-const vss1 = document.getElementById("vss");
-vss1.textContent = captain1.sqSize;
+const captain1_SqSize = document.getElementById("cp1_SqSize");
+captain1_SqSize.textContent = captain1.sqSize;
 
-const miss1 = document.getElementById("miss");
-miss1.textContent = captain2.sqSize;
+const captain2_SqSize = document.getElementById("cp2_SqSize");
+captain2_SqSize.textContent = captain2.sqSize;
 
-const arss1 = document.getElementById("arss");
-arss1.textContent = captain3.sqSize;
+const captain3_SqSize = document.getElementById("cp3_SqSize");
+captain3_SqSize.textContent = captain3.sqSize;
 
-const puss1 = document.getElementById("puss");
-puss1.textContent = captain4.sqSize;
+const captain4_SqSize = document.getElementById("cp4_SqSize");
+captain4_SqSize.textContent = captain4.sqSize;
 
-const suss1 = document.getElementById("suss");
-suss1.textContent = captain5.sqSize;
+const captain5_SqSize = document.getElementById("cp5_SqSize");
+captain5_SqSize.textContent = captain5.sqSize;
 
-const ass1 = document.getElementById("ass");
-ass1.textContent = captain6.sqSize;
+const captain6_SqSize = document.getElementById("cp6_SqSize");
+captain6_SqSize.textContent = captain6.sqSize;
 
 function changePurse(a, b, c) {
     let userInput = prompt("Crores spent: ");
@@ -146,37 +139,37 @@ function changePurse(a, b, c) {
 
 const captain1_Spend = document.getElementById("cp1_Spend");
 captain1_Spend.onclick = function () {
-    changePurse(captain1, captain1_Purse, vss1)
+    changePurse(captain1, captain1_Purse, captain1_SqSize)
 }
 
 const captain2_Spend = document.getElementById("cp2_Spend");
 captain2_Spend.onclick = function () {
-    changePurse(captain2, captain2_Purse, arss1)
+    changePurse(captain2, captain2_Purse, captain2_SqSize)
 }
 
 const captain3_Spend = document.getElementById("cp3_Spend");
 captain3_Spend.onclick = function () {
-    changePurse(captain3, captain3_Purse, miss1)
+    changePurse(captain3, captain3_Purse, captain3_SqSize)
 }
 
 const captain4_Spend = document.getElementById("cp4_Spend");
 captain4_Spend.onclick = function () {
-    changePurse(captain4, captain4_Purse, puss1)
+    changePurse(captain4, captain4_Purse, captain4_SqSize)
 }
 
 const captain5_Spend = document.getElementById("cp5_Spend");
 captain5_Spend.onclick = function () {
-    changePurse(captain5, captain5_Purse, suss1)
+    changePurse(captain5, captain5_Purse, captain5_SqSize)
 }
 
 const captain6_Spend = document.getElementById("cp6_Spend");
 captain6_Spend.onclick = function () {
-    changePurse(captain6, captain6_Purse, ass1)
+    changePurse(captain6, captain6_Purse, captain6_SqSize)
 };
 
 
 // Hardcoded - sample player list.
-var defenderList = [
+const defenderList = [
     new Player("Sparsh Makharia", "Batsman"),
     new Player("Ishaan Agarwal", "Batsman"),
     new Player("Varun Raiji", "Batsman"),
@@ -192,7 +185,7 @@ var defenderList = [
     new Player("Tejas Narayan", "Batsman")
 ];
 
-var forwardList = [
+const forwardList = [
     new Player("Manav Sharma", "Fast Bowler"),
     new Player("Manav Sharma", "Fast Bowler"),
     new Player("Divij Doshi", "Fast Bowler"),
@@ -201,14 +194,14 @@ var forwardList = [
 
 ];
 
-var midfielderList = [
+const midfielderList = [
     new Player("Sanath Kadalayil", "Wicket-Keeper"),
     new Player("Sabesan Solagar", "Wicket-Keeper"),
     new Player("Sanath Kadalayil", "Wicket-Keeper")
 
 ];
 
-var keeperList =
+const keeperList =
     [
         new Player("Vedant Kollare", "All Rounder"),
         new Player("Sidhant dhere ", "All Rounder"),
@@ -272,8 +265,8 @@ function defenseList(a, b) {
     document.getElementById("defList").style.display = "block";
 
 
-    for (i = 0; i < (b.length); ++i) {
-        var li = document.createElement('li');
+    for (let i = 0; i < (b.length); ++i) {
+        let li = document.createElement('li');
         li.innerText = b[i].name;
         list.appendChild(li);
     }
@@ -281,9 +274,10 @@ function defenseList(a, b) {
     randomize.onclick = function () {
         randomizingDef(b)
     }
-    // Passes the rest of the function to randomizing. 
+    // Passes the rest of the function to randomizing.
 }
 
+var playerArr2 = [];
 
 function randomizingDef(arrw) {
 
@@ -311,13 +305,12 @@ function randomizingDef(arrw) {
 
 
 function displayPlayer(playa) {
-    const player = document.getElementById("playerName");
-    let displayInfo = " " + (playa).name;
-    player.innerHTML = displayInfo;
+    const playerName = document.getElementById("playerName");
+    playerName.innerHTML = " " + (playa).name;
+    const playerBatch = document.getElementById("playerBatch");
+    playerBatch.innerHTML = " " + (playa).batch;
 }
 
-
-var playerArr2 = [];
 
 function startAuction() {
     // Awaiting implementation 
@@ -335,7 +328,7 @@ function startAuction() {
     }
 
     function stopBidding() {
-        if (playerArr2.length != 0) {
+        if (playerArr2.length !== 0) {
             document.getElementById("stopbid").disabled = true;
             document.getElementById("bidalert").style.display = "none";
             displayPlayer(playerArr2[0]);
