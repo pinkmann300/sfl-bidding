@@ -1,58 +1,48 @@
-
-// Source script for the SFL-Bidding application 
+// Source script for the SFL-Bidding application
 
 // Player class defintiion
 
 
 class Captain {
-    constructor(capname, price,sqSize) {
-        this.capname = capname; 
-        this.price = price 
+
+    constructor(name, purse, sqSize) {
+        this.name = name;
+        this.purse = purse
         this.sqSize = sqSize;
     }
 
-    getprice(){
-        return this.price;
-    }  
-
-    getSqSize(){
-        return this.sqSize;
+    setPurse(k) {
+        this.purse = k;
     }
 
-    setPrice(k){
-        this.price = k;
-    }
-
-    setSqSize(m){
+    setSqSize(m) {
         this.sqSize = m;
     }
 }
 
 class Player {
 
-    constructor(name, year, position) {
+    constructor(name, batch, position) {
         this.name = name;
+        this.batch = batch;
         this.position = position;
-        this.prize = 0;
     }
 
-    getName() {
-        return this.name;
+    getBatch() {
+        return this.batch;
     }
 
 
-    getPrize(){
-        return this.prize;
-    }
+
 }
 
 // Common functions 
 
 // Shuffle array - takes an array as a parameter and returns an array with the elements shuffled. 
 function shuffleArray(array) {
-    for(let i = array.length - 1; i > 0; i--) {
+    for (let i = array.length - 1; i > 0; i--) {
         // Generate random number
-        let j = Math.floor(Math.random() *(i + 1));
+        let j = Math.floor(Math.random() * (i + 1));
 
         let temp = array[i];
         array[i] = array[j];
@@ -64,203 +54,218 @@ function shuffleArray(array) {
 
 // Hardcode - captains list 
 
-var chandaCap = new Captain("Mudit", 100,0);
-var muskaanCap = new Captain("Santosh", 100,0);
-var mishkaCap = new Captain("Shaurya", 98,1);
-var punyaCap = new Captain("Tanmay", 100,0); 
-var sriramCap = new Captain("Sriram", 84,2);
-var arnavCap = new Captain("Arnav", 100,0);
+var captain1 = new Captain("Mudit", 100, 0);
+var captain2 = new Captain("Santosh", 100, 0);
+var captain3 = new Captain("Shaurya", 98, 1);
+var captain4 = new Captain("Tanmay", 100, 0);
+var captain5 = new Captain("Sriram", 84, 2);
+var captain6 = new Captain("Arnav", 100, 0);
 
 
-const chandaPriceEl = document.getElementById("cp1_Price");
-chandaPriceEl.textContent = chandaCap.getprice();
+// Display captain names
 
-const mishkaPriceEl = document.getElementById("cp2_Price");
-mishkaPriceEl.textContent = mishkaCap.getprice();
+const captain1_Name = document.getElementById("cp1_Name");
+captain1_Name.textContent = captain1.name;
 
-const muskaanPriceEl = document.getElementById("cp3_Price");
-muskaanPriceEl.textContent = muskaanCap.getprice();
+const captain2_Name = document.getElementById("cp2_Name");
+captain2_Name.textContent = captain2.name;
 
-const vss1 = document.getElementById("vss"); 
-vss1.textContent = chandaCap.getSqSize();
+const captain3_Name = document.getElementById("cp3_Name");
+captain3_Name.textContent = captain3.name;
 
-const punyaPriceEl = document.getElementById("cp4_Price");
-punyaPriceEl.textContent = punyaCap.getprice();
+const captain4_Name = document.getElementById("cp4_Name");
+captain4_Name.textContent = captain4.name;
 
-const puss1 = document.getElementById("puss"); 
-puss1.textContent = punyaCap.getSqSize();
+const captain5_Name = document.getElementById("cp5_Name");
+captain5_Name.textContent = captain5.name;
 
-const miss1 = document.getElementById("miss"); 
-miss1.textContent = muskaanCap.getSqSize(); 
+const captain6_Name = document.getElementById("cp6_Name");
+captain6_Name.textContent = captain6.name;
 
-const arss1 = document.getElementById("arss"); 
-arss1.textContent = mishkaCap.getSqSize(); 
 
-const sriPriceEl = document.getElementById("cp5_Price");
-sriPriceEl.textContent = sriramCap.getprice();
+// Display captain purse amounts
 
-const suss1 = document.getElementById("suss"); 
-suss1.textContent = sriramCap.getSqSize();
+const captain1_Purse = document.getElementById("cp1_Purse");
+captain1_Purse.textContent = captain1.purse;
 
-const arnavPriceEl = document.getElementById("cp6_Price");
-arnavPriceEl.textContent = arnavCap.getprice();
+const captain2_Purse = document.getElementById("cp2_Purse");
+captain2_Purse.textContent = captain3.purse;
 
-const ass1 = document.getElementById("ass"); 
-ass1.textContent = arnavCap.getSqSize();
+const captain3_Purse = document.getElementById("cp3_Purse");
+captain3_Purse.textContent = captain2.purse;
 
-const chandaSpending = document.getElementById("cp1_Spend");
-chandaSpending.onclick = function() { changePrice(chandaCap, chandaPriceEl, vss1) }
+const captain4_Purse = document.getElementById("cp4_Purse");
+captain4_Purse.textContent = captain4.purse;
 
-const mishkaSpending = document.getElementById("cp2_Spend");
-mishkaSpending.onclick = function() {changePrice(mishkaCap, mishkaPriceEl, arss1)}
+const captain5_Purse = document.getElementById("cp5_Purse");
+captain5_Purse.textContent = captain5.purse;
 
-const muskaanSpending = document.getElementById("cp3_Spend");
-muskaanSpending.onclick = function() {changePrice(muskaanCap, muskaanPriceEl, miss1)}
+const captain6_Purse = document.getElementById("cp6_Purse");
+captain6_Purse.textContent = captain6.purse;
 
-const punyaSpending = document.getElementById("cp4_Spend");
-punyaSpending.onclick = function () {changePrice(punyaCap, punyaPriceEl, puss1)}
 
-const sriramSpending = document.getElementById("cp5_Spend");
-sriramSpending.onclick = function () {changePrice(sriramCap, sriPriceEl, suss1)}
+// Display captain squad sizes
 
-const arnavSpending = document.getElementById("cp6_Spend");
-arnavSpending.onclick = function () {
-    changePrice(arnavCap, arnavPriceEl, ass1)
+const vss1 = document.getElementById("vss");
+vss1.textContent = captain1.sqSize;
+
+const miss1 = document.getElementById("miss");
+miss1.textContent = captain2.sqSize;
+
+const arss1 = document.getElementById("arss");
+arss1.textContent = captain3.sqSize;
+
+const puss1 = document.getElementById("puss");
+puss1.textContent = captain4.sqSize;
+
+const suss1 = document.getElementById("suss");
+suss1.textContent = captain5.sqSize;
+
+const ass1 = document.getElementById("ass");
+ass1.textContent = captain6.sqSize;
+
+function changePurse(a, b, c) {
+    let userInput = prompt("Crores spent: ");
+
+    // Parse the input to an integer
+    let integerInput = parseInt(userInput, 10);
+
+    if (isNaN(integerInput)) {
+        integerInput = 0;
+    }
+
+    let newPurse = a.purse - integerInput;
+
+    let nsq = a.sqSize + Math.sign(integerInput);
+
+    a.setPurse(newPurse);
+    a.setSqSize(nsq);
+    b.textContent = a.purse;
+    c.textContent = a.sqSize;
+}
+
+const captain1_Spend = document.getElementById("cp1_Spend");
+captain1_Spend.onclick = function () {
+    changePurse(captain1, captain1_Purse, vss1)
+}
+
+const captain2_Spend = document.getElementById("cp2_Spend");
+captain2_Spend.onclick = function () {
+    changePurse(captain2, captain2_Purse, arss1)
+}
+
+const captain3_Spend = document.getElementById("cp3_Spend");
+captain3_Spend.onclick = function () {
+    changePurse(captain3, captain3_Purse, miss1)
+}
+
+const captain4_Spend = document.getElementById("cp4_Spend");
+captain4_Spend.onclick = function () {
+    changePurse(captain4, captain4_Purse, puss1)
+}
+
+const captain5_Spend = document.getElementById("cp5_Spend");
+captain5_Spend.onclick = function () {
+    changePurse(captain5, captain5_Purse, suss1)
+}
+
+const captain6_Spend = document.getElementById("cp6_Spend");
+captain6_Spend.onclick = function () {
+    changePurse(captain6, captain6_Purse, ass1)
 };
 
 
-function changePrice(a, b, c) {
-    var userInput = prompt("Crores spent: ");
-
-    // Parse the input to an integer
-    var integerInput = parseInt(userInput, 10);
-
-    if (isNaN(integerInput)) {
-        integerInput = 0;}
-
-    var newPrice = a.getprice() - integerInput;
-
-    var nsq = a.getSqSize() + Math.sign(integerInput);
-
-    a.setPrice(newPrice);
-    a.setSqSize(nsq);
-    b.textContent = a.getprice();
-    c.textContent = a.getSqSize();
-}
-
 // Hardcoded - sample player list.
-var batArr = [
-   new Player ("Sparsh Makharia","Batsman"  ),
-  new Player ("Ishaan Agarwal","Batsman"  ),
-  new Player ("Varun Raiji","Batsman"  ),
-  new Player ("Arul Shankar","Batsman"  ),
-  new Player ("Ganesh","Batsman"  ),
-  new Player ("Ram Murari","Batsman"  ),
-  new Player ("Aashil Patel","Batsman"  ),
-  new Player ("Manan Malik","Batsman"  ),
-  new Player ("Sparsh Makharia","Batsman"  ),
+var defenderList = [
+    new Player("Sparsh Makharia", "Batsman"),
+    new Player("Ishaan Agarwal", "Batsman"),
+    new Player("Varun Raiji", "Batsman"),
+    new Player("Arul Shankar", "Batsman"),
+    new Player("Ganesh", "Batsman"),
+    new Player("Ram Murari", "Batsman"),
+    new Player("Aashil Patel", "Batsman"),
+    new Player("Manan Malik", "Batsman"),
+    new Player("Sparsh Makharia", "Batsman"),
 
-  new Player ("Arjun Baratan","Batsman"  ),
+    new Player("Arjun Baratan", "Batsman"),
 
-  new Player ("Tejas Narayan","Batsman"  )
+    new Player("Tejas Narayan", "Batsman")
 ];
 
-var fbArr = [
- new Player("Manav Sharma","Fast Bowler"  ),
-  new Player("Manav Sharma","Fast Bowler"  ),
-  new Player("Divij Doshi","Fast Bowler"  ),
-  new Player("Tushar Agrawal","Fast Bowler"  ),
-  new Player("Rohan Jacob","Fast Bowler"  )
-
-];
-
-var wkArr = [
- new Player ("Sanath Kadalayil","Wicket-Keeper" ),
-  new Player ("Sabesan Solagar","Wicket-Keeper"  ),
-  new Player ("Sanath Kadalayil","Wicket-Keeper"  )
+var forwardList = [
+    new Player("Manav Sharma", "Fast Bowler"),
+    new Player("Manav Sharma", "Fast Bowler"),
+    new Player("Divij Doshi", "Fast Bowler"),
+    new Player("Tushar Agrawal", "Fast Bowler"),
+    new Player("Rohan Jacob", "Fast Bowler")
 
 ];
 
-var arArr = 
-[
-      new Player ("Vedant Kollare","All Rounder"  ),
-  new Player ("Sidhant dhere ","All Rounder"  ),
-  new Player ("Sarim Shaikh ","All Rounder"  ),
-  new Player ("Shivansh Anand","All Rounder"  ),
-  new Player ("Vibhav Kapoor","All Rounder"  ),
-  new Player ("Aditya Akash Trigunayat ","All Rounder"  ),
-  new Player ("Raghav Govindarajan","All Rounder"  ),
-  new Player ("Prakash John Mathew","All Rounder"  ),
-  new Player ("Prithvi Singh","All Rounder"  ),
-  new Player ("Adi Agarwal","All Rounder"  ),
-  new Player ("Vedant Jhawar","All Rounder"  ),
-  new Player ("Hemant Megavath","All Rounder"  ),
-  new Player ("Pranav Jain","All Rounder"  ),
-  new Player ("Ansh Bhargava","All Rounder"  ),
-  new Player ("Mudit Kohli","All Rounder"  ),
-  new Player ("Yaadhi","All Rounder"  ),
-  new Player ("Dushyant Agarwal","All Rounder"  ),
-  new Player ("Dhruv Sachin Lele ","All Rounder"  ),
-  new Player ("Viraat Sinh ","All Rounder"  ),
-  new Player ("Vignesh Girish Nair","All Rounder"  ),
-  new Player ("Meet Tosaniwal ","All Rounder"  ),
-  new Player ("Tarangg Kakkar","All Rounder"  ),
-  new Player ("Anish Kumar","All Rounder"  ),
-  new Player ("Pranav Vale","All Rounder"  ),
-  new Player ("Yash Jhawar","All Rounder"  )
-]; 
+var midfielderList = [
+    new Player("Sanath Kadalayil", "Wicket-Keeper"),
+    new Player("Sabesan Solagar", "Wicket-Keeper"),
+    new Player("Sanath Kadalayil", "Wicket-Keeper")
 
-var sbArr = [
-      new Player("Yazad Bhacka","Spin Bowler"  ),
-  new Player("Siddharth Nagarajan","Spin Bowler"  ),
-  new Player("Sai Srikar Dayana","Spin Bowler"  ),
-  new Player("Ayaan Bedi","Spin Bowler"  )
 ];
 
-
-var nsArr = [
-      new Player("Rohit Sriram","Not Sure"  ),
-  new Player("Abhay Vasishta V ","Not Sure"  ),
-  new Player("Pranav Ramamoorthi","Not Sure"  ),
-  new Player("Raghav Kathane","Not Sure"  ),
-  new Player("Sunny Bind ","Not Sure"  ),
-  new Player("Dheer Panjwani ","Not Sure"  ),
-  new Player("Arunachalam","Not Sure"  ),
-  new Player("Vatsalya Betala","Not Sure"  ),
-  new Player("Baalateja Kataru","Not Sure"  ),
-  new Player("Nathan Upputuru","Not Sure"  ),
-  new Player("Tanav Vedantam ","Not Sure"  ),
-  new Player("Aatmesh Govind ","Not Sure"  ),
-  new Player("Punya Chowksey ","Not Sure"  ),
-  new Player("Akhilesh V","Not Sure"  )
-];
-
-
-var playerArr2 = [];
+var keeperList =
+    [
+        new Player("Vedant Kollare", "All Rounder"),
+        new Player("Sidhant dhere ", "All Rounder"),
+        new Player("Sarim Shaikh ", "All Rounder"),
+        new Player("Shivansh Anand", "All Rounder"),
+        new Player("Vibhav Kapoor", "All Rounder"),
+        new Player("Aditya Akash Trigunayat ", "All Rounder"),
+        new Player("Raghav Govindarajan", "All Rounder"),
+        new Player("Prakash John Mathew", "All Rounder"),
+        new Player("Prithvi Singh", "All Rounder"),
+        new Player("Adi Agarwal", "All Rounder"),
+        new Player("Vedant Jhawar", "All Rounder"),
+        new Player("Hemant Megavath", "All Rounder"),
+        new Player("Pranav Jain", "All Rounder"),
+        new Player("Ansh Bhargava", "All Rounder"),
+        new Player("Mudit Kohli", "All Rounder"),
+        new Player("Yaadhi", "All Rounder"),
+        new Player("Dushyant Agarwal", "All Rounder"),
+        new Player("Dhruv Sachin Lele ", "All Rounder"),
+        new Player("Viraat Sinh ", "All Rounder"),
+        new Player("Vignesh Girish Nair", "All Rounder"),
+        new Player("Meet Tosaniwal ", "All Rounder"),
+        new Player("Tarangg Kakkar", "All Rounder"),
+        new Player("Anish Kumar", "All Rounder"),
+        new Player("Pranav Vale", "All Rounder"),
+        new Player("Yash Jhawar", "All Rounder")
+    ];
 
 
 // Randomize button which appears when one of them is clicked.
 const randomize = document.getElementById("randomizer");
 
-// Defenders button 
-const defbutt = document.getElementById("defense").addEventListener('click', function() { defenseList("defense", batArr)});
+document.getElementById("keepers").addEventListener('click', function () {
+    defenseList("keepers", keeperList)
+});
 
-const forbutt = document.getElementById("forwards").addEventListener('click', function(){ defenseList("forwards",fbArr)});
+document.getElementById("defense").addEventListener('click', function () {
+    defenseList("defense", defenderList)
+});
 
-const midbutt = document.getElementById("midfielders").addEventListener('click', function () { defenseList("midfielders", wkArr)});
+document.getElementById("forwards").addEventListener('click', function () {
+    defenseList("forwards", forwardList)
+});
 
+document.getElementById("midfielders").addEventListener('click', function () {
+    defenseList("midfielders", midfielderList)
+});
 
-const arbutt = document.getElementById("ar").addEventListener('click', function () { defenseList("ar", arArr)});
-const sbbutt = document.getElementById("sb").addEventListener('click', function () { defenseList("sb", sbArr)});
-const nsbutt = document.getElementById("nots").addEventListener('click', function () { defenseList("nots", nsArr)});
 const stopBid = document.querySelector("#stopbid");
+
 const startBid = document.querySelector("#startbid");
 
-function defenseList(a,b){
+function defenseList(a, b) {
     document.getElementById("playerDisp").style.display = "none";
     document.getElementById(a).disabled = true;
-    document.getElementById("adminAl").style.display = "none"; 
-    document.getElementById("defDis").style.display="block";
+    document.getElementById("adminAl").style.display = "none";
+    document.getElementById("defDis").style.display = "block";
     randomize.style.display = "block";
 
     let list = document.getElementById("defList");
@@ -269,17 +274,19 @@ function defenseList(a,b){
 
     for (i = 0; i < (b.length); ++i) {
         var li = document.createElement('li');
-        li.innerText = b[i].getName();
+        li.innerText = b[i].name;
         list.appendChild(li);
-    }   
-    
-    randomize.onclick = function(){randomizingDef(b)}
+    }
+
+    randomize.onclick = function () {
+        randomizingDef(b)
+    }
     // Passes the rest of the function to randomizing. 
 }
 
 
-function randomizingDef(arrw){
-    
+function randomizingDef(arrw) {
+
     playerArr2 = shuffleArray(arrw);
     document.getElementById("defList").style.display = "none";
     document.getElementById("randef").style.display = "block";
@@ -303,38 +310,37 @@ function randomizingDef(arrw){
 }
 
 
-
-function displayPlayer(playa){   
-    const player = document.getElementById("playerName"); 
-    let displayInfo =  " " + (playa).getName();
-    player.innerHTML = displayInfo;      
+function displayPlayer(playa) {
+    const player = document.getElementById("playerName");
+    let displayInfo = " " + (playa).name;
+    player.innerHTML = displayInfo;
 }
 
 
-function startAuction(){
-    // Awaiting implementation 
-    
-    document.getElementById("startauc").style.visibility="hidden"; 
-    document.getElementById("startbid").disabled = false; 
-    
-    startBid.onclick = startBidding; 
+var playerArr2 = [];
 
-    function startBidding(){
+function startAuction() {
+    // Awaiting implementation 
+
+    document.getElementById("startauc").style.visibility = "hidden";
+    document.getElementById("startbid").disabled = false;
+
+    startBid.onclick = startBidding;
+
+    function startBidding() {
 
         document.getElementById("bidalert").style.display = "block";
         document.getElementById("stopbid").disabled = false;
         stopBid.onclick = stopBidding;
     }
 
-    function stopBidding(){
-        if (playerArr2.length != 0)
-        {
+    function stopBidding() {
+        if (playerArr2.length != 0) {
             document.getElementById("stopbid").disabled = true;
-            document.getElementById("bidalert").style.display ="none";
+            document.getElementById("bidalert").style.display = "none";
             displayPlayer(playerArr2[0]);
             playerArr2 = playerArr2.slice(1);
-        } 
-        else {
+        } else {
             document.getElementById("bidalert").style.display = "none";
             document.getElementById("adminops").style.display = "none";
             document.getElementById("defDis").style.display = "none";

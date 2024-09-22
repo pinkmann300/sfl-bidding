@@ -1,123 +1,107 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 
 <html lang="">
 
-    <head> 
-        <link rel="stylesheet" href="style.css"> 
-        <script src="script.js"></script>
-        <title> SFL Auctions </title>
-    </head>
+<head>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title> SFL Auctions </title>
+</head>
 
-    <body>
-        <h1 style ="text-align:center; color:white; "> SFL Auctions </h1>
-        <div class="adminBar">
-            <div class="buttonGr">
-                <button class="button1" id="keepers"> Goalkeepers </button>
-                <button class="button1" id="defense"> Defenders </button>
-                <button class="button1" id="midfielders" > Midfielders </button>
-                <button class="button1" id="forwards"> Forwards </button>
-            </div>
-        </div>
+<body>
 
-        <div class="adminAlert" id="adminAl">
-            Please select a category <br> to begin the auction
-        </div>
+<h1 style="text-align:center; color:white; "> SFL Auctions </h1>4
+
+<div class="adminBar">
+    <div class="buttonGr">
+        <button class="button1" id="keepers"> Goalkeepers</button>
+        <button class="button1" id="defense"> Defenders</button>
+        <button class="button1" id="midfielders"> Midfielders</button>
+        <button class="button1" id="forwards"> Forwards</button>
+    </div>
+</div>
+
+<div class="adminAlert" id="adminAl">
+    Please select a category <br> to begin the auction
+</div>
 
 
+<div class="defPlayerDisp" id="defDis" style="display:none;">
+    <button class="button2" id="randomizer">Randomize</button>
+    <br>
+    <ul id="defList"></ul>
+    <ul id="randef" style="display:none;"></ul>
 
-
-        <div class="defPlayerDisp" id="defDis" style="display:none;" >
-            <button class="button2" id="randomizer">Randomize</button>
-            <br>
-            <ul id="defList"></ul>
-            <ul id="randef" style="display:none;"></ul>
-
-            <div id="bidalert" style="display:none;text-align:center;margin-top:-3%;
+    <div id="bidalert" style="display:none;text-align:center;margin-top:-3%;
             margin-left:-2%;
             font-size:2vw; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-                Accepting bids for
-            </div>
+        Accepting bids for
+    </div>
 
-            <table id="purseTable" style="float:left; border: 1px solid black; display:none;">
-                <tr>
-                    <td  style="text-align:center;"><b>Captain</b> </td>
-                    <td style="text-align:center;"><b>Purse</b></td>
-                    <td style="text-align:center"><b>N.P</b></td>
-
-                </tr>
-
-
-                <tr>
-                    <td> Eeshan </td>
-                    <td> <span id = "cp1_Price"></span></td>
-                    <td> <span id= "vss"></span></td>
-                    <td><button id= "cp1_spend">Spend </button></td>
-                </tr>
-
-                <tr>
-                    <td> Anoop  </td>
-                    <td> <span id = "cp2_Price"></span></td>
-                    <td><span id= "arss"></span></td>
-                    <td> <button id=  "cp2_Spend">Spend</button></td>
-                </tr>
-
-                <tr>
-                    <td> Monu </td>
-                    <td> <span id ="cp3_Price"></span></td>
-                    <td>
-                        <span id="miss"></span>
-                    </td>
-                    <td><button id="cp3_Spend">Spend</button></td>
-                </tr>
-                <tr>
-                    <td> Tanmay </td>
-                    <td> <span id ="cp4_Price"></span></td>
-                    <td>
-                        <span id="puss"></span>
-                    </td>
-                    <td><button id="cp4_Spend">Spend</button></td>
-                </tr>
-                <tr>
-                    <td> Sriram </td>
-                    <td> <span id="cp5_Price"></span></td>
-                    <td>
-                        <span id="suss"></span>
-                    </td>
-                    <td><button id="cp5_Spend">Spend</button></td>
-                </tr>
-                <tr>
-                    <td> Arnav </td>
-                    <td> <span id="cp6_Price"></span></td>
-                    <td>
-                        <span id="ass"></span>
-                    </td>
-                    <td><button id="cp6_Spend">Spend</button></td>
-                </tr>
-                <tr>
+    <table id="purseTable" style="float:left; border: 1px solid black; display:none;">
+        <tr>
+            <td style="text-align:center;"><b>Captain</b></td>
+            <td style="text-align:center;"><b>Purse</b></td>
+            <td style="text-align:center;"><b>Squad Size</b></td>
+        </tr>
 
 
-            </table>
+        <tr> <!-- Captain 1 -->
+            <td><span id="cp1_Name"></span></td>
+            <td><span id="cp1_Purse"></span></td>
+            <td><span id="vss"></span></td>
+            <td><button id="cp1_Spend">Spend</button></td>
+        </tr>
+        <tr> <!-- Captain 2 -->
+            <td><span id="cp2_Name"></span></td>
+            <td><span id="cp2_Purse"></span></td>
+            <td><span id="arss"></span></td>
+            <td><button id="cp2_Spend">Spend</button></td>
+        </tr>
+        <tr> <!-- Captain 3 -->
+            <td><span id="cp3_Name"></span></td>
+            <td><span id="cp3_Purse"></span></td>
+            <td><span id="miss"></span></td>
+            <td><button id="cp3_Spend">Spend</button></td>
+        </tr>
+        <tr> <!-- Captain 4 -->
+            <td><span id="cp4_Name"></span></td>
+            <td><span id="cp4_Purse"></span></td>
+            <td><span id="puss"></span></td>
+            <td><button id="cp4_Spend">Spend</button></td>
+        </tr>
+        <tr> <!-- Captain 5 -->
+            <td><span id="cp5_Name"></span></td>
+            <td><span id="cp5_Purse"></span></td>
+            <td><span id="suss"></span></td>
+            <td><button id="cp5_Spend">Spend</button></td>
+        </tr>
+        <tr> <!-- Captain 6 -->
+            <td><span id="cp6_Name"></span></td>
+            <td><span id="cp6_Purse"></span></td>
+            <td><span id="ass"></span></td>
+            <td><button id="cp6_Spend">Spend</button></td>
+        </tr>
+        <tr>
 
 
-            <div class="playerDisp" id="playerDisp" style="display:none;" >
-                <div id="playerName"></div>
-                <div id="year"></div>
-            </div>
-
-        </div>
+    </table>
 
 
-        <div id="adminops" class="admbtn-group" style="width:100%; display:none;">
-            <button style="margin-left:10%;" id="startbid"> Start Bids</button>
-            <button style="margin-left:30%;" id="startauc"> Start Auction </button>
-            <button style="margin-left:30%" id="stopbid">Stop Bids</button>
-        </div>
+    <div class="playerDisp" id="playerDisp" style="display:none;">
+        <div id="playerName"></div>
+        <div id="year"></div>
+    </div>
+
+</div>
 
 
+<div id="adminops" class="admbtn-group" style="width:100%; display:none;">
+    <button style="margin-left:10%;" id="startbid"> Start Bids</button>
+    <button style="margin-left:30%;" id="startauc"> Start Auction</button>
+    <button style="margin-left:30%" id="stopbid">Stop Bids</button>
+</div>
 
 
-
-        
-
-    </body>
+</body>
 </html>
