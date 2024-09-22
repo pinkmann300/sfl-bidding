@@ -1,7 +1,7 @@
 // Source script for the SFL-Bidding application
 
-// Player class defintiion
-
+// Captain and Player class definition
+import {forwardList, keeperList, defenderList, midfielderList} from "./players.js";
 
 class Captain {
 
@@ -17,15 +17,6 @@ class Captain {
 
     setSqSize(m) {
         this.sqSize = m;
-    }
-}
-
-class Player {
-
-    constructor(name, batch, position) {
-        this.name = name;
-        this.batch = batch;
-        this.position = position;
     }
 }
 
@@ -47,12 +38,14 @@ function shuffleArray(array) {
 
 // Hardcode - captains list 
 
-var captain1 = new Captain("Mudit", 100, 0);
-var captain2 = new Captain("Santosh", 100, 0);
-var captain3 = new Captain("Shaurya", 98, 1);
-var captain4 = new Captain("Tanmay", 100, 0);
-var captain5 = new Captain("Sriram", 84, 2);
-var captain6 = new Captain("Arnav", 100, 0);
+var captain1 = new Captain("Punya", 180, 0);
+var captain2 = new Captain("Vignesh", 180, 0);
+var captain3 = new Captain("Arul", 180, 0);
+var captain4 = new Captain("Vale", 180, 0);
+var captain5 = new Captain("Adi", 180, 0);
+var captain6 = new Captain("Anvit", 180, 0);
+var captain7 = new Captain("Satya", 180, 0);
+var captain8 = new Captain("Ganesh", 180, 0);
 
 
 // Display captain names
@@ -75,6 +68,12 @@ captain5_Name.textContent = captain5.name;
 const captain6_Name = document.getElementById("cp6_Name");
 captain6_Name.textContent = captain6.name;
 
+const captain7_Name = document.getElementById("cp7_Name");
+captain7_Name.textContent = captain7.name;
+
+const captain8_Name = document.getElementById("cp8_Name");
+captain8_Name.textContent = captain8.name;
+
 
 // Display captain purse amounts
 
@@ -95,6 +94,12 @@ captain5_Purse.textContent = captain5.purse;
 
 const captain6_Purse = document.getElementById("cp6_Purse");
 captain6_Purse.textContent = captain6.purse;
+
+const captain7_Purse = document.getElementById("cp7_Purse");
+captain7_Purse.textContent = captain7.purse;
+
+const captain8_Purse = document.getElementById("cp8_Purse");
+captain8_Purse.textContent = captain8.purse;
 
 
 // Display captain squad sizes
@@ -117,7 +122,16 @@ captain5_SqSize.textContent = captain5.sqSize;
 const captain6_SqSize = document.getElementById("cp6_SqSize");
 captain6_SqSize.textContent = captain6.sqSize;
 
-function changePurse(a, b, c) {
+const captain7_SqSize = document.getElementById("cp7_SqSize");
+captain7_SqSize.textContent = captain7.sqSize;
+
+const captain8_SqSize = document.getElementById("cp8_SqSize");
+captain8_SqSize.textContent = captain8.sqSize;
+
+
+// Function to simulate a captain buying a player
+
+function buyPlayer(a, b, c) {
     let userInput = prompt("Crores spent: ");
 
     // Parse the input to an integer
@@ -137,124 +151,75 @@ function changePurse(a, b, c) {
     c.textContent = a.sqSize;
 }
 
+
+// Display captain spend buttons
+
 const captain1_Spend = document.getElementById("cp1_Spend");
 captain1_Spend.onclick = function () {
-    changePurse(captain1, captain1_Purse, captain1_SqSize)
+    buyPlayer(captain1, captain1_Purse, captain1_SqSize)
 }
 
 const captain2_Spend = document.getElementById("cp2_Spend");
 captain2_Spend.onclick = function () {
-    changePurse(captain2, captain2_Purse, captain2_SqSize)
+    buyPlayer(captain2, captain2_Purse, captain2_SqSize)
 }
 
 const captain3_Spend = document.getElementById("cp3_Spend");
 captain3_Spend.onclick = function () {
-    changePurse(captain3, captain3_Purse, captain3_SqSize)
+    buyPlayer(captain3, captain3_Purse, captain3_SqSize)
 }
 
 const captain4_Spend = document.getElementById("cp4_Spend");
 captain4_Spend.onclick = function () {
-    changePurse(captain4, captain4_Purse, captain4_SqSize)
+    buyPlayer(captain4, captain4_Purse, captain4_SqSize)
 }
 
 const captain5_Spend = document.getElementById("cp5_Spend");
 captain5_Spend.onclick = function () {
-    changePurse(captain5, captain5_Purse, captain5_SqSize)
+    buyPlayer(captain5, captain5_Purse, captain5_SqSize)
 }
 
 const captain6_Spend = document.getElementById("cp6_Spend");
 captain6_Spend.onclick = function () {
-    changePurse(captain6, captain6_Purse, captain6_SqSize)
+    buyPlayer(captain6, captain6_Purse, captain6_SqSize)
 };
 
+const captain7_Spend = document.getElementById("cp7_Spend");
+captain7_Spend.onclick = function () {
+    buyPlayer(captain7, captain7_Purse, captain7_SqSize)
+}
 
-// Hardcoded - sample player list.
-const defenderList = [
-    new Player("Sparsh Makharia", "Batsman"),
-    new Player("Ishaan Agarwal", "Batsman"),
-    new Player("Varun Raiji", "Batsman"),
-    new Player("Arul Shankar", "Batsman"),
-    new Player("Ganesh", "Batsman"),
-    new Player("Ram Murari", "Batsman"),
-    new Player("Aashil Patel", "Batsman"),
-    new Player("Manan Malik", "Batsman"),
-    new Player("Sparsh Makharia", "Batsman"),
+const captain8_Spend = document.getElementById("cp8_Spend");
+captain8_Spend.onclick = function () {
+    buyPlayer(captain8, captain8_Purse, captain8_SqSize)
+};
 
-    new Player("Arjun Baratan", "Batsman"),
-
-    new Player("Tejas Narayan", "Batsman")
-];
-
-const forwardList = [
-    new Player("Manav Sharma", "Fast Bowler"),
-    new Player("Manav Sharma", "Fast Bowler"),
-    new Player("Divij Doshi", "Fast Bowler"),
-    new Player("Tushar Agrawal", "Fast Bowler"),
-    new Player("Rohan Jacob", "Fast Bowler")
-
-];
-
-const midfielderList = [
-    new Player("Sanath Kadalayil", "Wicket-Keeper"),
-    new Player("Sabesan Solagar", "Wicket-Keeper"),
-    new Player("Sanath Kadalayil", "Wicket-Keeper")
-
-];
-
-const keeperList =
-    [
-        new Player("Vedant Kollare", "All Rounder"),
-        new Player("Sidhant dhere ", "All Rounder"),
-        new Player("Sarim Shaikh ", "All Rounder"),
-        new Player("Shivansh Anand", "All Rounder"),
-        new Player("Vibhav Kapoor", "All Rounder"),
-        new Player("Aditya Akash Trigunayat ", "All Rounder"),
-        new Player("Raghav Govindarajan", "All Rounder"),
-        new Player("Prakash John Mathew", "All Rounder"),
-        new Player("Prithvi Singh", "All Rounder"),
-        new Player("Adi Agarwal", "All Rounder"),
-        new Player("Vedant Jhawar", "All Rounder"),
-        new Player("Hemant Megavath", "All Rounder"),
-        new Player("Pranav Jain", "All Rounder"),
-        new Player("Ansh Bhargava", "All Rounder"),
-        new Player("Mudit Kohli", "All Rounder"),
-        new Player("Yaadhi", "All Rounder"),
-        new Player("Dushyant Agarwal", "All Rounder"),
-        new Player("Dhruv Sachin Lele ", "All Rounder"),
-        new Player("Viraat Sinh ", "All Rounder"),
-        new Player("Vignesh Girish Nair", "All Rounder"),
-        new Player("Meet Tosaniwal ", "All Rounder"),
-        new Player("Tarangg Kakkar", "All Rounder"),
-        new Player("Anish Kumar", "All Rounder"),
-        new Player("Pranav Vale", "All Rounder"),
-        new Player("Yash Jhawar", "All Rounder")
-    ];
 
 
 // Randomize button which appears when one of them is clicked.
 const randomize = document.getElementById("randomizer");
 
 document.getElementById("keepers").addEventListener('click', function () {
-    defenseList("keepers", keeperList)
+    addList("keepers", keeperList)
 });
 
 document.getElementById("defense").addEventListener('click', function () {
-    defenseList("defense", defenderList)
+    addList("defense", defenderList)
 });
 
 document.getElementById("forwards").addEventListener('click', function () {
-    defenseList("forwards", forwardList)
+    addList("forwards", forwardList)
 });
 
 document.getElementById("midfielders").addEventListener('click', function () {
-    defenseList("midfielders", midfielderList)
+    addList("midfielders", midfielderList)
 });
 
 const stopBid = document.querySelector("#stopbid");
 
 const startBid = document.querySelector("#startbid");
 
-function defenseList(a, b) {
+function addList(a, b) {
     document.getElementById("playerDisp").style.display = "none";
     document.getElementById(a).disabled = true;
     document.getElementById("adminAl").style.display = "none";
