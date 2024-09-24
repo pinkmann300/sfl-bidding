@@ -1,7 +1,7 @@
 // Source script for the SFL-Bidding application
 
 // Captain and Player class definition
-import {forwardList, keeperList, defenderList, midfielderList} from "./players.js";
+import {batsmanList, keeperList, bowlerList, allrounderList} from "./players.js";
 
 class Captain {
 
@@ -203,16 +203,16 @@ document.getElementById("keepers").addEventListener('click', function () {
     addList("keepers", keeperList)
 });
 
-document.getElementById("defense").addEventListener('click', function () {
-    addList("defense", defenderList)
+document.getElementById("bowlers").addEventListener('click', function () {
+    addList("bowlers", bowlerList)
 });
 
-document.getElementById("forwards").addEventListener('click', function () {
-    addList("forwards", forwardList)
+document.getElementById("batsmen").addEventListener('click', function () {
+    addList("batsmen", batsmanList)
 });
 
-document.getElementById("midfielders").addEventListener('click', function () {
-    addList("midfielders", midfielderList)
+document.getElementById("allrounders").addEventListener('click', function () {
+    addList("allrounders", allrounderList)
 });
 
 const stopBid = document.querySelector("#stopbid");
