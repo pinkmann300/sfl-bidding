@@ -1,7 +1,7 @@
 // Source script for the SFL-Bidding application
 
 // Captain and Player class definition
-import {forwardList, keeperList, defenderList, midfielderList} from "./players.js";
+import {playerList} from "./players.js";
 
 class Captain {
 
@@ -38,10 +38,10 @@ function shuffleArray(array) {
 
 // Hardcode - captains list 
 
-var captain1 = new Captain("Eeksha", 150, 0);
-var captain2 = new Captain("Aakansha", 150, 0);
-var captain3 = new Captain("Sumedha", 150, 0);
-var captain4 = new Captain("Mishka", 150, 0);
+var captain1 = new Captain("Aavya", 130, 0);
+var captain2 = new Captain("Saanvi", 130, 0);
+var captain3 = new Captain("Angel", 130, 0);
+var captain4 = new Captain("Aura", 130, 0);
 // var captain5 = new Captain("Adi", 150, 0);
 // var captain6 = new Captain("Anvit", 150, 0);
 // var captain7 = new Captain("Satya", 150, 0);
@@ -199,21 +199,25 @@ captain4_Spend.onclick = function () {
 // Randomize button which appears when one of them is clicked.
 const randomize = document.getElementById("randomizer");
 
-document.getElementById("keepers").addEventListener('click', function () {
-    addList("keepers", keeperList)
+document.getElementById("allplayers").addEventListener('click', function () {
+    addList("allplayers", playerList)
 });
 
-document.getElementById("defense").addEventListener('click', function () {
-    addList("defense", defenderList)
-});
-
-document.getElementById("forwards").addEventListener('click', function () {
-    addList("forwards", forwardList)
-});
-
-document.getElementById("midfielders").addEventListener('click', function () {
-    addList("midfielders", midfielderList)
-});
+// document.getElementById("keepers").addEventListener('click', function () {
+//     addList("keepers", keeperList)
+// });
+//
+// document.getElementById("defense").addEventListener('click', function () {
+//     addList("defense", defenderList)
+// });
+//
+// document.getElementById("forwards").addEventListener('click', function () {
+//     addList("forwards", forwardList)
+// });
+//
+// document.getElementById("midfielders").addEventListener('click', function () {
+//     addList("midfielders", midfielderList)
+// });
 
 const stopBid = document.querySelector("#stopbid");
 
@@ -303,7 +307,7 @@ function startAuction() {
             document.getElementById("adminops").style.display = "none";
             document.getElementById("defDis").style.display = "none";
             document.getElementById("adminAl").style.display = "block";
-            document.getElementById("adminAl").innerHTML = "All players sold! <br> Pick another category";
+            document.getElementById("adminAl").innerHTML = "All players sold!";
             document.getElementById("defList").replaceChildren();
         }
     }
