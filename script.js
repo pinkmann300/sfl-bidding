@@ -38,12 +38,12 @@ function shuffleArray(array) {
 
 // Hardcode - captains list 
 
-var captain1 = new Captain("Aavya", 130, 0);
-var captain2 = new Captain("Saanvi", 130, 0);
-var captain3 = new Captain("Angel", 130, 0);
-var captain4 = new Captain("Aura", 130, 0);
-// var captain5 = new Captain("Adi", 150, 0);
-// var captain6 = new Captain("Anvit", 150, 0);
+var captain1 = new Captain("Anish", 130, 0);
+var captain2 = new Captain("Swami", 130, 0);
+var captain3 = new Captain("Ishaan", 130, 0);
+var captain4 = new Captain("Mudit", 130, 0);
+var captain5 = new Captain("Shaurya", 150, 0);
+var captain6 = new Captain("Tejas", 150, 0);
 // var captain7 = new Captain("Satya", 150, 0);
 // var captain8 = new Captain("Ganesh", 150, 0);
 
@@ -62,12 +62,12 @@ captain3_Name.textContent = captain3.name;
 const captain4_Name = document.getElementById("cp4_Name");
 captain4_Name.textContent = captain4.name;
 
-// const captain5_Name = document.getElementById("cp5_Name");
-// captain5_Name.textContent = captain5.name;
-//
-// const captain6_Name = document.getElementById("cp6_Name");
-// captain6_Name.textContent = captain6.name;
-//
+const captain5_Name = document.getElementById("cp5_Name");
+captain5_Name.textContent = captain5.name;
+
+const captain6_Name = document.getElementById("cp6_Name");
+captain6_Name.textContent = captain6.name;
+
 // const captain7_Name = document.getElementById("cp7_Name");
 // captain7_Name.textContent = captain7.name;
 //
@@ -89,12 +89,12 @@ captain3_Purse.textContent = captain2.purse;
 const captain4_Purse = document.getElementById("cp4_Purse");
 captain4_Purse.textContent = captain4.purse;
 
-// const captain5_Purse = document.getElementById("cp5_Purse");
-// captain5_Purse.textContent = captain5.purse;
-//
-// const captain6_Purse = document.getElementById("cp6_Purse");
-// captain6_Purse.textContent = captain6.purse;
-//
+const captain5_Purse = document.getElementById("cp5_Purse");
+captain5_Purse.textContent = captain5.purse;
+
+const captain6_Purse = document.getElementById("cp6_Purse");
+captain6_Purse.textContent = captain6.purse;
+
 // const captain7_Purse = document.getElementById("cp7_Purse");
 // captain7_Purse.textContent = captain7.purse;
 //
@@ -116,12 +116,12 @@ captain3_SqSize.textContent = captain3.sqSize;
 const captain4_SqSize = document.getElementById("cp4_SqSize");
 captain4_SqSize.textContent = captain4.sqSize;
 
-// const captain5_SqSize = document.getElementById("cp5_SqSize");
-// captain5_SqSize.textContent = captain5.sqSize;
-//
-// const captain6_SqSize = document.getElementById("cp6_SqSize");
-// captain6_SqSize.textContent = captain6.sqSize;
-//
+const captain5_SqSize = document.getElementById("cp5_SqSize");
+captain5_SqSize.textContent = captain5.sqSize;
+
+const captain6_SqSize = document.getElementById("cp6_SqSize");
+captain6_SqSize.textContent = captain6.sqSize;
+
 // const captain7_SqSize = document.getElementById("cp7_SqSize");
 // captain7_SqSize.textContent = captain7.sqSize;
 //
@@ -174,16 +174,16 @@ captain4_Spend.onclick = function () {
     buyPlayer(captain4, captain4_Purse, captain4_SqSize)
 }
 
-// const captain5_Spend = document.getElementById("cp5_Spend");
-// captain5_Spend.onclick = function () {
-//     buyPlayer(captain5, captain5_Purse, captain5_SqSize)
-// }
-//
-// const captain6_Spend = document.getElementById("cp6_Spend");
-// captain6_Spend.onclick = function () {
-//     buyPlayer(captain6, captain6_Purse, captain6_SqSize)
-// };
-//
+const captain5_Spend = document.getElementById("cp5_Spend");
+captain5_Spend.onclick = function () {
+    buyPlayer(captain5, captain5_Purse, captain5_SqSize)
+}
+
+const captain6_Spend = document.getElementById("cp6_Spend");
+captain6_Spend.onclick = function () {
+    buyPlayer(captain6, captain6_Purse, captain6_SqSize)
+};
+
 // const captain7_Spend = document.getElementById("cp7_Spend");
 // captain7_Spend.onclick = function () {
 //     buyPlayer(captain7, captain7_Purse, captain7_SqSize)
