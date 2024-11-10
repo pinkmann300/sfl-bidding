@@ -1,10 +1,9 @@
 
 class Player {
 
-    constructor(name, batch, position) {
+    constructor(name, batch) {
         this.name = name;
         this.batch = batch;
-        this.position = position;
     }
 }
 
@@ -14,7 +13,7 @@ let playerList = [];
 // Fetch the CSV file and parse it
 async function loadCSV() {
     try {
-        const response = await fetch('./wsfl2024_players.csv'); // path to your CSV file
+        const response = await fetch('./wkbl2024_players.csv'); // path to your CSV file
         const csvText = await response.text(); // read it as text
         const dataArray = csvToArray(csvText);
 
@@ -40,53 +39,46 @@ function csvToArray(csvData, delimiter = ',') {
 }
 
 
-// Hardcoded - sample player list.
-
-var defenderList = [];
-
-var forwardList = [];
-
-var midfielderList = [];
-
-var keeperList = [];
 
 
-function categorizePlayers() {
-    // Debugging: Check the structure of playerList
-    console.log("Player List:", playerList);
+// function categorizePlayers() {
+//     // Debugging: Check the structure of playerList
+//     console.log("Player List:", playerList);
+//
+//     // Filter out any undefined or invalid players
+//     const validPlayers = playerList.filter(player => {
+//         if (player && player.position) {
+//             return true;
+//         } else {
+//             console.error("Invalid Player Entry: ", player);
+//             return false;
+//         }
+//     });
+//
+//     // Now categorize the valid players by position
+//     defenderList = validPlayers.filter(player => player.position.trim() === "Defender");
+//     midfielderList = validPlayers.filter(player => player.position.trim() === "Midfielder");
+//     forwardList = validPlayers.filter(player => player.position.trim() === "Forward");
+//     keeperList = validPlayers.filter(player => player.position.trim() === "Goalkeeper");
+//
+//     // Debugging: Check if positions are correctly identified
+//     console.log("Defenders:", defenderList);
+//     console.log("Midfielders:", midfielderList);
+//     console.log("Forwards:", forwardList);
+//     console.log("Goalkeepers:", keeperList);
+// }
+//
+// // Call this function after playerList is populated
+// loadCSV().then(() => {
+//     categorizePlayers();
+// });
 
-    // Filter out any undefined or invalid players
-    const validPlayers = playerList.filter(player => {
-        if (player && player.position) {
-            return true;
-        } else {
-            console.error("Invalid Player Entry: ", player);
-            return false;
-        }
-    });
-
-    // Now categorize the valid players by position
-    defenderList = validPlayers.filter(player => player.position.trim() === "Defender");
-    midfielderList = validPlayers.filter(player => player.position.trim() === "Midfielder");
-    forwardList = validPlayers.filter(player => player.position.trim() === "Forward");
-    keeperList = validPlayers.filter(player => player.position.trim() === "Goalkeeper");
-
-    // Debugging: Check if positions are correctly identified
-    console.log("Defenders:", defenderList);
-    console.log("Midfielders:", midfielderList);
-    console.log("Forwards:", forwardList);
-    console.log("Goalkeepers:", keeperList);
-}
-
-// Call this function after playerList is populated
 loadCSV().then(() => {
-    categorizePlayers();
+    console.log("CSV Loaded");
+    // categorizePlayers();
 });
 
 
 export {
-    defenderList,
-    forwardList,
-    midfielderList,
-    keeperList
+    playerList
 }
