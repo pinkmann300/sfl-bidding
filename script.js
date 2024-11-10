@@ -38,10 +38,10 @@ function shuffleArray(array) {
 
 // Hardcode - captains list 
 
-var captain1 = new Captain("Anish", 130, 0);
-var captain2 = new Captain("Swami", 130, 0);
-var captain3 = new Captain("Ishaan", 130, 0);
-var captain4 = new Captain("Mudit", 130, 0);
+var captain1 = new Captain("Anish", 150, 0);
+var captain2 = new Captain("Swami", 150, 0);
+var captain3 = new Captain("Ishaan", 150, 0);
+var captain4 = new Captain("Mudit", 150, 0);
 var captain5 = new Captain("Shaurya", 150, 0);
 var captain6 = new Captain("Tejas", 150, 0);
 // var captain7 = new Captain("Satya", 150, 0);
