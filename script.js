@@ -221,14 +221,14 @@ const startBid = document.querySelector("#startbid");
 
 function addList(a, b) {
     document.getElementById("playerDisp").style.display = "none";
-    document.getElementById(a).disabled = true;
     document.getElementById("adminAl").style.display = "none";
     document.getElementById("defDis").style.display = "block";
     randomize.style.display = "block";
 
-    let list = document.getElementById("defList");
-    document.getElementById("defList").style.display = "block";
 
+    let list = document.getElementById("defList");
+    list.innerHTML = ""; // Clear the list before adding new items
+    document.getElementById("defList").style.display = "block";
 
     for (let i = 0; i < (b.length); ++i) {
         let li = document.createElement('li');
@@ -238,6 +238,7 @@ function addList(a, b) {
 
     randomize.onclick = function () {
         randomizingDef(b)
+        document.getElementById(a).disabled = true;
     }
     // Passes the rest of the function to randomizing.
 }
