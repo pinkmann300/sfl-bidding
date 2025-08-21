@@ -129,70 +129,141 @@ const captain8_SqSize = document.getElementById("cp8_SqSize");
 captain8_SqSize.textContent = captain8.sqSize;
 
 
-// Function to simulate a captain buying a player
 
-function buyPlayer(a, b, c) {
-    let userInput = prompt("Crores spent: ");
 
-    // Parse the input to an integer
-    let integerInput = parseInt(userInput, 10);
+// Modal logic for spending (moved after spend button declarations)
+const spendModal = document.getElementById("spendModal");
+const spendInput = document.getElementById("spendInput");
+const spendError = document.getElementById("spendError");
+const spendConfirm = document.getElementById("spendConfirm");
+const spendCancel = document.getElementById("spendCancel");
 
-    if (isNaN(integerInput)) {
-        integerInput = 0;
-    }
+let currentCaptain = null;
+let currentPurseElem = null;
+let currentSqSizeElem = null;
 
-    let newPurse = a.purse - integerInput;
-
-    let nsq = a.sqSize + Math.sign(integerInput);
-
-    a.setPurse(newPurse);
-    a.setSqSize(nsq);
-    b.textContent = a.purse;
-    c.textContent = a.sqSize;
+function openSpendModal(captain, purseElem, sqSizeElem) {
+    currentCaptain = captain;
+    currentPurseElem = purseElem;
+    currentSqSizeElem = sqSizeElem;
+    spendInput.value = "";
+    spendError.textContent = "";
+    spendModal.style.display = "flex";
+    spendInput.focus();
 }
+
+function closeSpendModal() {
+    spendModal.style.display = "none";
+    currentCaptain = null;
+    currentPurseElem = null;
+    currentSqSizeElem = null;
+}
+
+spendCancel.onclick = closeSpendModal;
 
 
 // Display captain spend buttons
 
 const captain1_Spend = document.getElementById("cp1_Spend");
 captain1_Spend.onclick = function () {
-    buyPlayer(captain1, captain1_Purse, captain1_SqSize)
+    openSpendModal(captain1, captain1_Purse, captain1_SqSize);
 }
 
 const captain2_Spend = document.getElementById("cp2_Spend");
 captain2_Spend.onclick = function () {
-    buyPlayer(captain2, captain2_Purse, captain2_SqSize)
+    openSpendModal(captain2, captain2_Purse, captain2_SqSize);
 }
 
 const captain3_Spend = document.getElementById("cp3_Spend");
 captain3_Spend.onclick = function () {
-    buyPlayer(captain3, captain3_Purse, captain3_SqSize)
+    openSpendModal(captain3, captain3_Purse, captain3_SqSize);
 }
 
 const captain4_Spend = document.getElementById("cp4_Spend");
 captain4_Spend.onclick = function () {
-    buyPlayer(captain4, captain4_Purse, captain4_SqSize)
+    openSpendModal(captain4, captain4_Purse, captain4_SqSize);
 }
 
 const captain5_Spend = document.getElementById("cp5_Spend");
 captain5_Spend.onclick = function () {
-    buyPlayer(captain5, captain5_Purse, captain5_SqSize)
+    openSpendModal(captain5, captain5_Purse, captain5_SqSize);
 }
 
 const captain6_Spend = document.getElementById("cp6_Spend");
 captain6_Spend.onclick = function () {
-    buyPlayer(captain6, captain6_Purse, captain6_SqSize)
+    openSpendModal(captain6, captain6_Purse, captain6_SqSize);
 };
 
 const captain7_Spend = document.getElementById("cp7_Spend");
 captain7_Spend.onclick = function () {
-    buyPlayer(captain7, captain7_Purse, captain7_SqSize)
+    openSpendModal(captain7, captain7_Purse, captain7_SqSize);
 }
 
 const captain8_Spend = document.getElementById("cp8_Spend");
 captain8_Spend.onclick = function () {
-    buyPlayer(captain8, captain8_Purse, captain8_SqSize)
+    openSpendModal(captain8, captain8_Purse, captain8_SqSize);
 };
+
+const spendButtons = [
+        captain1_Spend,
+        captain2_Spend,
+        captain3_Spend,
+        captain4_Spend,
+        captain5_Spend,
+        captain6_Spend,
+        captain7_Spend,
+        captain8_Spend
+    ];
+
+function enableSpendButtons() {
+    spendButtons.forEach(btn => {
+        if (btn) btn.disabled = false;
+    });
+}
+
+function disableSpendButtons() {
+    spendButtons.forEach(btn => {
+        if (btn) btn.disabled = true;
+    });
+}
+
+
+const bidAlert = document.getElementById("bidalert");
+
+// This block is now after all spend button variables are declared
+spendConfirm.onclick = function () {
+    if (!currentCaptain) return;
+    let value = spendInput.value.trim();
+    let spendAmount = parseInt(value, 10);
+    if (isNaN(spendAmount) || spendAmount <= 0) {
+        spendError.textContent = "Please enter a valid positive number.";
+        return;
+    }
+    if (spendAmount > currentCaptain.purse) {
+        spendError.textContent = "Cannot spend more than available purse.";
+        return;
+    }
+    let newPurse = currentCaptain.purse - spendAmount;
+    let nsq = currentCaptain.sqSize + 1;
+    currentCaptain.setPurse(newPurse);
+    currentCaptain.setSqSize(nsq);
+    currentPurseElem.textContent = currentCaptain.purse;
+    currentSqSizeElem.textContent = currentCaptain.sqSize;
+    // Disable all spend buttons after purchase using existing variables
+    disableSpendButtons();
+    // Change bid alert text to 'player sold'
+    if (bidAlert) {
+        bidAlert.textContent = "Player sold";
+    }
+    closeSpendModal();
+};
+
+// Optional: close modal on Escape key
+window.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && spendModal.style.display === 'flex') {
+        closeSpendModal();
+    }
+});
 
 
 
@@ -264,6 +335,7 @@ function randomizingDef(arrw) {
 
     displayPlayer(playerArr2[0]);
     playerArr2 = playerArr2.slice(1);
+    disableSpendButtons();
 
     const startAuc = document.querySelector("#startauc");
     startAuc.onclick = startAuction;
@@ -294,6 +366,7 @@ function startAuction() {
     //     document.getElementById("stopbid").disabled = false;
     //     stopBid.onclick = stopBidding;
     // }
+    enableSpendButtons();
 
     document.getElementById("bidalert").style.display = "block";
     document.getElementById("stopbid").disabled = false;
@@ -306,6 +379,10 @@ function startAuction() {
             // document.getElementById("bidalert").style.display = "none";
             displayPlayer(playerArr2[0]);
             playerArr2 = playerArr2.slice(1);
+            enableSpendButtons();
+            if (bidAlert) {
+                bidAlert.textContent = "Accepting bids for ";
+            }
         } else {
             document.getElementById("bidalert").style.display = "none";
             document.getElementById("adminops").style.display = "none";

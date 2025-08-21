@@ -27,6 +27,19 @@
 
 
     <div class="defPlayerDisp" id="defDis" style="display:none;">
+
+        <!-- Spend Modal -->
+        <div id="spendModal"
+            style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:1000; align-items:center; justify-content:center;">
+            <div
+                style="background:white; color:black; padding:2em; border-radius:10px; max-width:90vw; margin:auto; text-align:center;">
+                <h2>Enter Spend Amount</h2>
+                <input type="number" id="spendInput" min="0" style="font-size:1.2em; padding:0.5em; width:60%;" />
+                <div id="spendError" style="color:red; margin-top:0.5em; min-height:1.5em;"></div>
+                <button id="spendConfirm" style="margin:1em; padding:0.5em 1.5em; font-size:1em;">Confirm</button>
+                <button id="spendCancel" style="padding:0.5em 1.5em; font-size:1em;">Cancel</button>
+            </div>
+        </div>
         <button class="button2" id="randomizer">Randomize</button>
         <br>
         <ul id="defList"></ul>
