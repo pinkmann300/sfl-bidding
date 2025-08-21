@@ -1,0 +1,5 @@
+# Ignore all local VS Code settings
+.vscode/
+
+# Allow sharing recommended extensions (uncomment if needed)
+#!.vscode/extensions.json
