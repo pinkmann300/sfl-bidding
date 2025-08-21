@@ -217,7 +217,7 @@ document.getElementById("midfielders").addEventListener('click', function () {
 
 const stopBid = document.querySelector("#stopbid");
 
-const startBid = document.querySelector("#startbid");
+// const startBid = document.querySelector("#startbid");
 
 function addList(a, b) {
     document.getElementById("playerDisp").style.display = "none";
@@ -254,8 +254,9 @@ function randomizingDef(arrw) {
     document.getElementById("playerDisp").style.display = "block";
     randomize.style.display = "none";
 
-    document.getElementById("startbid").disabled = true;
+    // document.getElementById("startbid").disabled = true;
     document.getElementById("stopbid").disabled = true;
+    document.getElementById("stopbid").style.visibility = "hidden";
 
     document.getElementById("adminops").style.display = "inline-block";
     document.getElementById("startauc").style.visibility = "visible";
@@ -282,21 +283,27 @@ function startAuction() {
     // Awaiting implementation 
 
     document.getElementById("startauc").style.visibility = "hidden";
-    document.getElementById("startbid").disabled = false;
+    document.getElementById("stopbid").style.visibility = "visible";
+    // document.getElementById("startbid").disabled = false;
 
-    startBid.onclick = startBidding;
+    //startBid.onclick = startBidding;
 
-    function startBidding() {
+    // function startBidding() {
 
-        document.getElementById("bidalert").style.display = "block";
-        document.getElementById("stopbid").disabled = false;
-        stopBid.onclick = stopBidding;
-    }
+    //     document.getElementById("bidalert").style.display = "block";
+    //     document.getElementById("stopbid").disabled = false;
+    //     stopBid.onclick = stopBidding;
+    // }
+
+    document.getElementById("bidalert").style.display = "block";
+    document.getElementById("stopbid").disabled = false;
+    stopBid.onclick = stopBidding;
+    
 
     function stopBidding() {
         if (playerArr2.length !== 0) {
-            document.getElementById("stopbid").disabled = true;
-            document.getElementById("bidalert").style.display = "none";
+            // document.getElementById("stopbid").disabled = true;
+            // document.getElementById("bidalert").style.display = "none";
             displayPlayer(playerArr2[0]);
             playerArr2 = playerArr2.slice(1);
         } else {
