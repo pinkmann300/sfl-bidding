@@ -246,12 +246,14 @@ function enableSpendButtons() {
     spendButtons.forEach(btn => {
         if (btn) btn.disabled = false;
     });
+    document.getElementById("stopbid").disabled = true;
 }
 
 function disableSpendButtons() {
     spendButtons.forEach(btn => {
         if (btn) btn.disabled = true;
     });
+    document.getElementById("stopbid").disabled = false;
 }
 
 
@@ -417,7 +419,7 @@ function startAuction() {
     enableSpendButtons();
 
     document.getElementById("bidalert").style.display = "block";
-    document.getElementById("stopbid").disabled = false;
+    
     stopBid.onclick = stopBidding;
     
 
