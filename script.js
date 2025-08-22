@@ -402,6 +402,11 @@ function displayPlayer(playa) {
     playerBatch.innerHTML = " " + (playa).batch;
 }
 
+// Squads Modal logic
+const squadsModal = document.getElementById("squadsModal");
+const squadsContent = document.getElementById("squadsContent");
+const squadsClose = document.getElementById("squadsClose");
+const viewSquads = document.getElementById("viewSquads");
 
 function startAuction() {
     // Awaiting implementation 
@@ -442,6 +447,89 @@ function startAuction() {
             document.getElementById("adminAl").style.display = "block";
             document.getElementById("adminAl").innerHTML = "All players sold! <br> Pick another category";
             document.getElementById("defList").replaceChildren();
+            viewSquads.style.visibility = "visible";
         }
     }
 }
+
+
+
+
+
+// Download CSV button (will be created dynamically)
+let squadsDownloadBtn = null;
+
+function generateSquadsTable() {
+    let html = '<table style="width:100%; border-collapse:collapse;">';
+    html += '<tr><th>Captain</th><th>Player Name</th><th>Batch</th><th>Position</th></tr>';
+    captains.forEach(captain => {
+        if (captain.players.length === 0) {
+            html += `<tr><td>${captain.name}</td><td colspan="3" style="text-align:center; color:#888;">No players</td></tr>`;
+        } else {
+            captain.players.forEach((player, idx) => {
+                html += `<tr>`;
+                if (idx === 0) {
+                    html += `<td rowspan="${captain.players.length}">${captain.name}</td>`;
+                }
+                html += `<td>${player.name}</td><td>${player.batch}</td><td>${player.position}</td></tr>`;
+            });
+        }
+    });
+    html += '</table>';
+    return html;
+}
+
+function generateSquadsCSV() {
+    let csv = 'Captain,Player Name,Batch,Position\n';
+    captains.forEach(captain => {
+        if (captain.players.length === 0) {
+            csv += `${captain.name},,,\n`;
+        } else {
+            captain.players.forEach(player => {
+                csv += `${captain.name},${player.name},${player.batch},${player.position}\n`;
+            });
+        }
+    });
+    return csv;
+}
+
+function showSquadsModal() {
+    squadsContent.innerHTML = generateSquadsTable();
+    // Add download button if not present
+    if (!squadsDownloadBtn) {
+        squadsDownloadBtn = document.createElement('button');
+        squadsDownloadBtn.textContent = 'Download CSV';
+        squadsDownloadBtn.style.margin = '1em';
+        squadsDownloadBtn.style.padding = '0.5em 1.5em';
+        squadsDownloadBtn.style.fontSize = '1em';
+        squadsDownloadBtn.onclick = function() {
+            const csv = generateSquadsCSV();
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'squads.csv';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        };
+        squadsContent.parentNode.insertBefore(squadsDownloadBtn, squadsContent.nextSibling);
+    }
+    squadsModal.style.display = 'flex';
+}
+
+if (viewSquads) {
+    viewSquads.onclick = showSquadsModal;
+}
+if (squadsClose) {
+    squadsClose.onclick = function() {
+        squadsModal.style.display = 'none';
+    };
+}
+// Optional: close modal on Escape key
+window.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && squadsModal && squadsModal.style.display === 'flex') {
+        squadsModal.style.display = 'none';
+    }
+});

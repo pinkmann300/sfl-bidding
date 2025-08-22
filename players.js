@@ -14,7 +14,7 @@ let playerList = [];
 // Fetch the CSV file and parse it
 async function loadCSV() {
     try {
-        const response = await fetch('./msfl2024_players.csv'); // path to your CSV file
+        const response = await fetch('./players_msfl25.csv'); // path to your CSV file
         const csvText = await response.text(); // read it as text
         const dataArray = csvToArray(csvText);
 
@@ -68,10 +68,10 @@ function categorizePlayers() {
     });
 
     // Now categorize the valid players by position
-    defenderList = validPlayers.filter(player => player.position.trim() === "Defender");
-    midfielderList = validPlayers.filter(player => player.position.trim() === "Midfielder");
+    defenderList = validPlayers.filter(player => player.position.trim() === "Defence");
+    midfielderList = validPlayers.filter(player => player.position.trim() === "Midfield");
     forwardList = validPlayers.filter(player => player.position.trim() === "Forward");
-    keeperList = validPlayers.filter(player => player.position.trim() === "Goalkeeper");
+    keeperList = validPlayers.filter(player => player.position.trim() === "Goal Keeper");
 
     // Debugging: Check if positions are correctly identified
     console.log("Defenders:", defenderList);

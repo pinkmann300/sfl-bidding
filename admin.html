@@ -23,8 +23,12 @@
     </div>
 
     <div class="adminAlert" id="adminAl">
-        Please select a category <br> to begin the auction
+        Please select a category <br> to begin the auction <br>
+
     </div>
+    <!-- <button class="button2" id="viewSquads" style="margin-left:1em;" display="none" visibility="hidden">
+        View Squads
+    </button> -->
 
 
     <div class="defPlayerDisp" id="defDis" style="display:none;">
@@ -42,6 +46,17 @@
             </div>
         </div>
         <button class="button2" id="randomizer">Randomize</button>
+
+        <!-- Squads Modal -->
+        <div id="squadsModal"
+            style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:2000; align-items:center; justify-content:center;">
+            <div
+                style="background:white; color:black; padding:2em; border-radius:10px; max-width:90vw; margin:auto; text-align:center; min-width:300px;">
+                <h2>All Captains' Squads</h2>
+                <div id="squadsContent" style="text-align:left; max-height:60vh; overflow-y:auto;"></div>
+                <button id="squadsClose" style="margin-top:1em; padding:0.5em 1.5em; font-size:1em;">Close</button>
+            </div>
+        </div>
         <br>
         <ul id="defList"></ul>
         <ul id="randef" style="display:none;"></ul>
