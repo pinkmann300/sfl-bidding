@@ -1,7 +1,7 @@
 // Source script for the SFL-Bidding application
 
 // Captain and Player class definition
-import {forwardList, keeperList, defenderList, midfielderList} from "./players.js";
+import {forwardList, keeperList, defenderList, midfielderList, draftList} from "./players.js";
 
 class Captain {
     constructor(name, purse, sqSize) {
@@ -42,13 +42,13 @@ function shuffleArray(array) {
 
 // Hardcode - captains list 
 
-var captain1 = new Captain("Punya", 180, 0);
-var captain2 = new Captain("Vignesh", 180, 0);
-var captain3 = new Captain("Arul", 180, 0);
-var captain4 = new Captain("Vale", 180, 0);
-var captain5 = new Captain("Adi", 180, 0);
-var captain6 = new Captain("Anvit", 180, 0);
-var captain7 = new Captain("Satya", 180, 0);
+var captain1 = new Captain("Arhaan", 180, 0);
+var captain2 = new Captain("Vishant", 180, 0);
+var captain3 = new Captain("OG", 180, 0);
+var captain4 = new Captain("Amritesh", 180, 0);
+var captain5 = new Captain("Saayan", 180, 0);
+var captain6 = new Captain("Shaurya", 180, 0);
+var captain7 = new Captain("Nathan", 180, 0);
 var captain8 = new Captain("Ganesh", 180, 0);
 
 var captains = [captain1, captain2, captain3, captain4, captain5, captain6, captain7, captain8];
@@ -141,6 +141,14 @@ captain8_SqSize.textContent = captain8.sqSize;
 
 
 
+// Display draft count
+const draftCount = document.getElementById("draftCount");
+draftCount.textContent = "(" + draftList.length + ")";
+
+// Draft logic
+
+const draftButton = document.getElementById("sendtodraft");
+
 
 // Modal logic for spending (moved after spend button declarations)
 const spendModal = document.getElementById("spendModal");
@@ -230,7 +238,8 @@ const spendButtons = [
         captain5_Spend,
         captain6_Spend,
         captain7_Spend,
-        captain8_Spend
+        captain8_Spend,
+        draftButton // Add draft button to the spend buttons array
     ];
 
 function enableSpendButtons() {
@@ -248,7 +257,6 @@ function disableSpendButtons() {
 
 const bidAlert = document.getElementById("bidalert");
 
-// This block is now after all spend button variables are declared
 spendConfirm.onclick = function () {
     if (!currentCaptain) return;
     let value = spendInput.value.trim();
@@ -288,7 +296,19 @@ window.addEventListener('keydown', function(e) {
     }
 });
 
-
+draftButton.onclick = function () {
+    if (currentAuctionPlayer) {
+        draftList.push(currentAuctionPlayer);
+        // Optionally update draft count display
+        if (draftCount) {
+            draftCount.textContent = "(" + draftList.length + ")";
+        }
+    }
+    disableSpendButtons();
+    if (bidAlert) {
+        bidAlert.textContent = "Player sent to draft";
+    }
+};
 
 // Randomize button which appears when one of them is clicked.
 const randomize = document.getElementById("randomizer");
@@ -307,6 +327,10 @@ document.getElementById("forwards").addEventListener('click', function () {
 
 document.getElementById("midfielders").addEventListener('click', function () {
     addList("midfielders", midfielderList)
+});
+
+document.getElementById("draft").addEventListener('click', function () {
+    addList("draft", draftList)
 });
 
 const stopBid = document.querySelector("#stopbid");

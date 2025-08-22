@@ -50,6 +50,8 @@ var midfielderList = [];
 
 var keeperList = [];
 
+var draftList = [];
+
 
 function categorizePlayers() {
     // Debugging: Check the structure of playerList
@@ -76,6 +78,7 @@ function categorizePlayers() {
     console.log("Midfielders:", midfielderList);
     console.log("Forwards:", forwardList);
     console.log("Goalkeepers:", keeperList);
+    console.log("Draft List:", draftList);
 }
 
 // Call this function after playerList is populated
@@ -88,5 +91,6 @@ export {
     defenderList,
     forwardList,
     midfielderList,
-    keeperList
+    keeperList,
+    draftList
 }
