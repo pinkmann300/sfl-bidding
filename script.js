@@ -4,11 +4,11 @@
 import {forwardList, keeperList, defenderList, midfielderList} from "./players.js";
 
 class Captain {
-
     constructor(name, purse, sqSize) {
         this.name = name;
-        this.purse = purse
+        this.purse = purse;
         this.sqSize = sqSize;
+        this.players = [];
     }
 
     setPurse(k) {
@@ -17,6 +17,10 @@ class Captain {
 
     setSqSize(m) {
         this.sqSize = m;
+    }
+
+    addPlayer(player) {
+        this.players.push(player);
     }
 }
 
@@ -47,6 +51,13 @@ var captain6 = new Captain("Anvit", 180, 0);
 var captain7 = new Captain("Satya", 180, 0);
 var captain8 = new Captain("Ganesh", 180, 0);
 
+var captains = [captain1, captain2, captain3, captain4, captain5, captain6, captain7, captain8];
+
+
+// Debugging to check all captain's player lists
+for (let i = 0; i < captains.length; i++) {
+    console.log(captains[i].name,"'s Players:", captains[i].players);
+}
 
 // Display captain names
 
@@ -138,9 +149,11 @@ const spendError = document.getElementById("spendError");
 const spendConfirm = document.getElementById("spendConfirm");
 const spendCancel = document.getElementById("spendCancel");
 
+
 let currentCaptain = null;
 let currentPurseElem = null;
 let currentSqSizeElem = null;
+let currentAuctionPlayer = null;
 
 function openSpendModal(captain, purseElem, sqSizeElem) {
     currentCaptain = captain;
@@ -150,6 +163,11 @@ function openSpendModal(captain, purseElem, sqSizeElem) {
     spendError.textContent = "";
     spendModal.style.display = "flex";
     spendInput.focus();
+}
+
+// Set the current player being auctioned
+function setCurrentAuctionPlayer(player) {
+    currentAuctionPlayer = player;
 }
 
 function closeSpendModal() {
@@ -249,6 +267,10 @@ spendConfirm.onclick = function () {
     currentCaptain.setSqSize(nsq);
     currentPurseElem.textContent = currentCaptain.purse;
     currentSqSizeElem.textContent = currentCaptain.sqSize;
+    // Track player sold to captain
+    if (currentAuctionPlayer) {
+        currentCaptain.addPlayer(currentAuctionPlayer);
+    }
     // Disable all spend buttons after purchase using existing variables
     disableSpendButtons();
     // Change bid alert text to 'player sold'
@@ -256,6 +278,7 @@ spendConfirm.onclick = function () {
         bidAlert.textContent = "Player sold";
     }
     closeSpendModal();
+
 };
 
 // Optional: close modal on Escape key
@@ -344,6 +367,7 @@ function randomizingDef(arrw) {
 
 
 function displayPlayer(playa) {
+    setCurrentAuctionPlayer(playa);
     const playerName = document.getElementById("playerName");
     playerName.innerHTML = " " + (playa).name;
     const playerBatch = document.getElementById("playerBatch");
