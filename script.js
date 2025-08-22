@@ -343,6 +343,7 @@ function addList(a, b) {
     document.getElementById("playerDisp").style.display = "none";
     document.getElementById("adminAl").style.display = "none";
     document.getElementById("defDis").style.display = "block";
+    document.getElementById("purseTable").style.display = "none";
     randomize.style.display = "block";
 
 
@@ -359,6 +360,7 @@ function addList(a, b) {
     randomize.onclick = function () {
         randomizingDef(b)
         document.getElementById(a).disabled = true;
+        document.getElementById("purseTable").style.display = "block";
     }
     // Passes the rest of the function to randomizing.
 }
