@@ -42,16 +42,18 @@ function shuffleArray(array) {
 
 // Hardcode - captains list 
 
-var captain1 = new Captain("Arhaan", 180, 0);
-var captain2 = new Captain("Vishant", 180, 0);
-var captain3 = new Captain("OG", 180, 0);
-var captain4 = new Captain("Amritesh", 180, 0);
-var captain5 = new Captain("Saayan", 180, 0);
-var captain6 = new Captain("Shaurya", 180, 0);
-var captain7 = new Captain("Nathan", 180, 0);
-var captain8 = new Captain("Ganesh", 180, 0);
+var captain1 = new Captain("Treia", 180, 0);
+var captain2 = new Captain("Mitali", 180, 0);
+var captain3 = new Captain("Anika", 180, 0);
+var captain4 = new Captain("Mishka", 180, 0);
+// var captain5 = new Captain("Saayan", 180, 0);
+// var captain6 = new Captain("Shaurya", 180, 0);
+// var captain7 = new Captain("Nathan", 180, 0);
+// var captain8 = new Captain("Ganesh", 180, 0);
 
-var captains = [captain1, captain2, captain3, captain4, captain5, captain6, captain7, captain8];
+var captains = [captain1, captain2, captain3, captain4, 
+    // captain5, captain6, captain7, captain8
+];
 
 
 // Debugging to check all captain's player lists
@@ -73,17 +75,17 @@ captain3_Name.textContent = captain3.name;
 const captain4_Name = document.getElementById("cp4_Name");
 captain4_Name.textContent = captain4.name;
 
-const captain5_Name = document.getElementById("cp5_Name");
-captain5_Name.textContent = captain5.name;
+// const captain5_Name = document.getElementById("cp5_Name");
+// captain5_Name.textContent = captain5.name;
 
-const captain6_Name = document.getElementById("cp6_Name");
-captain6_Name.textContent = captain6.name;
+// const captain6_Name = document.getElementById("cp6_Name");
+// captain6_Name.textContent = captain6.name;
 
-const captain7_Name = document.getElementById("cp7_Name");
-captain7_Name.textContent = captain7.name;
+// const captain7_Name = document.getElementById("cp7_Name");
+// captain7_Name.textContent = captain7.name;
 
-const captain8_Name = document.getElementById("cp8_Name");
-captain8_Name.textContent = captain8.name;
+// const captain8_Name = document.getElementById("cp8_Name");
+// captain8_Name.textContent = captain8.name;
 
 
 // Display captain purse amounts
@@ -100,17 +102,17 @@ captain3_Purse.textContent = captain2.purse;
 const captain4_Purse = document.getElementById("cp4_Purse");
 captain4_Purse.textContent = captain4.purse;
 
-const captain5_Purse = document.getElementById("cp5_Purse");
-captain5_Purse.textContent = captain5.purse;
+// const captain5_Purse = document.getElementById("cp5_Purse");
+// captain5_Purse.textContent = captain5.purse;
 
-const captain6_Purse = document.getElementById("cp6_Purse");
-captain6_Purse.textContent = captain6.purse;
+// const captain6_Purse = document.getElementById("cp6_Purse");
+// captain6_Purse.textContent = captain6.purse;
 
-const captain7_Purse = document.getElementById("cp7_Purse");
-captain7_Purse.textContent = captain7.purse;
+// const captain7_Purse = document.getElementById("cp7_Purse");
+// captain7_Purse.textContent = captain7.purse;
 
-const captain8_Purse = document.getElementById("cp8_Purse");
-captain8_Purse.textContent = captain8.purse;
+// const captain8_Purse = document.getElementById("cp8_Purse");
+// captain8_Purse.textContent = captain8.purse;
 
 
 // Display captain squad sizes
@@ -127,17 +129,17 @@ captain3_SqSize.textContent = captain3.sqSize;
 const captain4_SqSize = document.getElementById("cp4_SqSize");
 captain4_SqSize.textContent = captain4.sqSize;
 
-const captain5_SqSize = document.getElementById("cp5_SqSize");
-captain5_SqSize.textContent = captain5.sqSize;
+// const captain5_SqSize = document.getElementById("cp5_SqSize");
+// captain5_SqSize.textContent = captain5.sqSize;
 
-const captain6_SqSize = document.getElementById("cp6_SqSize");
-captain6_SqSize.textContent = captain6.sqSize;
+// const captain6_SqSize = document.getElementById("cp6_SqSize");
+// captain6_SqSize.textContent = captain6.sqSize;
 
-const captain7_SqSize = document.getElementById("cp7_SqSize");
-captain7_SqSize.textContent = captain7.sqSize;
+// const captain7_SqSize = document.getElementById("cp7_SqSize");
+// captain7_SqSize.textContent = captain7.sqSize;
 
-const captain8_SqSize = document.getElementById("cp8_SqSize");
-captain8_SqSize.textContent = captain8.sqSize;
+// const captain8_SqSize = document.getElementById("cp8_SqSize");
+// captain8_SqSize.textContent = captain8.sqSize;
 
 
 
@@ -210,35 +212,35 @@ captain4_Spend.onclick = function () {
     openSpendModal(captain4, captain4_Purse, captain4_SqSize);
 }
 
-const captain5_Spend = document.getElementById("cp5_Spend");
-captain5_Spend.onclick = function () {
-    openSpendModal(captain5, captain5_Purse, captain5_SqSize);
-}
+// const captain5_Spend = document.getElementById("cp5_Spend");
+// captain5_Spend.onclick = function () {
+//     openSpendModal(captain5, captain5_Purse, captain5_SqSize);
+// }
 
-const captain6_Spend = document.getElementById("cp6_Spend");
-captain6_Spend.onclick = function () {
-    openSpendModal(captain6, captain6_Purse, captain6_SqSize);
-};
+// const captain6_Spend = document.getElementById("cp6_Spend");
+// captain6_Spend.onclick = function () {
+//     openSpendModal(captain6, captain6_Purse, captain6_SqSize);
+// };
 
-const captain7_Spend = document.getElementById("cp7_Spend");
-captain7_Spend.onclick = function () {
-    openSpendModal(captain7, captain7_Purse, captain7_SqSize);
-}
+// const captain7_Spend = document.getElementById("cp7_Spend");
+// captain7_Spend.onclick = function () {
+//     openSpendModal(captain7, captain7_Purse, captain7_SqSize);
+// }
 
-const captain8_Spend = document.getElementById("cp8_Spend");
-captain8_Spend.onclick = function () {
-    openSpendModal(captain8, captain8_Purse, captain8_SqSize);
-};
+// const captain8_Spend = document.getElementById("cp8_Spend");
+// captain8_Spend.onclick = function () {
+//     openSpendModal(captain8, captain8_Purse, captain8_SqSize);
+// };
 
 const spendButtons = [
         captain1_Spend,
         captain2_Spend,
         captain3_Spend,
         captain4_Spend,
-        captain5_Spend,
-        captain6_Spend,
-        captain7_Spend,
-        captain8_Spend,
+        // captain5_Spend,
+        // captain6_Spend,
+        // captain7_Spend,
+        // captain8_Spend,
         draftButton // Add draft button to the spend buttons array
     ];
 
