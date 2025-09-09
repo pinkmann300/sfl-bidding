@@ -1,7 +1,7 @@
 // Source script for the SFL-Bidding application
 
 // Captain and Player class definition
-import {forwardList, keeperList, defenderList, midfielderList, draftList} from "./players.js";
+import {allRounderList, keeperList, batterList, bowlerList, draftList} from "./players.js";
 
 class Captain {
     constructor(name, purse, sqSize) {
@@ -42,16 +42,26 @@ function shuffleArray(array) {
 
 // Hardcode - captains list 
 
-var captain1 = new Captain("Arhaan", 180, 0);
-var captain2 = new Captain("Vishant", 180, 0);
-var captain3 = new Captain("OG", 180, 0);
-var captain4 = new Captain("Amritesh", 180, 0);
-var captain5 = new Captain("Saayan", 180, 0);
-var captain6 = new Captain("Shaurya", 180, 0);
-var captain7 = new Captain("Nathan", 180, 0);
-var captain8 = new Captain("Ganesh", 180, 0);
+var captain1 = new Captain("Sparsh", 115, 1);
+var captain2 = new Captain("Aditya", 80, 2);
+var captain3 = new Captain("Prithvi", 115, 1);
+var captain4 = new Captain("Arnav VG", 115, 1);
+var captain5 = new Captain("Sarim", 115, 1);
+var captain6 = new Captain("Siddhant", 80, 2);
+var captain7 = new Captain("Eeshaan", 180, 0);
+var captain8 = new Captain("Mounish", 180, 0);
 
 var captains = [captain1, captain2, captain3, captain4, captain5, captain6, captain7, captain8];
+
+// Adding retained players
+captain1.addPlayer({name: "Yaadhi", batch: "SIAS 2023", position: "All-Rounder"});
+captain2.addPlayer({name: "Jash Agarwal", batch: "BBA 2024", position: "All-Rounder"});
+captain2.addPlayer({name: "Arnav Mishra", batch: "BBA 2024", position: "All-Rounder"});
+captain3.addPlayer({name: "Tannmay Kakkar", batch: "SIAS 2023", position: "Batter"});
+captain4.addPlayer({name: "Mudit Kohli", batch: "SIAS 2023", position: "Batter"});
+captain5.addPlayer({name: "Aditya Dilli", batch: "SIAS 2023", position: "All-Rounder"});
+captain6.addPlayer({name: "Vedant Sivaram", batch: "SIAS 2024", position: "Batter"});
+captain6.addPlayer({name: "Siddarth Pashikanti", batch: "SIAS 2024", position: "All-Rounder"});
 
 
 // Debugging to check all captain's player lists
@@ -92,10 +102,10 @@ const captain1_Purse = document.getElementById("cp1_Purse");
 captain1_Purse.textContent = captain1.purse;
 
 const captain2_Purse = document.getElementById("cp2_Purse");
-captain2_Purse.textContent = captain3.purse;
+captain2_Purse.textContent = captain2.purse;
 
 const captain3_Purse = document.getElementById("cp3_Purse");
-captain3_Purse.textContent = captain2.purse;
+captain3_Purse.textContent = captain3.purse;
 
 const captain4_Purse = document.getElementById("cp4_Purse");
 captain4_Purse.textContent = captain4.purse;
@@ -315,20 +325,20 @@ draftButton.onclick = function () {
 // Randomize button which appears when one of them is clicked.
 const randomize = document.getElementById("randomizer");
 
+document.getElementById("allrounders").addEventListener('click', function () {
+    addList("allrounders", allRounderList)
+});
+
+document.getElementById("batters").addEventListener('click', function () {
+    addList("batters", batterList)
+});
+
+document.getElementById("bowlers").addEventListener('click', function () {
+    addList("bowlers", bowlerList)
+});
+
 document.getElementById("keepers").addEventListener('click', function () {
     addList("keepers", keeperList)
-});
-
-document.getElementById("defense").addEventListener('click', function () {
-    addList("defense", defenderList)
-});
-
-document.getElementById("forwards").addEventListener('click', function () {
-    addList("forwards", forwardList)
-});
-
-document.getElementById("midfielders").addEventListener('click', function () {
-    addList("midfielders", midfielderList)
 });
 
 document.getElementById("draft").addEventListener('click', function () {

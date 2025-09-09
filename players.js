@@ -14,7 +14,7 @@ let playerList = [];
 // Fetch the CSV file and parse it
 async function loadCSV() {
     try {
-        const response = await fetch('./players_msfl25.csv'); // path to your CSV file
+        const response = await fetch('./KCL AUCTIONS PLAYER LIST - Sheet3.csv'); // path to your CSV file
         const csvText = await response.text(); // read it as text
         const dataArray = csvToArray(csvText);
 
@@ -42,11 +42,11 @@ function csvToArray(csvData, delimiter = ',') {
 
 // Hardcoded - sample player list.
 
-var defenderList = [];
+var allRounderList = [];
 
-var forwardList = [];
+var batterList = [];
 
-var midfielderList = [];
+var bowlerList = [];
 
 var keeperList = [];
 
@@ -68,16 +68,16 @@ function categorizePlayers() {
     });
 
     // Now categorize the valid players by position
-    defenderList = validPlayers.filter(player => player.position.trim() === "Defence");
-    midfielderList = validPlayers.filter(player => player.position.trim() === "Midfield");
-    forwardList = validPlayers.filter(player => player.position.trim() === "Forward");
-    keeperList = validPlayers.filter(player => player.position.trim() === "Goal Keeper");
+    allRounderList = validPlayers.filter(player => player.position.trim() === "All-Rounder");
+    batterList = validPlayers.filter(player => player.position.trim() === "Batter");
+    bowlerList = validPlayers.filter(player => player.position.trim() === "Bowler");
+    keeperList = validPlayers.filter(player => player.position.trim() === "Wicket-Keeper");
 
     // Debugging: Check if positions are correctly identified
-    console.log("Defenders:", defenderList);
-    console.log("Midfielders:", midfielderList);
-    console.log("Forwards:", forwardList);
-    console.log("Goalkeepers:", keeperList);
+    console.log("All Rounders:", allRounderList);
+    console.log("Batters:", batterList);
+    console.log("Bowlers:", bowlerList);
+    console.log("Wicket Keepers:", keeperList);
     console.log("Draft List:", draftList);
 }
 
@@ -88,9 +88,9 @@ loadCSV().then(() => {
 
 
 export {
-    defenderList,
-    forwardList,
-    midfielderList,
+    allRounderList,
+    batterList,
+    bowlerList,
     keeperList,
     draftList
 }
