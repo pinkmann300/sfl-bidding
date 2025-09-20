@@ -1,7 +1,7 @@
 // Source script for the SFL-Bidding application
 
 // Captain and Player class definition
-import {allRounderList, keeperList, batterList, bowlerList, draftList} from "./players.js";
+import {playerList, draftList} from "./players.js";
 
 class Captain {
     constructor(name, purse, sqSize) {
@@ -42,26 +42,13 @@ function shuffleArray(array) {
 
 // Hardcode - captains list 
 
-var captain1 = new Captain("Sparsh", 115, 1);
-var captain2 = new Captain("Aditya", 80, 2);
-var captain3 = new Captain("Prithvi", 115, 1);
-var captain4 = new Captain("Arnav VG", 115, 1);
-var captain5 = new Captain("Sarim", 115, 1);
-var captain6 = new Captain("Siddhant", 80, 2);
-var captain7 = new Captain("Eeshaan", 180, 0);
-var captain8 = new Captain("Mounish", 180, 0);
+var captain1 = new Captain("Niharika", 150, 0);
+var captain2 = new Captain("Aavya", 150, 0);
+var captain3 = new Captain("Angel", 150, 0);
+var captain4 = new Captain("Nehhal", 150, 0);
 
-var captains = [captain1, captain2, captain3, captain4, captain5, captain6, captain7, captain8];
+var captains = [captain1, captain2, captain3, captain4];
 
-// Adding retained players
-captain1.addPlayer({name: "Yaadhi", batch: "SIAS 2023", position: "All-Rounder"});
-captain2.addPlayer({name: "Jash Agarwal", batch: "BBA 2024", position: "All-Rounder"});
-captain2.addPlayer({name: "Arnav Mishra", batch: "BBA 2024", position: "All-Rounder"});
-captain3.addPlayer({name: "Tannmay Kakkar", batch: "SIAS 2023", position: "Batter"});
-captain4.addPlayer({name: "Mudit Kohli", batch: "SIAS 2023", position: "Batter"});
-captain5.addPlayer({name: "Aditya Dilli", batch: "SIAS 2023", position: "All-Rounder"});
-captain6.addPlayer({name: "Vedant Sivaram", batch: "SIAS 2024", position: "Batter"});
-captain6.addPlayer({name: "Siddarth Pashikanti", batch: "SIAS 2024", position: "All-Rounder"});
 
 
 // Debugging to check all captain's player lists
@@ -83,17 +70,6 @@ captain3_Name.textContent = captain3.name;
 const captain4_Name = document.getElementById("cp4_Name");
 captain4_Name.textContent = captain4.name;
 
-const captain5_Name = document.getElementById("cp5_Name");
-captain5_Name.textContent = captain5.name;
-
-const captain6_Name = document.getElementById("cp6_Name");
-captain6_Name.textContent = captain6.name;
-
-const captain7_Name = document.getElementById("cp7_Name");
-captain7_Name.textContent = captain7.name;
-
-const captain8_Name = document.getElementById("cp8_Name");
-captain8_Name.textContent = captain8.name;
 
 
 // Display captain purse amounts
@@ -110,18 +86,6 @@ captain3_Purse.textContent = captain3.purse;
 const captain4_Purse = document.getElementById("cp4_Purse");
 captain4_Purse.textContent = captain4.purse;
 
-const captain5_Purse = document.getElementById("cp5_Purse");
-captain5_Purse.textContent = captain5.purse;
-
-const captain6_Purse = document.getElementById("cp6_Purse");
-captain6_Purse.textContent = captain6.purse;
-
-const captain7_Purse = document.getElementById("cp7_Purse");
-captain7_Purse.textContent = captain7.purse;
-
-const captain8_Purse = document.getElementById("cp8_Purse");
-captain8_Purse.textContent = captain8.purse;
-
 
 // Display captain squad sizes
 
@@ -137,17 +101,6 @@ captain3_SqSize.textContent = captain3.sqSize;
 const captain4_SqSize = document.getElementById("cp4_SqSize");
 captain4_SqSize.textContent = captain4.sqSize;
 
-const captain5_SqSize = document.getElementById("cp5_SqSize");
-captain5_SqSize.textContent = captain5.sqSize;
-
-const captain6_SqSize = document.getElementById("cp6_SqSize");
-captain6_SqSize.textContent = captain6.sqSize;
-
-const captain7_SqSize = document.getElementById("cp7_SqSize");
-captain7_SqSize.textContent = captain7.sqSize;
-
-const captain8_SqSize = document.getElementById("cp8_SqSize");
-captain8_SqSize.textContent = captain8.sqSize;
 
 
 
@@ -220,35 +173,12 @@ captain4_Spend.onclick = function () {
     openSpendModal(captain4, captain4_Purse, captain4_SqSize);
 }
 
-const captain5_Spend = document.getElementById("cp5_Spend");
-captain5_Spend.onclick = function () {
-    openSpendModal(captain5, captain5_Purse, captain5_SqSize);
-}
-
-const captain6_Spend = document.getElementById("cp6_Spend");
-captain6_Spend.onclick = function () {
-    openSpendModal(captain6, captain6_Purse, captain6_SqSize);
-};
-
-const captain7_Spend = document.getElementById("cp7_Spend");
-captain7_Spend.onclick = function () {
-    openSpendModal(captain7, captain7_Purse, captain7_SqSize);
-}
-
-const captain8_Spend = document.getElementById("cp8_Spend");
-captain8_Spend.onclick = function () {
-    openSpendModal(captain8, captain8_Purse, captain8_SqSize);
-};
 
 const spendButtons = [
         captain1_Spend,
         captain2_Spend,
         captain3_Spend,
         captain4_Spend,
-        captain5_Spend,
-        captain6_Spend,
-        captain7_Spend,
-        captain8_Spend,
         draftButton // Add draft button to the spend buttons array
     ];
 
@@ -325,20 +255,8 @@ draftButton.onclick = function () {
 // Randomize button which appears when one of them is clicked.
 const randomize = document.getElementById("randomizer");
 
-document.getElementById("allrounders").addEventListener('click', function () {
-    addList("allrounders", allRounderList)
-});
-
-document.getElementById("batters").addEventListener('click', function () {
-    addList("batters", batterList)
-});
-
-document.getElementById("bowlers").addEventListener('click', function () {
-    addList("bowlers", bowlerList)
-});
-
-document.getElementById("keepers").addEventListener('click', function () {
-    addList("keepers", keeperList)
+document.getElementById("allplayers").addEventListener('click', function () {
+    addList("allplayers", playerList)
 });
 
 document.getElementById("draft").addEventListener('click', function () {
@@ -413,9 +331,9 @@ function displayPlayer(playa) {
 }
 
 // Squads Modal logic
-const squadsModal = document.getElementById("squadsModal");
-const squadsContent = document.getElementById("squadsContent");
-const squadsClose = document.getElementById("squadsClose");
+// const squadsModal = document.getElementById("squadsModal");
+// const squadsContent = document.getElementById("squadsContent");
+// const squadsClose = document.getElementById("squadsClose");
 const viewSquads = document.getElementById("viewSquads");
 
 function startAuction() {
@@ -467,79 +385,79 @@ function startAuction() {
 
 
 // Download CSV button (will be created dynamically)
-let squadsDownloadBtn = null;
+// let squadsDownloadBtn = null;
 
-function generateSquadsTable() {
-    let html = '<table style="width:100%; border-collapse:collapse;">';
-    html += '<tr><th>Captain</th><th>Player Name</th><th>Batch</th><th>Position</th></tr>';
-    captains.forEach(captain => {
-        if (captain.players.length === 0) {
-            html += `<tr><td>${captain.name}</td><td colspan="3" style="text-align:center; color:#888;">No players</td></tr>`;
-        } else {
-            captain.players.forEach((player, idx) => {
-                html += `<tr>`;
-                if (idx === 0) {
-                    html += `<td rowspan="${captain.players.length}">${captain.name}</td>`;
-                }
-                html += `<td>${player.name}</td><td>${player.batch}</td><td>${player.position}</td></tr>`;
-            });
-        }
-    });
-    html += '</table>';
-    return html;
-}
+// function generateSquadsTable() {
+//     let html = '<table style="width:100%; border-collapse:collapse;">';
+//     html += '<tr><th>Captain</th><th>Player Name</th><th>Batch</th><th>Position</th></tr>';
+//     captains.forEach(captain => {
+//         if (captain.players.length === 0) {
+//             html += `<tr><td>${captain.name}</td><td colspan="3" style="text-align:center; color:#888;">No players</td></tr>`;
+//         } else {
+//             captain.players.forEach((player, idx) => {
+//                 html += `<tr>`;
+//                 if (idx === 0) {
+//                     html += `<td rowspan="${captain.players.length}">${captain.name}</td>`;
+//                 }
+//                 html += `<td>${player.name}</td><td>${player.batch}</td><td>${player.position}</td></tr>`;
+//             });
+//         }
+//     });
+//     html += '</table>';
+//     return html;
+// }
 
-function generateSquadsCSV() {
-    let csv = 'Captain,Player Name,Batch,Position\n';
-    captains.forEach(captain => {
-        if (captain.players.length === 0) {
-            csv += `${captain.name},,,\n`;
-        } else {
-            captain.players.forEach(player => {
-                csv += `${captain.name},${player.name},${player.batch},${player.position}\n`;
-            });
-        }
-    });
-    return csv;
-}
+// function generateSquadsCSV() {
+//     let csv = 'Captain,Player Name,Batch\n';
+//     captains.forEach(captain => {
+//         if (captain.players.length === 0) {
+//             csv += `${captain.name},,,\n`;
+//         } else {
+//             captain.players.forEach(player => {
+//                 csv += `${captain.name},${player.name},${player.batch},${player.position}\n`;
+//             });
+//         }
+//     });
+//     return csv;
+// }
 
-function showSquadsModal() {
-    squadsContent.innerHTML = generateSquadsTable();
-    // Add download button if not present
-    if (!squadsDownloadBtn) {
-        squadsDownloadBtn = document.createElement('button');
-        squadsDownloadBtn.textContent = 'Download CSV';
-        squadsDownloadBtn.style.margin = '1em';
-        squadsDownloadBtn.style.padding = '0.5em 1.5em';
-        squadsDownloadBtn.style.fontSize = '1em';
-        squadsDownloadBtn.onclick = function() {
-            const csv = generateSquadsCSV();
-            const blob = new Blob([csv], { type: 'text/csv' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'squads.csv';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        };
-        squadsContent.parentNode.insertBefore(squadsDownloadBtn, squadsContent.nextSibling);
-    }
-    squadsModal.style.display = 'flex';
-}
+// function showSquadsModal() {
+//     squadsContent.innerHTML = generateSquadsTable();
+//     // Add download button if not present
+//     if (!squadsDownloadBtn) {
+//         squadsDownloadBtn = document.createElement('button');
+//         squadsDownloadBtn.textContent = 'Download CSV';
+//         squadsDownloadBtn.style.margin = '1em';
+//         squadsDownloadBtn.style.padding = '0.5em 1.5em';
+//         squadsDownloadBtn.style.fontSize = '1em';
+//         squadsDownloadBtn.onclick = function() {
+//             const csv = generateSquadsCSV();
+//             const blob = new Blob([csv], { type: 'text/csv' });
+//             const url = URL.createObjectURL(blob);
+//             const a = document.createElement('a');
+//             a.href = url;
+//             a.download = 'squads.csv';
+//             document.body.appendChild(a);
+//             a.click();
+//             document.body.removeChild(a);
+//             URL.revokeObjectURL(url);
+//         };
+//         squadsContent.parentNode.insertBefore(squadsDownloadBtn, squadsContent.nextSibling);
+//     }
+//     squadsModal.style.display = 'flex';
+// // }
 
-if (viewSquads) {
-    viewSquads.onclick = showSquadsModal;
-}
-if (squadsClose) {
-    squadsClose.onclick = function() {
-        squadsModal.style.display = 'none';
-    };
-}
-// Optional: close modal on Escape key
-window.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && squadsModal && squadsModal.style.display === 'flex') {
-        squadsModal.style.display = 'none';
-    }
-});
+// if (viewSquads) {
+//     viewSquads.onclick = showSquadsModal;
+// }
+// if (squadsClose) {
+//     squadsClose.onclick = function() {
+//         squadsModal.style.display = 'none';
+//     };
+// }
+// // Optional: close modal on Escape key
+// window.addEventListener('keydown', function(e) {
+//     if (e.key === 'Escape' && squadsModal && squadsModal.style.display === 'flex') {
+//         squadsModal.style.display = 'none';
+//     }
+// });
