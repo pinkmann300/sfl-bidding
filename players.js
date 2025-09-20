@@ -13,7 +13,7 @@ let playerList = [];
 // Fetch the CSV file and parse it
 async function loadCSV() {
     try {
-        const response = await fetch('players_wkbl25.csv'); // path to your CSV file
+        const response = await fetch('players_mkbl25.csv'); // path to your CSV file
         const csvText = await response.text(); // read it as text
         const dataArray = csvToArray(csvText);
 

@@ -42,12 +42,14 @@ function shuffleArray(array) {
 
 // Hardcode - captains list 
 
-var captain1 = new Captain("Niharika", 150, 0);
-var captain2 = new Captain("Aavya", 150, 0);
-var captain3 = new Captain("Angel", 150, 0);
-var captain4 = new Captain("Nehhal", 150, 0);
+var captain1 = new Captain("Siddharth", 180, 0);
+var captain2 = new Captain("Mudit", 180, 0);
+var captain3 = new Captain("Swami", 180, 0);
+var captain4 = new Captain("Hari G.G.K.", 180, 0);
+var captain5 = new Captain("Parth", 180, 0);
+var captain6 = new Captain("Tejas", 180, 0);
 
-var captains = [captain1, captain2, captain3, captain4];
+var captains = [captain1, captain2, captain3, captain4, captain5, captain6];
 
 
 
@@ -70,6 +72,11 @@ captain3_Name.textContent = captain3.name;
 const captain4_Name = document.getElementById("cp4_Name");
 captain4_Name.textContent = captain4.name;
 
+const captain5_Name = document.getElementById("cp5_Name");
+captain5_Name.textContent = captain5.name;
+
+const captain6_Name = document.getElementById("cp6_Name");
+captain6_Name.textContent = captain6.name;
 
 
 // Display captain purse amounts
@@ -86,6 +93,12 @@ captain3_Purse.textContent = captain3.purse;
 const captain4_Purse = document.getElementById("cp4_Purse");
 captain4_Purse.textContent = captain4.purse;
 
+const captain5_Purse = document.getElementById("cp5_Purse");
+captain5_Purse.textContent = captain5.purse;
+
+const captain6_Purse = document.getElementById("cp6_Purse");
+captain6_Purse.textContent = captain6.purse;
+
 
 // Display captain squad sizes
 
@@ -101,6 +114,11 @@ captain3_SqSize.textContent = captain3.sqSize;
 const captain4_SqSize = document.getElementById("cp4_SqSize");
 captain4_SqSize.textContent = captain4.sqSize;
 
+const captain5_SqSize = document.getElementById("cp5_SqSize");
+captain5_SqSize.textContent = captain5.sqSize;
+
+const captain6_SqSize = document.getElementById("cp6_SqSize");
+captain6_SqSize.textContent = captain6.sqSize;
 
 
 
@@ -173,12 +191,24 @@ captain4_Spend.onclick = function () {
     openSpendModal(captain4, captain4_Purse, captain4_SqSize);
 }
 
+const captain5_Spend = document.getElementById("cp5_Spend");
+captain5_Spend.onclick = function () {
+    openSpendModal(captain5, captain5_Purse, captain5_SqSize);
+}
+
+const captain6_Spend = document.getElementById("cp6_Spend");
+captain6_Spend.onclick = function () {
+    openSpendModal(captain6, captain6_Purse, captain6_SqSize);
+}
+
 
 const spendButtons = [
         captain1_Spend,
         captain2_Spend,
         captain3_Spend,
         captain4_Spend,
+        captain5_Spend,
+        captain6_Spend,
         draftButton // Add draft button to the spend buttons array
     ];
 
