@@ -255,13 +255,37 @@ draftButton.onclick = function () {
 // Randomize button which appears when one of them is clicked.
 const randomize = document.getElementById("randomizer");
 
-document.getElementById("allplayers").addEventListener('click', function () {
+var categoryButton1 = document.getElementById("allplayers");
+categoryButton1.addEventListener('click', function () {
     addList("allplayers", playerList)
 });
 
-document.getElementById("draft").addEventListener('click', function () {
+var categoryButtonDraft = document.getElementById("draft");
+categoryButtonDraft.addEventListener('click', function () {
     addList("draft", draftList)
 });
+
+const categoryButtons = [
+    categoryButton1,
+    categoryButtonDraft
+];
+
+function disableCategoryButtons() {
+    categoryButtons.forEach(btn => {
+        if (btn) {
+            btn._disabledClick = btn._disabledClick || (e => { e.preventDefault(); e.stopImmediatePropagation(); });
+            btn.addEventListener('click', btn._disabledClick, true);
+        }
+    });
+}
+
+function enableCategoryButtons() {
+    categoryButtons.forEach(btn => {
+        if (btn && btn._disabledClick) {
+            btn.removeEventListener('click', btn._disabledClick, true);
+        }
+    });
+}
 
 const stopBid = document.querySelector("#stopbid");
 
@@ -317,6 +341,8 @@ function randomizingDef(arrw) {
     disableSpendButtons();
 
     const startAuc = document.querySelector("#startauc");
+    
+    disableCategoryButtons();
     startAuc.onclick = startAuction;
 
 }
@@ -374,6 +400,7 @@ function startAuction() {
             document.getElementById("defDis").style.display = "none";
             document.getElementById("adminAl").style.display = "block";
             document.getElementById("adminAl").innerHTML = "All players sold! <br> Pick another category";
+            enableCategoryButtons();
             document.getElementById("defList").replaceChildren();
             viewSquads.style.visibility = "visible";
         }
